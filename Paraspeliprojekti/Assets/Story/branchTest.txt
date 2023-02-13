@@ -1,0 +1,7 @@
+0	This is the first card.	1	2
+1	This is the left branch.	3	4
+2	This is the right branch.	5	6
+3	This is the left-left branch.	-1	-1
+4	This is the left-right branch.	-1	-1
+5	This is the right-left branch.	-1	-1
+6	This is the right-right branch.	-1	-1
