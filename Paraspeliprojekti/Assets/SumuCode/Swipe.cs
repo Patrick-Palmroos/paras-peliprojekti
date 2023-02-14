@@ -90,9 +90,14 @@ namespace ProjectC
             // sends swipe message
             if (distanceMoved > checkThreshold)
             {
-                control.SendMessage(state);
+                control.SendMessage("Swiped", state);
             }
             distanceMoved = 0;
+            // resets the children
+            foreach (Transform child in transform)
+            {
+                child.localPosition = startPos;
+            }
             transform.position = startPos;
         }
     }

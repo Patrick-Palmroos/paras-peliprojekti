@@ -9,16 +9,13 @@ namespace ProjectC
     {
         private Dictionary<int, StoryNode> nodes = new Dictionary<int, StoryNode>();
         public StoryNode RootNode { get; private set; }
-        GameControl control;
         [SerializeField] string filePath;
         public StoryNode currNode;
 
         public void Awake()
         {
-            control = GameObject.Find("GameControl").GetComponent<GameControl>();
             LoadFromFile(filePath);
             currNode = RootNode;
-            // control.SendMessage("GetCurrentOptions");
             // PlayStory(RootNode);
         }
 
@@ -34,9 +31,11 @@ namespace ProjectC
                 childNode = GetNode(currNode.ChildRight);
             }
             currNode = childNode;
+            Debug.Log("current node: " + currNode.Prompt);
             return childNode;
         }
 
+        // this is just for testing purposes
         private void PlayStory(StoryNode node)
         {
             ShowMessage(node.Prompt);
@@ -70,6 +69,7 @@ namespace ProjectC
             return optionLeft;
         }
 
+        // this can be deleted later
         private void ShowMessage(string message)
         {
             // This function would normally display the message to the player, but in this example we'll just print it to the console.
@@ -118,6 +118,16 @@ namespace ProjectC
             {
                 return null;
             }
+        }
+
+        public bool IsLastNode(int id)
+        {
+            StoryNode sn = GetNode(id);
+            if(sn.ChildLeft == -1 && sn.ChildRight == -1)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
