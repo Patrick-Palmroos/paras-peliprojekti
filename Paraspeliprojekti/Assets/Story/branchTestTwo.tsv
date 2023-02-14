@@ -1,0 +1,7 @@
+0	(side)This is the first card.	1	option 1	2	option 2
+1	(side)This is the left branch.	3	option 3	4	option 4
+2	(side)This is the right branch.	5	option 5	6	option 6
+3	(side)This is the left-left branch.	-1		-1	
+4	(side)This is the left-right branch.	-1		-1	
+5	(side)This is the right-left branch.	-1		-1	
+6	(side)This is the right-right branch.	-1		-1	

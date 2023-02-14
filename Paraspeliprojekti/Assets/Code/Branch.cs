@@ -9,11 +9,32 @@ namespace ProjectC
     {
         private Dictionary<int, StoryNode> nodes = new Dictionary<int, StoryNode>();
         public StoryNode RootNode { get; private set; }
+        GameControl control;
+        [SerializeField] string filePath;
+        public StoryNode currNode;
 
-        public void Start()
+        public void Awake()
         {
-            LoadFromFile("Assets/Story/branchTest.tsv");
-            PlayStory(RootNode);
+            control = GameObject.Find("GameControl").GetComponent<GameControl>();
+            LoadFromFile(filePath);
+            currNode = RootNode;
+            // control.SendMessage("GetCurrentOptions");
+            // PlayStory(RootNode);
+        }
+
+        public StoryNode GetNextNode(bool left)
+        {
+            StoryNode childNode;
+            if(left)
+            {
+                childNode = GetNode(currNode.ChildLeft);
+            } 
+            else
+            {
+                childNode = GetNode(currNode.ChildRight);
+            }
+            currNode = childNode;
+            return childNode;
         }
 
         private void PlayStory(StoryNode node)
@@ -98,15 +119,5 @@ namespace ProjectC
                 return null;
             }
         }
-    }
-
-    public class StoryNode
-    {
-        public int Id { get; set; }
-        public string Prompt { get; set; }
-        public string OptionLeft { get; set; }
-        public string OptionRight { get; set; }
-        public int ChildLeft { get; set; }
-        public int ChildRight { get; set; }
     }
 }
