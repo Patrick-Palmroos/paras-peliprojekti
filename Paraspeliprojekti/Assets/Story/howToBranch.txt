@@ -1,0 +1,14 @@
+The branch files are TSV (Tab Separated Values) and each row is it's own card in the game
+
+1: The ID of the card
+2: The prompt that will be displayed on the card
+3: Left child card ID
+4: Option that leads to left child
+5: How much the left option will affect to Happiness (0 if it doesn't)
+6: How much the left option will affect to Money (0 if it doesn't)
+7: How much the left option will affect to Energy (0 if it doesn't)
+8: Right child card ID
+9: Option that leads to right child
+10: How much the right option will affect to Happiness (0 if it doesn't)
+11: How much the right option will affect to Money (0 if it doesn't)
+12: How much the right option will affect to Energy (0 if it doesn't)

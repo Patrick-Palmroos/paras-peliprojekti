@@ -16,9 +16,10 @@ namespace ProjectC
         {
             LoadFromFile(filePath);
             currNode = RootNode;
-            // PlayStory(RootNode);
         }
 
+        // Moves on to the child node
+        // Called from another script
         public StoryNode GetNextNode(bool left)
         {
             StoryNode childNode;
@@ -31,51 +32,10 @@ namespace ProjectC
                 childNode = GetNode(currNode.ChildRight);
             }
             currNode = childNode;
-            Debug.Log("current node: " + currNode.Prompt);
             return childNode;
         }
 
-        // this is just for testing purposes
-        private void PlayStory(StoryNode node)
-        {
-            ShowMessage(node.Prompt);
-
-            // If this node has no children, the story has ended
-            if (node.ChildLeft == -1 && node.ChildRight == -1)
-            {
-                Debug.Log("no children");
-                return;
-            }
-
-
-            string choice = ShowChoice(node.OptionLeft, node.OptionRight);
-            StoryNode nextNode;
-            if (choice == node.OptionLeft)
-            {
-                nextNode = GetNode(node.ChildLeft);
-            }
-            else
-            {
-                nextNode = GetNode(node.ChildRight);
-            }
-
-            // Play the story from the selected child node
-            PlayStory(nextNode);
-        }
-
-        // this currently returns optionLeft every time, wip
-        private string ShowChoice(string optionLeft, string optionRight)
-        {
-            return optionLeft;
-        }
-
-        // this can be deleted later
-        private void ShowMessage(string message)
-        {
-            // This function would normally display the message to the player, but in this example we'll just print it to the console.
-            Debug.Log("message: " + message);
-        }
-
+        // Loads from file
         public void LoadFromFile(string path)
         {
             using (StreamReader reader = new StreamReader(path))
@@ -89,16 +49,28 @@ namespace ProjectC
                     string description = parts[1];
                     int leftId = int.Parse(parts[2]);
                     string leftOption = parts[3];
-                    int rightId = int.Parse(parts[4]);
-                    string rightOption = parts[5];
+                    int leftHappy = int.Parse(parts[4]);
+                    int leftMoney = int.Parse(parts[5]);
+                    int leftEnergy = int.Parse(parts[6]);
+                    int rightId = int.Parse(parts[7]);
+                    string rightOption = parts[8];
+                    int rightHappy = int.Parse(parts[9]);
+                    int rightMoney = int.Parse(parts[10]);
+                    int rightEnergy = int.Parse(parts[11]);
                     StoryNode node = new StoryNode
                     {
                         Id = id,
                         Prompt = description,
                         OptionLeft = leftOption,
                         ChildLeft = leftId,
+                        LeftHappy = leftHappy,
+                        LeftMoney = leftMoney,
+                        LeftEnergy = leftEnergy,
                         OptionRight = rightOption,
-                        ChildRight = rightId
+                        ChildRight = rightId,
+                        RightHappy = rightHappy,
+                        RightMoney = rightMoney,
+                        RightEnergy = rightEnergy
                     };
 
                     nodes[id] = node;
@@ -108,6 +80,7 @@ namespace ProjectC
             RootNode = GetNode(0);
         }
 
+        // Finds a node by its ID
         private StoryNode GetNode(int id)
         {
             if (nodes.TryGetValue(id, out StoryNode node))
@@ -120,6 +93,7 @@ namespace ProjectC
             }
         }
 
+        // Checks by ID if this node is the last child
         public bool IsLastNode(int id)
         {
             StoryNode sn = GetNode(id);

@@ -14,13 +14,12 @@ namespace ProjectC
         private Vector3 startPos;
         private Vector3 currScreenPos;
         private BoxCollider2D coll;
-        Camera camera;
         private string state;
         private bool isDragging;
         private bool isPressed {
             get
             {
-                Vector3 wp = camera.ScreenToWorldPoint(currScreenPos);
+                Vector3 wp = Camera.main.ScreenToWorldPoint(currScreenPos);
                 Vector2 touchPos = new Vector2(wp.x, wp.y);
                 if(coll == Physics2D.OverlapPoint(touchPos))
                 {
@@ -34,7 +33,6 @@ namespace ProjectC
         {
             control = GameObject.Find("GameControl").GetComponent<GameControl>();
             startPos = transform.position;
-            camera = Camera.main;
             coll = gameObject.GetComponent<BoxCollider2D>();
             screenPos.Enable();
             press.Enable();
@@ -81,7 +79,7 @@ namespace ProjectC
             while(isDragging)
             {
                 distanceMoved = Mathf.Abs(transform.localPosition.x - startPos.x);
-                Vector3 newPos = camera.ScreenToWorldPoint(currScreenPos);
+                Vector3 newPos = Camera.main.ScreenToWorldPoint(currScreenPos);
                 newPos.z = transform.position.z;
                 transform.position = newPos;
                 yield return null;
@@ -92,6 +90,7 @@ namespace ProjectC
             {
                 control.SendMessage("Swiped", state);
             }
+
             distanceMoved = 0;
             // resets the children
             foreach (Transform child in transform)

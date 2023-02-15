@@ -15,38 +15,53 @@ namespace ProjectC
         int branchCount;
         int currBranch;
         string optionLeft, optionRight;
+        bool endGame = false;
 
         // Start is called before the first frame update
         void Start()
         {
             allBranches = GetComponents<Branch>().ToList<Branch>();
-            branches = allBranches;
-            branchCount = branches.Count;
+            branches = new List<Branch>();
+            foreach (Branch b in allBranches)
+            {
+                branches.Add(b);
+            }
             RandomBranch();
-            GetCurrentOptions();
-            Debug.Log(branchCount + " branches");
         }
 
-        public void GetCurrentOptions()
+        // Displays current prompt and options on screen
+        public void GetCurrentOptions(Branch b)
         {
-            Debug.Log(currBranch);
-            if (branches[currBranch].currNode == null)
+            if (b.currNode == null)
             {
-                Debug.Log("null");
+                Debug.Log("null branch");
             } else
             {
-                Debug.Log("Not null");
-                optionLeft = branches[currBranch].currNode.OptionLeft;
-                optionRight = branches[currBranch].currNode.OptionRight;
+                optionLeft = b.currNode.OptionLeft;
+                optionRight = b.currNode.OptionRight;
+                cardText.text = b.currNode.Prompt;
             }
-            cardText.text = branches[currBranch].currNode.Prompt;
         }
 
+        // Randomizes which branch to check next
         public void RandomBranch()
         {
-            currBranch = Random.Range(0, branchCount);
+            branchCount = branches.Count;
+            if (branchCount <= 0)
+            {
+                endGame = true;
+                currBranch = Random.Range(0, allBranches.Count);
+                GetCurrentOptions(allBranches[currBranch]);
+            }
+            else
+            {
+                currBranch = Random.Range(0, branchCount);
+                GetCurrentOptions(branches[currBranch]);
+            }
         }
 
+        // Shows the text depending on which side the card is being swiped to
+        // Called from another script
         public void ChangeText(string state)
         {
             switch(state)
@@ -63,30 +78,44 @@ namespace ProjectC
             }
         }
 
+        // Happens when the swipe is done
         public void Swiped(string state)
         {
             bool left = (state == "Left");
-            if(left)
+            if (endGame)
             {
-                Debug.Log("swiped left");
-                if (branches[currBranch].IsLastNode(branches[currBranch].currNode.ChildLeft))
+                // If we're in endgame, meaning that we don't have any choices left
+                // we will cycle through the end cards until they run out
+                // and then the game ends
+                if (allBranches.Count - 1 > 0)
                 {
-                    Debug.Log("Next story node is the last one");
+                    allBranches.Remove(allBranches[currBranch]);
+                    RandomBranch();
                 }
-            } 
-            else
-            {
-                Debug.Log("swiped right");
-                if (branches[currBranch].IsLastNode(branches[currBranch].currNode.ChildRight))
+                else
                 {
-                    Debug.Log("Next story node is the last one");
+                    GameEnd();
                 }
             }
+            else
+            {
+                // If we're not in endgame, we check if the next child node is the end card
+                // and if it is, remove it from the list and save it for endgame
+                branches[currBranch].GetNextNode(left);
+                if (branches[currBranch].IsLastNode(branches[currBranch].currNode.Id))
+                {
+                    Debug.Log("Next node is the last node");
+                    branches.Remove(branches[currBranch]);
+                }
 
-            branches[currBranch].GetNextNode(left);
-            RandomBranch();
-            GetCurrentOptions();
+                RandomBranch();
+            }
         }
 
+        // Game ends
+        public void GameEnd()
+        {
+            Debug.Log("Game ends");
+        }
     }
 }

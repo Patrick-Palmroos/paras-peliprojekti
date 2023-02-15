@@ -747,7 +747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c4009fdadcf324a8f11d9ab2c77e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 0}
+  cardText: {fileID: 754024678}
   optionText: {fileID: 1028773835}
 --- !u!1 &1028773833
 GameObject:
