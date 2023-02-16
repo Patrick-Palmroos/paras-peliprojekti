@@ -16,10 +16,12 @@ namespace ProjectC
         int currBranch;
         string optionLeft, optionRight;
         bool endGame = false;
+        private Meters meters;
 
         // Start is called before the first frame update
         void Start()
         {
+            meters = GetComponent<Meters>();
             allBranches = GetComponents<Branch>().ToList<Branch>();
             branches = new List<Branch>();
             foreach (Branch b in allBranches)
@@ -40,6 +42,11 @@ namespace ProjectC
                 optionLeft = b.currNode.OptionLeft;
                 optionRight = b.currNode.OptionRight;
                 cardText.text = b.currNode.Prompt;
+
+                bool affectsHappy = (b.currNode.LeftHappy != 0 || b.currNode.RightHappy != 0);
+                bool affectsMoney = (b.currNode.LeftMoney != 0 || b.currNode.RightMoney != 0);
+                bool affectsEnergy = (b.currNode.LeftEnergy != 0 || b.currNode.RightEnergy != 0);
+                meters.ShowIndicators(affectsHappy, affectsMoney, affectsEnergy);
             }
         }
 

@@ -5,87 +5,92 @@ using UnityEngine.UI;
 
 namespace ProjectC
 {
-    // WIP NOT TESTED
     public class Meters : MonoBehaviour
     {
         [SerializeField] Image happyMeter, moneyMeter, energyMeter;
         [SerializeField] Image affectHappy, affectMoney, affectEnergy;
-        int tempHappy, tempMoney, tempEnergy;
-        int currHappy, currMoney, currEnergy;
+        [SerializeField] private int happy, money, energy;
         int factor = 100;
-        private float meterSpeed = 0.5f;
-        bool changeFill = false;
+        private float meterSpeed = 2f;
 
         // Start is called before the first frame update
         void Start()
         {
-        
+            
         }
 
         // Update is called once per frame
         void Update()
         {
-            if(Input.GetKeyDown(KeyCode.H))
+
+            // FOR TESTING PURPOSES ONLY
+            if (Input.GetKeyDown(KeyCode.H))
             {
-                AddToMeters(1, 10, 20);
+                AddToMeters(20, 10, 1);
             }
 
-            if(Input.GetKeyDown(KeyCode.J))
+            // FOR TESTING PURPOSES ONLY
+            if (Input.GetKeyDown(KeyCode.J))
             {
-                AddToMeters(-1, -10, -20);
+                AddToMeters(-20, -10, -1);
             }
 
-            if(changeFill)
+            // Adjusts the meters if the values are changed
+            if(ValuesChanged())
             {
-                Adjust();
-            }
-        }
-
-        public void AddToMeters(int changeHappy, int changeMoney, int changeEnergy)
-        {
-            currHappy = tempHappy + changeHappy;
-            currMoney = tempMoney + changeMoney;
-            currEnergy = tempEnergy + changeEnergy;
-            changeFill = true;
-        }
-
-        public void Adjust()
-        {
-            happyMeter.fillAmount = Mathf.Lerp((float)(tempHappy / factor), (float)(currHappy / factor), Time.deltaTime * meterSpeed);
-            moneyMeter.fillAmount = Mathf.Lerp((float)(tempMoney / factor), (float)(currMoney / factor), Time.deltaTime * meterSpeed);
-            energyMeter.fillAmount = Mathf.Lerp((float)(tempEnergy / factor), (float)(currEnergy / factor), Time.deltaTime * meterSpeed);
-            tempHappy = (int)(happyMeter.fillAmount * factor);
-            tempMoney = (int)(moneyMeter.fillAmount * factor);
-            tempEnergy = (int)(energyMeter.fillAmount * factor);
-
-            if (tempHappy == currHappy && tempMoney == currMoney && tempEnergy == currEnergy)
-            {
-                changeFill = false;
+                Adjust(happyMeter, happyMeter.fillAmount, ConvertToFillAmount(happy));
+                Adjust(moneyMeter, moneyMeter.fillAmount, ConvertToFillAmount(money));
+                Adjust(energyMeter, energyMeter.fillAmount, ConvertToFillAmount(energy));
             }
         }
 
-        private void AffectMeter(Image meter, string meterName)
+        // Shows the indicators if the choice can affect that value
+        public void ShowIndicators(bool affectsHappiness, bool affectsMoney, bool affectsEnergy)
         {
-            float tempFill = 0f;
-            float currFill = 0f; ;
-            switch(meterName)
+            affectHappy.enabled = affectsHappiness;
+            affectMoney.enabled = affectsMoney;
+            affectEnergy.enabled = affectsEnergy;
+        }
+
+        // Returns true if the value has changed, false if not
+        private bool ValuesChanged()
+        {
+            if(happyMeter.fillAmount != ConvertToFillAmount(happy))
             {
-                case "happy":
-                    tempFill = tempHappy;
-                    currFill = currHappy;
-                    break;
-                case "money":
-                    tempFill = tempMoney;
-                    currFill = currMoney;
-                    break;
-                case "energy":
-                    tempFill = tempEnergy;
-                    currFill = currEnergy;
-                    break;
+                return true;
             }
-            tempFill = (float)(tempFill / 100);
-            currFill = (float)(currFill / 100);
-            meter.fillAmount = Mathf.Lerp(tempFill, currFill, Time.deltaTime * meterSpeed);
+
+            if(moneyMeter.fillAmount != ConvertToFillAmount(money))
+            {
+                return true;
+            }
+
+            if(energyMeter.fillAmount != ConvertToFillAmount(energy))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // Adds points to the meters
+        public void AddToMeters(int addHappy, int addMoney, int addEnergy)
+        {
+            happy += addHappy;
+            money += addMoney;
+            energy += addEnergy;
+        }
+
+        // Converts the values to fill amount for the image
+        private float ConvertToFillAmount(int value)
+        {
+            return (float)value / factor;
+        }
+
+        // Smoothly adjusts the meters
+        private void Adjust(Image meter, float from, float to)
+        {
+            meter.fillAmount = Mathf.Lerp(from, to, Time.deltaTime * meterSpeed);
         }
     }
 }
