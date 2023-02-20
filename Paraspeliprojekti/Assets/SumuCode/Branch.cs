@@ -11,6 +11,7 @@ namespace ProjectC
         public StoryNode RootNode { get; private set; }
         [SerializeField] string filePath;
         public StoryNode currNode;
+        [SerializeField] private bool isRandom;
 
         public void Awake()
         {
@@ -22,17 +23,30 @@ namespace ProjectC
         // Called from another script
         public StoryNode GetNextNode(bool left)
         {
-            StoryNode childNode;
-            if(left)
+            if (!isRandom)
             {
-                childNode = GetNode(currNode.ChildLeft);
-            } 
+                StoryNode childNode;
+                if (left)
+                {
+                    childNode = GetNode(currNode.ChildLeft);
+                }
+                else
+                {
+                    childNode = GetNode(currNode.ChildRight);
+                }
+                currNode = childNode;
+                return childNode;
+            }
             else
             {
-                childNode = GetNode(currNode.ChildRight);
+                List<StoryNode> remainingNodes = new List<StoryNode>(nodes.Values);
+                int randomIndex = Random.Range(0, remainingNodes.Count);
+                StoryNode randomNode = remainingNodes[randomIndex];
+                nodes.Remove(randomNode.Id);
+                Debug.Log(nodes.Count + " nodes remaining");
+                currNode = randomNode;
+                return randomNode;
             }
-            currNode = childNode;
-            return childNode;
         }
 
         // Loads from file
@@ -96,12 +110,33 @@ namespace ProjectC
         // Checks by ID if this node is the last child
         public bool IsLastNode(int id)
         {
-            StoryNode sn = GetNode(id);
-            if(sn.ChildLeft == -1 && sn.ChildRight == -1)
+            if (!isRandom)
             {
+                StoryNode sn = GetNode(id);
+                if (sn.ChildLeft == -1 && sn.ChildRight == -1)
+                {
+                    return true;
+                }
+                return false;
+            }
+            else
+            {
+                if(nodes.Count > 1)
+                {
+                    return false;
+                }
                 return true;
             }
-            return false;
+        }
+
+        public bool RandomBranch()
+        {
+            return isRandom;
+        }
+
+        public int NodeCount()
+        {
+            return nodes.Count;
         }
     }
 }

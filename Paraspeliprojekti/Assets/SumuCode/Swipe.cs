@@ -21,7 +21,7 @@ namespace ProjectC
             {
                 Vector3 wp = Camera.main.ScreenToWorldPoint(currScreenPos);
                 Vector2 touchPos = new Vector2(wp.x, wp.y);
-                if(coll == Physics2D.OverlapPoint(touchPos))
+                if(coll == Physics2D.OverlapPoint(touchPos) && coll.bounds.Contains(touchPos))
                 {
                     return true;
                 }
@@ -33,7 +33,7 @@ namespace ProjectC
         {
             control = GameObject.Find("GameControl").GetComponent<GameControl>();
             startPos = transform.position;
-            coll = gameObject.GetComponent<BoxCollider2D>();
+            coll = GameObject.Find("bg").GetComponent<BoxCollider2D>();
             screenPos.Enable();
             press.Enable();
             screenPos.performed += ctx => { currScreenPos = ctx.ReadValue<Vector2>(); };

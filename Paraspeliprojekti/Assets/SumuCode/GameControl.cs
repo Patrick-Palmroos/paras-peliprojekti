@@ -102,17 +102,47 @@ namespace ProjectC
                 else
                 {
                     GameEnd();
+                    return;
                 }
             }
             else
             {
                 // If we're not in endgame, we check if the next child node is the end card
                 // and if it is, remove it from the list and save it for endgame
-                branches[currBranch].GetNextNode(left);
-                if (branches[currBranch].IsLastNode(branches[currBranch].currNode.Id))
+                StoryNode curr = branches[currBranch].currNode;
+
+                if (left)
                 {
-                    Debug.Log("Next node is the last node");
-                    branches.Remove(branches[currBranch]);
+                    meters.AddToMeters(curr.LeftHappy, curr.LeftMoney, curr.LeftEnergy);
+                }
+                else
+                {
+                    meters.AddToMeters(curr.RightHappy, curr.RightMoney, curr.RightEnergy);
+                }
+
+                branches[currBranch].GetNextNode(left);
+
+                if (branches[currBranch].RandomBranch())
+                {
+                    if(branches[currBranch].NodeCount() <= 0)
+                    {
+                        allBranches.Remove(branches[currBranch]);
+                        branches.Remove(branches[currBranch]);
+                        Debug.Log("All randoms are played");
+                        if(allBranches.Count <= 0)
+                        {
+                            GameEnd();
+                            return;
+                        }
+                    }
+                }
+                else
+                {
+                    if (branches[currBranch].IsLastNode(branches[currBranch].currNode.Id))
+                    {
+                        Debug.Log("Next node is the last node");
+                        branches.Remove(branches[currBranch]);
+                    }
                 }
 
                 RandomBranch();

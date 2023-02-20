@@ -11,7 +11,10 @@ namespace ProjectC
         [SerializeField] Image affectHappy, affectMoney, affectEnergy;
         [SerializeField] private int happy, money, energy;
         int factor = 100;
-        private float meterSpeed = 2f;
+        private float meterSpeed = 3f;
+        const string outOfHappiness = "unhappy";
+        const string outOfMoney = "no money";
+        const string outOfEnergy = "burnout";
 
         // Start is called before the first frame update
         void Start()
@@ -41,6 +44,22 @@ namespace ProjectC
                 Adjust(happyMeter, happyMeter.fillAmount, ConvertToFillAmount(happy));
                 Adjust(moneyMeter, moneyMeter.fillAmount, ConvertToFillAmount(money));
                 Adjust(energyMeter, energyMeter.fillAmount, ConvertToFillAmount(energy));
+            }
+
+            // GAME ENDS
+            if (happy <= 0)
+            {
+                GameEnd(outOfHappiness);
+            }
+
+            if (money <= 0)
+            {
+                GameEnd(outOfMoney);
+            }
+
+            if(energy <= 0)
+            {
+                GameEnd(outOfEnergy);
             }
         }
 
@@ -76,6 +95,7 @@ namespace ProjectC
         // Adds points to the meters
         public void AddToMeters(int addHappy, int addMoney, int addEnergy)
         {
+            Debug.Log("Added " + addHappy + " happiness, " + addMoney + " money, and " + addEnergy + " energy");
             happy += addHappy;
             money += addMoney;
             energy += addEnergy;
@@ -91,6 +111,22 @@ namespace ProjectC
         private void Adjust(Image meter, float from, float to)
         {
             meter.fillAmount = Mathf.Lerp(from, to, Time.deltaTime * meterSpeed);
+        }
+
+        private void GameEnd(string state)
+        {
+            switch(state)
+            {
+                case outOfHappiness:
+                    Debug.Log("Game ends because happiness ran out");
+                    break;
+                case outOfMoney:
+                    Debug.Log("Game ends because money ran out");
+                    break;
+                case outOfEnergy:
+                    Debug.Log("Game ends because of no energy");
+                    break;
+            }
         }
     }
 }
