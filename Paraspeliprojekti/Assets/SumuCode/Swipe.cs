@@ -96,6 +96,11 @@ namespace ProjectC
             foreach (Transform child in transform)
             {
                 child.localPosition = startPos;
+                Vector3 promptPos = startPos + new Vector3(0, 0, -0.2f);
+                if(child.name =="Prompt")
+                {
+                    child.localPosition = promptPos;
+                }
             }
             transform.position = startPos;
         }

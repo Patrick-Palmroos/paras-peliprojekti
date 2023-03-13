@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using System.Linq;
 
+using TMPro;
+
 namespace ProjectC
 {
     public class GameControl : MonoBehaviour
@@ -27,6 +29,8 @@ namespace ProjectC
             foreach (Branch b in allBranches)
             {
                 branches.Add(b);
+                b.LoadFromFile();
+                b.currNode = b.RootNode;
             }
             RandomBranch();
         }
@@ -54,6 +58,7 @@ namespace ProjectC
         public void RandomBranch()
         {
             branchCount = branches.Count;
+
             if (branchCount <= 0)
             {
                 endGame = true;
