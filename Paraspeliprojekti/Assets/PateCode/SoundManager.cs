@@ -39,6 +39,11 @@ namespace ProjectC
             }
         }
 
+        private void Start()
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+
         public void PlayAudio(string clipName) {
             Sound playSound = Array.Find(soundArr, s => s.audioclipName == clipName);
             playSound.audioSource.Play();
