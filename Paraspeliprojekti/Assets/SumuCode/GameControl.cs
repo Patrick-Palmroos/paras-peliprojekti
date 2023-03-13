@@ -152,7 +152,8 @@ namespace ProjectC
         // Game ends
         public void GameEnd()
         {
-            Debug.Log("Game ends");
+            SceneLoader sceneLoader = GetComponent<SceneLoader>();
+            sceneLoader.LoadScene("GameOver");
         }
     }
 }
