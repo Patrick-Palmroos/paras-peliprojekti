@@ -128,5 +128,27 @@ namespace ProjectC
                     break;
             }
         }
+
+        public int GetHappiness()
+        {
+            return happy;
+        }
+
+        public int GetEnergy()
+        {
+            return energy;
+        }
+
+        public int GetMoney()
+        {
+            return money;
+        }
+
+        public void SetMeters(int happiness, int energy, int money)
+        {
+            this.happy = happiness;
+            this.energy = energy;
+            this.money = money;
+        }
     }
 }

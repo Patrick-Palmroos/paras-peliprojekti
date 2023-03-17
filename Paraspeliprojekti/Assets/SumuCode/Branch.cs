@@ -94,7 +94,7 @@ namespace ProjectC
         }
 
         // Finds a node by its ID
-        private StoryNode GetNode(int id)
+        public StoryNode GetNode(int id)
         {
             if (nodes.TryGetValue(id, out StoryNode node))
             {
@@ -136,6 +136,17 @@ namespace ProjectC
         public int NodeCount()
         {
             return nodes.Count;
+        }
+
+        public List<int> RemainingNodes()
+        {
+            List<int> remainingNodes = new List<int>(nodes.Keys);
+            return remainingNodes;
+        }
+
+        public void SetRemainingNodes(List<int> nodesRemaining)
+        {
+
         }
     }
 }

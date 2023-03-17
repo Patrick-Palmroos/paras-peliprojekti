@@ -4,8 +4,6 @@ using UnityEngine;
 using TMPro;
 using System.Linq;
 
-using TMPro;
-
 namespace ProjectC
 {
     public class GameControl : MonoBehaviour
@@ -159,6 +157,17 @@ namespace ProjectC
         {
             SceneLoader sceneLoader = GetComponent<SceneLoader>();
             sceneLoader.LoadScene("GameOver");
+        }
+
+        public int GetCurrBranch()
+        {
+            return currBranch;
+        }
+
+        public void GameLoaded(int currBranch)
+        {
+            this.currBranch = currBranch;
+            GetCurrentOptions(branches[currBranch]);
         }
     }
 }

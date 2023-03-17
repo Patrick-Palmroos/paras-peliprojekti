@@ -6,6 +6,7 @@ TagManager:
   tags:
   - prompt
   - stat
+  - Card
   layers:
   - Default
   - TransparentFX
