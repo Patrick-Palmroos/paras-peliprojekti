@@ -1,71 +1,94 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace ProjectC
 {
     public class Swipe : MonoBehaviour
     {
-        [SerializeField] private InputAction press, screenPos;
         GameControl control;
+
+        private bool dragging = false;
+        private Vector2 screenPos;
+        private Vector3 worldPos;
+
         private float checkThreshold = 1.5f;
         private float distanceMoved;
-        private Vector3 startPos;
-        private Vector3 currScreenPos;
-        private BoxCollider2D coll;
-        private string state;
-        private bool isDragging;
-        private bool isPressed {
-            get
-            {
-                Vector3 wp = Camera.main.ScreenToWorldPoint(currScreenPos);
-                Vector2 touchPos = new Vector2(wp.x, wp.y);
-                if(coll == Physics2D.OverlapPoint(touchPos) && coll.bounds.Contains(touchPos))
-                {
-                    return true;
-                }
-                return false;
-            }
-        }
+        private string state = "Blank";
 
-        private void Awake()
+        private void Start()
         {
             control = GameObject.Find("GameControl").GetComponent<GameControl>();
-            startPos = transform.position;
-            coll = GameObject.Find("bg").GetComponent<BoxCollider2D>();
-            screenPos.Enable();
-            press.Enable();
-            screenPos.performed += ctx => { currScreenPos = ctx.ReadValue<Vector2>(); };
-            press.performed += _ => { if(isPressed) StartCoroutine(Drag()); };
-            press.canceled += _ => { isDragging = false; };
+            control.SendMessage("ChangeText", "");
         }
 
         private void Update()
         {
+            // When dragging stops
+            if(dragging && Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended)
+            {
+                StopDrag();
+                return;
+            }
+
+            // Get the touch porision
+            if (Input.touchCount > 0)
+            {
+                screenPos = Input.GetTouch(0).position;
+            } 
+            else
+            {
+                return;
+            }
+
+            // Start dragging
+            worldPos = Camera.main.ScreenToWorldPoint(screenPos);
+            if (dragging)
+            {
+                Drag();
+            } else
+            {
+                // Starts dragging only if the gameobject's tag is Card
+                if(Physics2D.Raycast(worldPos, Vector2.zero))
+                {
+                    RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
+                    if (hit.collider.gameObject.tag == "Card" && Input.GetTouch(0).phase == TouchPhase.Began)
+                    {
+                        StartDrag();
+                    }
+                }
+            }
+
+
+            // When dragging goes beyond threshold
             if (distanceMoved > checkThreshold)
             {
-                if (transform.localPosition.x > startPos.x)
+                if (transform.localPosition.x > 0)
                 {
-                    // right
+                    // If the state isn't already right, 
+                    // change it and the option shown on screen
                     if (state != "Right")
                     {
                         state = "Right";
                         control.SendMessage("ChangeText", state);
                     }
-                } 
+                }
                 else
                 {
-                    // left
+                    // If the state isn't already left, 
+                    // change it and the option shown on screen
                     if (state != "Left")
                     {
                         state = "Left";
                         control.SendMessage("ChangeText", state);
                     }
                 }
-            } else
+            }
+            else
             {
-                if(state != "Blank")
+                // If the state isn't already none, 
+                // change it and hide the text shown on screen
+                if (state != "Blank")
                 {
                     state = "Blank";
                     control.SendMessage("ChangeText", "");
@@ -73,31 +96,50 @@ namespace ProjectC
             }
         }
 
-        private IEnumerator Drag()
+        void StartDrag()
         {
-            isDragging = true;
-            while(isDragging)
-            {
-                distanceMoved = Mathf.Abs(transform.localPosition.x - startPos.x);
-                Vector3 newPos = Camera.main.ScreenToWorldPoint(currScreenPos);
-                newPos.z = transform.position.z;
-                transform.position = newPos;
-                yield return null;
-            }
+            dragging = true;
+        }
 
-            // sends swipe message
+        // Card follows the touch position
+        void Drag()
+        {
+            transform.position = new Vector2(worldPos.x, worldPos.y);
+            distanceMoved = Mathf.Abs(transform.localPosition.x - 0);
+
+            // Resets the children too
+            foreach (Transform child in transform)
+            {
+                child.localPosition = Vector2.zero;
+                Vector3 promptPos = Vector3.zero + new Vector3(0, 0, -0.2f);
+                if (child.name != "bg")
+                {
+                    child.localPosition = promptPos;
+                }
+            }
+        }
+
+        // Resets the position to center
+        void StopDrag()
+        {
+            // If the card was over the threshold when drag ended
+            // Send a message that the swipe has happened
             if (distanceMoved > checkThreshold)
             {
                 control.SendMessage("Swiped", state);
             }
-
-            distanceMoved = 0;
-            // resets the children
+            control.SendMessage("ChangeText", "");
+            dragging = false;
+            transform.position = Vector2.zero;
             foreach (Transform child in transform)
             {
-                child.localPosition = startPos;
+                child.localPosition = Vector2.zero;
+                Vector3 promptPos = Vector3.zero + new Vector3(0, 0, -0.2f);
+                if (child.name != "bg")
+                {
+                    child.localPosition = promptPos;
+                }
             }
-            transform.position = startPos;
         }
     }
 }

@@ -9,14 +9,14 @@ namespace ProjectC
     {
         private Dictionary<int, StoryNode> nodes = new Dictionary<int, StoryNode>();
         public StoryNode RootNode { get; private set; }
-        [SerializeField] string filePath;
+        [SerializeField] public string fileName;
         public StoryNode currNode;
         [SerializeField] private bool isRandom;
 
         public void Awake()
         {
-            LoadFromFile(filePath);
-            currNode = RootNode;
+            // LoadFromFile(filePath);
+            // currNode = RootNode;
         }
 
         // Moves on to the child node
@@ -50,52 +50,55 @@ namespace ProjectC
         }
 
         // Loads from file
-        public void LoadFromFile(string path)
+        public void LoadFromFile()
         {
-            using (StreamReader reader = new StreamReader(path))
+            TextAsset textData = Resources.Load("Story/" + fileName) as TextAsset;
+            string txt = textData.text;
+            var lines = txt.Split("\n");
+            foreach (var line in lines)
             {
-                while (!reader.EndOfStream)
+                string[] parts = line.Split('\t');
+
+                int id = int.Parse(parts[0].Trim());
+                string name = parts[1];
+                string imageName = parts[2];
+                string description = parts[3];
+                int leftId = int.Parse(parts[4].Trim());
+                string leftOption = parts[5];
+                int leftHappy = int.Parse(parts[6].Trim());
+                int leftMoney = int.Parse(parts[7].Trim());
+                int leftEnergy = int.Parse(parts[8].Trim());
+                int rightId = int.Parse(parts[9].Trim());
+                string rightOption = parts[10];
+                int rightHappy = int.Parse(parts[11].Trim());
+                int rightMoney = int.Parse(parts[12].Trim());
+                int rightEnergy = int.Parse(parts[13].Trim());
+                StoryNode node = new StoryNode
                 {
-                    string line = reader.ReadLine();
-                    string[] parts = line.Split('\t');
+                    Id = id,
+                    Name = name,
+                    ImageName = imageName,
+                    Prompt = description,
+                    OptionLeft = leftOption,
+                    ChildLeft = leftId,
+                    LeftHappy = leftHappy,
+                    LeftMoney = leftMoney,
+                    LeftEnergy = leftEnergy,
+                    OptionRight = rightOption,
+                    ChildRight = rightId,
+                    RightHappy = rightHappy,
+                    RightMoney = rightMoney,
+                    RightEnergy = rightEnergy
+                };
 
-                    int id = int.Parse(parts[0]);
-                    string description = parts[1];
-                    int leftId = int.Parse(parts[2]);
-                    string leftOption = parts[3];
-                    int leftHappy = int.Parse(parts[4]);
-                    int leftMoney = int.Parse(parts[5]);
-                    int leftEnergy = int.Parse(parts[6]);
-                    int rightId = int.Parse(parts[7]);
-                    string rightOption = parts[8];
-                    int rightHappy = int.Parse(parts[9]);
-                    int rightMoney = int.Parse(parts[10]);
-                    int rightEnergy = int.Parse(parts[11]);
-                    StoryNode node = new StoryNode
-                    {
-                        Id = id,
-                        Prompt = description,
-                        OptionLeft = leftOption,
-                        ChildLeft = leftId,
-                        LeftHappy = leftHappy,
-                        LeftMoney = leftMoney,
-                        LeftEnergy = leftEnergy,
-                        OptionRight = rightOption,
-                        ChildRight = rightId,
-                        RightHappy = rightHappy,
-                        RightMoney = rightMoney,
-                        RightEnergy = rightEnergy
-                    };
-
-                    nodes[id] = node;
-                }
+                nodes[id] = node;
             }
 
             RootNode = GetNode(0);
         }
 
         // Finds a node by its ID
-        private StoryNode GetNode(int id)
+        public StoryNode GetNode(int id)
         {
             if (nodes.TryGetValue(id, out StoryNode node))
             {
@@ -137,6 +140,17 @@ namespace ProjectC
         public int NodeCount()
         {
             return nodes.Count;
+        }
+
+        public List<int> RemainingNodes()
+        {
+            List<int> remainingNodes = new List<int>(nodes.Keys);
+            return remainingNodes;
+        }
+
+        public void SetRemainingNodes(List<int> nodesRemaining)
+        {
+
         }
     }
 }

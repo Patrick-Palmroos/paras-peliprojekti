@@ -7,6 +7,8 @@ namespace ProjectC
     public class StoryNode
     {
         public int Id { get; set; }
+        public string Name { get; set; }
+        public string ImageName { get; set; }
         public string Prompt { get; set; }
         public string OptionLeft { get; set; }
         public string OptionRight { get; set; }
