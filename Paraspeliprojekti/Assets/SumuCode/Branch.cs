@@ -59,20 +59,20 @@ namespace ProjectC
             {
                 string[] parts = line.Split('\t');
 
-                int id = int.Parse(parts[0]);
+                int id = int.Parse(parts[0].Trim());
                 string name = parts[1];
                 string imageName = parts[2];
                 string description = parts[3];
-                int leftId = int.Parse(parts[4]);
+                int leftId = int.Parse(parts[4].Trim());
                 string leftOption = parts[5];
-                int leftHappy = int.Parse(parts[6]);
-                int leftMoney = int.Parse(parts[7]);
-                int leftEnergy = int.Parse(parts[8]);
-                int rightId = int.Parse(parts[9]);
+                int leftHappy = int.Parse(parts[6].Trim());
+                int leftMoney = int.Parse(parts[7].Trim());
+                int leftEnergy = int.Parse(parts[8].Trim());
+                int rightId = int.Parse(parts[9].Trim());
                 string rightOption = parts[10];
-                int rightHappy = int.Parse(parts[11]);
-                int rightMoney = int.Parse(parts[12]);
-                int rightEnergy = int.Parse(parts[13]);
+                int rightHappy = int.Parse(parts[11].Trim());
+                int rightMoney = int.Parse(parts[12].Trim());
+                int rightEnergy = int.Parse(parts[13].Trim());
                 StoryNode node = new StoryNode
                 {
                     Id = id,
