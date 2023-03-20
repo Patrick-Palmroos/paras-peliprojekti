@@ -19,6 +19,7 @@ namespace ProjectC
         private void Start()
         {
             control = GameObject.Find("GameControl").GetComponent<GameControl>();
+            control.SendMessage("ChangeText", "");
         }
 
         private void Update()
@@ -127,7 +128,7 @@ namespace ProjectC
             {
                 control.SendMessage("Swiped", state);
             }
-
+            control.SendMessage("ChangeText", "");
             dragging = false;
             transform.position = Vector2.zero;
             foreach (Transform child in transform)
