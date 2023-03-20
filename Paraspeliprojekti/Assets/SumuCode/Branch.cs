@@ -52,7 +52,7 @@ namespace ProjectC
         // Loads from file
         public void LoadFromFile()
         {
-            TextAsset textData = Resources.Load("Story/" + fileName) as TextAsset; // Huom, file extensionia ei saa laittaa per‰‰n
+            TextAsset textData = Resources.Load("Story/" + fileName) as TextAsset;
             string txt = textData.text;
             var lines = txt.Split("\n");
             foreach (var line in lines)
@@ -60,20 +60,24 @@ namespace ProjectC
                 string[] parts = line.Split('\t');
 
                 int id = int.Parse(parts[0]);
-                string description = parts[1];
-                int leftId = int.Parse(parts[2]);
-                string leftOption = parts[3];
-                int leftHappy = int.Parse(parts[4]);
-                int leftMoney = int.Parse(parts[5]);
-                int leftEnergy = int.Parse(parts[6]);
-                int rightId = int.Parse(parts[7]);
-                string rightOption = parts[8];
-                int rightHappy = int.Parse(parts[9]);
-                int rightMoney = int.Parse(parts[10]);
-                int rightEnergy = int.Parse(parts[11]);
+                string name = parts[1];
+                string imageName = parts[2];
+                string description = parts[3];
+                int leftId = int.Parse(parts[4]);
+                string leftOption = parts[5];
+                int leftHappy = int.Parse(parts[6]);
+                int leftMoney = int.Parse(parts[7]);
+                int leftEnergy = int.Parse(parts[8]);
+                int rightId = int.Parse(parts[9]);
+                string rightOption = parts[10];
+                int rightHappy = int.Parse(parts[11]);
+                int rightMoney = int.Parse(parts[12]);
+                int rightEnergy = int.Parse(parts[13]);
                 StoryNode node = new StoryNode
                 {
                     Id = id,
+                    Name = name,
+                    ImageName = imageName,
                     Prompt = description,
                     OptionLeft = leftOption,
                     ChildLeft = leftId,

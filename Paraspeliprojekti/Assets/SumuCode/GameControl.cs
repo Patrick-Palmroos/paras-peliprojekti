@@ -12,6 +12,8 @@ namespace ProjectC
         private List<Branch> branches;
         [SerializeField] private TMP_Text cardText;
         [SerializeField] private TMP_Text optionText;
+        [SerializeField] private TMP_Text nameText;
+        [SerializeField] private SpriteRenderer image;
         int branchCount;
         int currBranch;
         string optionLeft, optionRight;
@@ -44,6 +46,14 @@ namespace ProjectC
                 optionLeft = b.currNode.OptionLeft;
                 optionRight = b.currNode.OptionRight;
                 cardText.text = b.currNode.Prompt;
+                nameText.text = b.currNode.Name;
+                
+                // changes the pic but only if it's a different one than the previous
+                if(image.sprite.name != b.currNode.ImageName)
+                {
+                    Sprite cardImage = Resources.Load<Sprite>("Art/Character cards/" + b.currNode.ImageName);
+                    image.sprite = cardImage;
+                }
 
                 bool affectsHappy = (b.currNode.LeftHappy != 0 || b.currNode.RightHappy != 0);
                 bool affectsMoney = (b.currNode.LeftMoney != 0 || b.currNode.RightMoney != 0);

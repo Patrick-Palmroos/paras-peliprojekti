@@ -10,6 +10,11 @@ namespace ProjectC
         Meters meters;
         GameControl control;
 
+        private const string HAPPINESS = "Happiness";
+        private const string ENERGY = "Energy";
+        private const string MONEY = "Money";
+        private const string CURRENTBRANCH = "Current branch";
+
         private void Start()
         {
             branches = GetComponents<Branch>();
@@ -44,11 +49,10 @@ namespace ProjectC
                 }
             }
 
-            PlayerPrefs.SetInt("Happiness", meters.GetHappiness());
-            PlayerPrefs.SetInt("Energy", meters.GetEnergy());
-            PlayerPrefs.SetInt("Money", meters.GetMoney());
-            PlayerPrefs.SetInt("Current branch", control.GetCurrBranch());
-            print("Saved");
+            PlayerPrefs.SetInt(HAPPINESS, meters.GetHappiness());
+            PlayerPrefs.SetInt(ENERGY, meters.GetEnergy());
+            PlayerPrefs.SetInt(MONEY, meters.GetMoney());
+            PlayerPrefs.SetInt(CURRENTBRANCH, control.GetCurrBranch());
         }
 
         public void LoadData()
@@ -73,14 +77,13 @@ namespace ProjectC
                 }
             }
 
-            int happiness = PlayerPrefs.GetInt("Happiness");
-            int energy = PlayerPrefs.GetInt("Energy");
-            int money = PlayerPrefs.GetInt("Money");
+            int happiness = PlayerPrefs.GetInt(HAPPINESS);
+            int energy = PlayerPrefs.GetInt(ENERGY);
+            int money = PlayerPrefs.GetInt(MONEY);
             meters.SetMeters(happiness, energy, money);
             print(happiness + " " + energy + " " + money);
-            int currentBranch = PlayerPrefs.GetInt("Current branch");
+            int currentBranch = PlayerPrefs.GetInt(CURRENTBRANCH);
             control.GameLoaded(currentBranch);
-            print("Loaded");
         }
     }
 }

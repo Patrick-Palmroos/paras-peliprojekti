@@ -105,14 +105,13 @@ namespace ProjectC
         {
             transform.position = new Vector2(worldPos.x, worldPos.y);
             distanceMoved = Mathf.Abs(transform.localPosition.x - 0);
-            print(distanceMoved);
 
             // Resets the children too
             foreach (Transform child in transform)
             {
                 child.localPosition = Vector2.zero;
                 Vector3 promptPos = Vector3.zero + new Vector3(0, 0, -0.2f);
-                if (child.name == "Prompt")
+                if (child.name != "bg")
                 {
                     child.localPosition = promptPos;
                 }
@@ -135,7 +134,7 @@ namespace ProjectC
             {
                 child.localPosition = Vector2.zero;
                 Vector3 promptPos = Vector3.zero + new Vector3(0, 0, -0.2f);
-                if (child.name == "Prompt")
+                if (child.name != "bg")
                 {
                     child.localPosition = promptPos;
                 }
