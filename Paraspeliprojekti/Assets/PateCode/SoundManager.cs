@@ -11,6 +11,7 @@ namespace ProjectC
     {
         [SerializeField] private AudioMixerGroup musicGroup;
         [SerializeField] private AudioMixerGroup sfxGroup;
+        float sfxVol = 100f, musicVol = 100f;
         [SerializeField] private Sound[] soundArr;
 
         private void Awake()
@@ -28,10 +29,6 @@ namespace ProjectC
                         break;
                 }
 
-                if (sound.playOnAwake) {
-                    sound.audioSource.Play();
-                }
-
                 if (sound.loop)
                 {
                     sound.audioSource.loop = true;
@@ -42,6 +39,16 @@ namespace ProjectC
         private void Start()
         {
             DontDestroyOnLoad(this.gameObject);
+            GameObject[] tempArr = GameObject.FindGameObjectsWithTag("SoundManager");
+            if (tempArr.Length > 1)
+            {
+                if (tempArr[0] != this.gameObject) {
+                    Destroy(tempArr[0].gameObject);
+                } else
+                {
+                    Destroy(tempArr[1].gameObject);
+                }
+            }
         }
 
         public void PlayAudio(string clipName) {
@@ -51,7 +58,46 @@ namespace ProjectC
 
         public void UpdateMixer(float v, string mixerName)
         {
-            sfxGroup.audioMixer.SetFloat(mixerName, Mathf.Log10(v) * 20);
+            if (mixerName == "Sfx Volume")
+            {
+                sfxGroup.audioMixer.SetFloat(mixerName, Mathf.Log10(v) * 20);
+                sfxVol = v;
+            } else
+            {
+                musicGroup.audioMixer.SetFloat(mixerName, Mathf.Log10(v) * 20);
+                musicVol = v;
+            }
+        }
+
+        public float GetVolume(string name)
+        {
+            float temp = 0;
+            if (name == "sfx")
+            {
+                temp = sfxVol;
+            } else
+            {
+                temp = musicVol;
+            }
+
+            return temp;
+        }
+
+        public void StopAudio(string clipName)
+        {
+            Sound stopSound = Array.Find(soundArr, s => s.audioclipName == clipName);
+            stopSound.audioSource.Stop();
+        }
+
+        public void StopGroup(Sound.SoundType type)
+        {
+            foreach (Sound sound in soundArr)
+            {
+                if (sound.soundType == type)
+                {
+                    sound.audioSource.Stop();
+                }
+            }
         }
     }
 }

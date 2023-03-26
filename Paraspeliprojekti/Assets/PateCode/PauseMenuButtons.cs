@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 namespace ProjectC
 {
-    public class ButtonControlScr : MonoBehaviour
+    public class PauseMenuButtons : MonoBehaviour
     {
-        [SerializeField] string newGameScene;
+        [SerializeField] string MaineMenuScene;
         AnimationController animCtrl;
         GameObject mainButtons;
         GameObject optionsButtons;
@@ -28,52 +28,50 @@ namespace ProjectC
             optionsButtons = GameObject.Find("OptionContainer");
             mainButtons = GameObject.Find("MainContainer");
             optionsButtons.SetActive(false);
+            mainButtons.SetActive(false);
         }
-
         private void Start()
         {
             music.value = soundManager.GetVolume("music");
             musicSlider.text = ((int)(music.value * 100)).ToString();
             sfx.value = soundManager.GetVolume("sfx");
             sfxSlider.text = ((int)(sfx.value * 100)).ToString();
-            soundManager.PlayAudio("Menu Music");
+            soundManager.PlayAudio("Game Music");
         }
-        //Unity UI button cant start a couroutine so a wrapper is used.
-        public void NewGameWrapper() {
-            StartCoroutine(NewGameButton());
-        }
-        //loads new game scene asynchronatically.
-        IEnumerator NewGameButton() {
-            animCtrl.FadeIn();
-            yield return new WaitForSeconds(0.4f);
-            soundManager.StopGroup(Sound.SoundType.music);
-            this.gameObject.GetComponent<SceneLoader>().LoadScene(newGameScene);
-        }
+
         //turns main menu buttons off and options menu on by calling the coroutine below
         public void OptionsMenu()
         {
-            StartCoroutine(OptionsMenuCoroutine());
-        }
-
-        IEnumerator OptionsMenuCoroutine()
-        {
             mainButtons.SetActive(false);
-            animCtrl.CloseBlinds();
-            yield return new WaitForSeconds(0.7f);
             optionsButtons.SetActive(true);
         }
+
         //turns options menu buttons off and main menu on by calling the coroutine below
         public void MainMenu()
         {
             StartCoroutine(MainMenuCoroutine());
         }
 
+        public void PauseMenu()
+        {
+            if (optionsButtons.activeInHierarchy == true)
+            {
+                optionsButtons.SetActive(false);
+            }
+            mainButtons.SetActive(true);
+        }
+
+        public void ClosePauseMenu()
+        {
+            mainButtons.SetActive(false);
+        }
+
         IEnumerator MainMenuCoroutine()
         {
-            optionsButtons.SetActive(false);
-            animCtrl.OpenBlinds();
-            yield return new WaitForSeconds(0.5f);
-            mainButtons.SetActive(true);
+            animCtrl.FadeIn();
+            yield return new WaitForSeconds(0.4f);
+            soundManager.StopGroup(Sound.SoundType.music);
+            this.gameObject.GetComponent<SceneLoader>().LoadScene(MaineMenuScene);
         }
         //used to change sfx volume
         public void SfxSlider(float v)

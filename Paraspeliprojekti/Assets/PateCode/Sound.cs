@@ -12,7 +12,6 @@ namespace ProjectC
         }
         public SoundType soundType;
 
-        public bool playOnAwake;
         public bool loop;
         public string audioclipName;
         public AudioClip audioClip;

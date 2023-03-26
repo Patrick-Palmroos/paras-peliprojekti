@@ -7,6 +7,9 @@ TagManager:
   - prompt
   - stat
   - Card
+  - sfx
+  - music
+  - SoundManager
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.SceneManagement;
 
 namespace ProjectC
 {
@@ -11,9 +13,16 @@ namespace ProjectC
 
         private void Awake() {
             fade = GameObject.Find("Fade");
-            fade.SetActive(false);
-            blindsAnim = GameObject.Find("Blinds").GetComponent<Animator>();
             fadeAnim = fade.GetComponent<Animator>();
+            try
+            {
+                blindsAnim = GameObject.Find("Blinds").GetComponent<Animator>();
+            } catch(NullReferenceException e) { }
+        }
+
+        private void Start()
+        {
+            StartCoroutine(FadeOut());
         }
 
         public void FadeIn() {
@@ -29,6 +38,14 @@ namespace ProjectC
         public void OpenBlinds()
         {
             blindsAnim.Play("Blinds_OpenAnim");
+        }
+
+        IEnumerator FadeOut()
+        {
+            yield return new WaitForSeconds(0.1f);
+            fadeAnim.Play("Fade_Out");
+            yield return new WaitForSeconds(0.4f);
+            fade.SetActive(false);
         }
     }
 }
