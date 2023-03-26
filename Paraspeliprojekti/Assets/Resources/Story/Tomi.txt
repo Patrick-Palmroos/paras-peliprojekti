@@ -7,7 +7,7 @@
 6	Toni	char14-card	Minulla on huono päivä.	8	Tsemppiä!	-15	0	-8	7	Tarjoa apua/taukoa	10	0	0
 8	Toni	char14-card	Kärsin burnoutista.	9	Tsemppiä!	-27	0	0	7	Ohjaa hoitoon	10	0	0
 9	Toni	char14-card	Olet aika huono pomo.	12	Ai..	0	0	0	12	Enhän ole	0	0	0
-7	Toni	char14-card	Kuulin mahtavasta mahdollisuudesta, veljenpoikani voi hankkia meille halvalla toimistotarvikkeita!	10	Otetaan alennus!	0	0	-5	11	Hankimme tarvikkeet täydellä hinnalla.	0	0	-15
+7	Toni	char14-card	Kuulin mahtavasta mahdollisuudesta, veljenpoikani voi hankkia meille halvalla toimistotarvikkeita!	10	Otetaan alennus!	0	-5	0	11	Hankimme tarvikkeet täydellä hinnalla.	0	-15	0
 10	Toni	char14-card	Veljeni teki projektille lahjoituksen, koska tuimme hänen poikansa bisnestä!	13	Mahtavaa!	10	15	5	13	Jes!	10	15	5
 11	Toni	char14-card	Kuulin, että niitä toimistotarvikkeita ei oltu hankittu täysin laillisesti.	14	Jaaha	0	0	0	14	Ai..	0	0	0
 12	Toni	char14-card	BAD ENDING	-1	Ups..	0	0	0	-1	Ups…	0	0	0
