@@ -111,7 +111,7 @@ namespace ProjectC
             foreach (Transform child in transform)
             {
                 child.localPosition = Vector2.zero;
-                Vector3 promptPos = Vector3.zero + new Vector3(0, 0, -0.2f);
+                Vector3 promptPos = Vector3.zero;
                 if (child.name != "bg")
                 {
                     child.localPosition = promptPos;
@@ -134,7 +134,7 @@ namespace ProjectC
             foreach (Transform child in transform)
             {
                 child.localPosition = Vector2.zero;
-                Vector3 promptPos = Vector3.zero + new Vector3(0, 0, -0.2f);
+                Vector3 promptPos = Vector3.zero;
                 if (child.name != "bg")
                 {
                     child.localPosition = promptPos;
