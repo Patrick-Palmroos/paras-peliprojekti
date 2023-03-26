@@ -1,25 +1,25 @@
-0	Sirkka	imageName	Olen uusi täällä, saisinko esittelykierroksen?	1	Ei millään ehdi	-10	0	10	12	Tottakai	15	0	-5
-1	Sirkka	imageName	Huomaat, että Sirkka on vähän hukassa	2	Pyydä jotakuta auttamaan	5	0	-10	15	Anna hänelle tilaa	-15	5	-5
-2	Sirkka	imageName	Olet menossa syömään, ja huomaat Sirkan tekevän edelleen töitä	3	Kutsu hänetkin syömään	10	0	0	7	Anna hänen työskennellä	-5	0	-5
-3	Sirkka	imageName	Minun tuntosarveni ovat hyvin herkkänä tässä ympäristössä. Onko oma työtila mahdollinen?	4	Teen parhaani, että saat oman työtilan	30	-20	-10	8	Ei ole, kukaan ei saa erityiskohtelua	-20	15	5
-4	Sirkka	imageName	Olet jo auttanut paljon. Voisiko kuitenkin valoja vielä himmentää?	5	Tietenkin	10	0	0	9	Ei ole varaa himmentimiin	-10	0	-10
-5	Sirkka	imageName	Kahvihuoneessa Sirkka kertoo kivikokoelmastaan, ja selittää miten eri kivilajeja voi tunnistaa	6	Kiviäkin kiinnostaa, heh heh	-15	0	-20	18	Kuuntele ja opi	14	0	0
-6	Sirkka	imageName	En aina ymmärrä, miksi minulle nauretaan	7	Koska olet outo	-5	0	-5	10	Koska olet hauska	8	0	0
-7	Sirkka	imageName	Yrität puhua Sirkalle, mutta hänellä on kuulokkeet, eikä hän kuule sinua	8	Kosketa olkapäätä	0	0	-20	9	Laita viesti tai odota katsekontaktia	5	0	15
-8	Sirkka	imageName	Sirkka näyttää olevan turhautunut ja uupunut	9	Tsemppaa jaksamaan	9	6	-7	19	Anna hänen olla	0	-15	0
-9	Sirkka	imageName	En vieläkään tunnista kaikkia työtovereitani	10	Voin lähettää tiimin kuvat ja nimet sinulle	13	0	-8	21	Kyllä sä vielä opit	-10	0	7
-10	Sirkka	imageName	Olen varmaan ollut kovin paljon vaivaksi	11	Ei huolta, et ole	20	0	10	21	Kaikki ovat joskus vaivaksi	-10	-10	-10
-11	Sirkka	imageName	GOOD ENDING	-1	JEE	0	0	0	-1	JEE	0	0	0
-12	Sirkka	imageName	Millaisen esittelykierroksen pidät Sirkalle?	13	Perusteellisen	20	-10	-10	22	Lyhyen	-10	9	20
-13	Sirkka	imageName	Miten täällä toimitaan taukojen suhteen?	14	Tietyt ajat tauoille	7	0	10	2	Taukoja voi pitää kun haluaa	0	0	-10
-14	Sirkka	imageName	Sanoit, että tauko on tiettyinä aikoina. Voinko kuitenkin hakea kahvia ja käydä vessassa, vaikka ei olisi tauon paikka?	6	Naura kysymykselle	-20	0	0	3	Toki	15	0	0
-15	Sirkka	imageName	Sirkka ei ole edistynyt töissä kovin paljoa	16	Pyydä juttelemaan	10	0	-20	23	Anna hänelle aikaa	-20	0	10
-16	Sirkka	imageName	Olen ollut todella kuormittunut, tarvitsen enemmän ohjeistusta	7	Anna ohjeistusta	20	-10	-15	17	Ei ehdi	-20	10	10
-17	Sirkka	imageName	BAD ENDING	-1	OHNO	0	0	0	-1	OH NO	0	0	0
-18	Sirkka	imageName	Kävin eilen uimassa ja söin jäätelöä!	11	Kerro omasta päivästäsi	20	0	0	10	Okei kiva	0	0	0
-19	Sirkka	imageName	Sirkka on ollut sairaslomalla työuupumuksen vuoksi. Hän kysyy, voisiko olla vielä pari päivää pidempään lomalla.	20	Voit olla	10	-20	10	17	Ei. Töissä on kiire. Deadlinet paukkuu	-20	30	-10
-20	Sirkka	imageName	Sirkka on palannut viikon päästä takaisin töihin.	21	Selitä hänelle projektin tämänhetkinen tilanne, ja kerro, mitä hänen täytyy tehdä	15	0	-15	24	Anna hänen selvittää itse projektin tila	-15	-10	10
-21	Sirkka	imageName	NEUTRAL ENDING	-1	OK	0	0	0	-1	OK	0	0	0
-22	Sirkka	imageName	Saisinko vaikka pohjapiirustuksen tästä paikasta?	1	Ei ole	-15	0	10	2	Kyllä	10	-5	-7
-23	Sirkka	imageName	Sirkka näyttää olevan kovin kuormittunut	16	Pyydä juttelemaan	10	0	-20	17	Anna hänelle aikaa	-20	0	10
-24	Sirkka	imageName	Hei. Mitä minun pitäisi tehdä nyt? En saa dokumentaatiosta kiinni	21	Selitä mitä tarvitaan	17	0	-15	17	Katso niitä dokumentteja enemmän ja tarkemmin, kyllä sä jotain keksit	-20	0	15
+0	Sirkka	char19-card	Olen uusi täällä, saisinko esittelykierroksen?	1	Ei millään ehdi	-10	0	10	12	Tottakai	15	0	-5
+1	Sirkka	char19-card	Huomaat, että Sirkka on vähän hukassa	2	Pyydä jotakuta auttamaan	5	0	-10	15	Anna hänelle tilaa	-15	5	-5
+2	Sirkka	char19-card	Olet menossa syömään, ja huomaat Sirkan tekevän edelleen töitä	3	Kutsu hänetkin syömään	10	0	0	7	Anna hänen työskennellä	-5	0	-5
+3	Sirkka	char19-card	Minun tuntosarveni ovat hyvin herkkänä tässä ympäristössä. Onko oma työtila mahdollinen?	4	Teen parhaani, että saat oman työtilan	30	-20	-10	8	Ei ole, kukaan ei saa erityiskohtelua	-20	15	5
+4	Sirkka	char19-card	Olet jo auttanut paljon. Voisiko kuitenkin valoja vielä himmentää?	5	Tietenkin	10	0	0	9	Ei ole varaa himmentimiin	-10	0	-10
+5	Sirkka	char19-card	Kahvihuoneessa Sirkka kertoo kivikokoelmastaan, ja selittää miten eri kivilajeja voi tunnistaa	6	Kiviäkin kiinnostaa, heh heh	-15	0	-20	18	Kuuntele ja opi	14	0	0
+6	Sirkka	char19-card	En aina ymmärrä, miksi minulle nauretaan	7	Koska olet outo	-5	0	-5	10	Koska olet hauska	8	0	0
+7	Sirkka	char19-card	Yrität puhua Sirkalle, mutta hänellä on kuulokkeet, eikä hän kuule sinua	8	Kosketa olkapäätä	0	0	-20	9	Laita viesti tai odota katsekontaktia	5	0	15
+8	Sirkka	char19-card	Sirkka näyttää olevan turhautunut ja uupunut	9	Tsemppaa jaksamaan	9	6	-7	19	Anna hänen olla	0	-15	0
+9	Sirkka	char19-card	En vieläkään tunnista kaikkia työtovereitani	10	Voin lähettää tiimin kuvat ja nimet sinulle	13	0	-8	21	Kyllä sä vielä opit	-10	0	7
+10	Sirkka	char19-card	Olen varmaan ollut kovin paljon vaivaksi	11	Ei huolta, et ole	20	0	10	21	Kaikki ovat joskus vaivaksi	-10	-10	-10
+11	Sirkka	char19-card	GOOD ENDING	-1	JEE	0	0	0	-1	JEE	0	0	0
+12	Sirkka	char19-card	Millaisen esittelykierroksen pidät Sirkalle?	13	Perusteellisen	20	-10	-10	22	Lyhyen	-10	9	20
+13	Sirkka	char19-card	Miten täällä toimitaan taukojen suhteen?	14	Tietyt ajat tauoille	7	0	10	2	Taukoja voi pitää kun haluaa	0	0	-10
+14	Sirkka	char19-card	Sanoit, että tauko on tiettyinä aikoina. Voinko kuitenkin hakea kahvia ja käydä vessassa, vaikka ei olisi tauon paikka?	6	Naura kysymykselle	-20	0	0	3	Toki	15	0	0
+15	Sirkka	char19-card	Sirkka ei ole edistynyt töissä kovin paljoa	16	Pyydä juttelemaan	10	0	-20	23	Anna hänelle aikaa	-20	0	10
+16	Sirkka	char19-card	Olen ollut todella kuormittunut, tarvitsen enemmän ohjeistusta	7	Anna ohjeistusta	20	-10	-15	17	Ei ehdi	-20	10	10
+17	Sirkka	char19-card	BAD ENDING	-1	OHNO	0	0	0	-1	OH NO	0	0	0
+18	Sirkka	char19-card	Kävin eilen uimassa ja söin jäätelöä!	11	Kerro omasta päivästäsi	20	0	0	10	Okei kiva	0	0	0
+19	Sirkka	char19-card	Sirkka on ollut sairaslomalla työuupumuksen vuoksi. Hän kysyy, voisiko olla vielä pari päivää pidempään lomalla.	20	Voit olla	10	-20	10	17	Ei. Töissä on kiire. Deadlinet paukkuu	-20	30	-10
+20	Sirkka	char19-card	Sirkka on palannut viikon päästä takaisin töihin.	21	Selitä hänelle projektin tämänhetkinen tilanne, ja kerro, mitä hänen täytyy tehdä	15	0	-15	24	Anna hänen selvittää itse projektin tila	-15	-10	10
+21	Sirkka	char19-card	NEUTRAL ENDING	-1	OK	0	0	0	-1	OK	0	0	0
+22	Sirkka	char19-card	Saisinko vaikka pohjapiirustuksen tästä paikasta?	1	Ei ole	-15	0	10	2	Kyllä	10	-5	-7
+23	Sirkka	char19-card	Sirkka näyttää olevan kovin kuormittunut	16	Pyydä juttelemaan	10	0	-20	17	Anna hänelle aikaa	-20	0	10
+24	Sirkka	char19-card	Hei. Mitä minun pitäisi tehdä nyt? En saa dokumentaatiosta kiinni	21	Selitä mitä tarvitaan	17	0	-15	17	Katso niitä dokumentteja enemmän ja tarkemmin, kyllä sä jotain keksit	-20	0	15

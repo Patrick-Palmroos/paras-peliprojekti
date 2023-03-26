@@ -1,15 +1,15 @@
-0	Toni	char14-card.png	Kuulin mahtavasta sijoitusmahdollisuudesta, meid‰n kannattaa laittaa kaikki rahat Catto-coiniin!	1	Tarvitsemme rahat projektin yll‰pit‰miseen.	-5	0	0	12	Mahtava vinkki, sijoitetaan!	0	-100	0
-1	Toni	char14-card.png	Kuulin, ett‰ Sirkka tekee kaiken tahallaan v‰‰r‰ll‰ k‰dell‰. Eikˆ ole outoa?	2	Oho, onhan se aika outoa!	-10	0	0	2	Sirkka on vasenk‰tinen.	5	0	0
-2	Toni	char14-card.png	Matti valittaa, koska laitan pienet kahvikupit aina yl‰hyllylle, mutta h‰n ei koskaan tyhjenn‰ tiskikonetta. 	3	Puhun Matille, jotta h‰n tekee osansa.	-5	0	0	3	Laita jatkossa pienet kahvikupit alahyllylle, jotta pienemm‰t el‰imet ylett‰v‰t niihin.	15	0	0
-3	Toni	char14-card.png	Kuulin kirjanpit‰j‰lt‰ ett‰ budjetissa on ylij‰‰m‰‰, annatko meille bonukset?	4	Tietenkin!	25	-40	10	4	Meid‰n pit‰‰ k‰ytt‰‰ rahat j‰rkev‰mmin.	-25	40	-10
-4	Toni	char14-card.png	Matti on hidas ja h‰n putoaa helposti k‰rryilt‰ kun selit‰n h‰nelle asioita.	5	Selit‰ asiat hitaammin ja selke‰mmin Matille.	25	0	-10	5	Matti oppii kyll‰ pysym‰‰n tahdissa.	-30	0	10
-5	Toni	char14-card.png	En juurikaan n‰e perhett‰ni tyˆtuntieni takia, voinko siirty‰ yˆvuoroon?	6	Tarvitsemme panostasi p‰iv‰vuorossa.	-10	0	20	7	Voit jatkossa tyˆskennell‰ yˆvuorossa.	15	0	-30
-6	Toni	char14-card.png	Minulla on huono p‰iv‰.	8	Tsemppi‰!	-20	0	-10	9	Tarjoa apua/taukoa	14	0	5
-8	Toni	char14-card.png	K‰rsin burnoutista.	9	Tsemppi‰!	-27	0	0	7	Ohjaa hoitoon	10	0	0
-9	Toni	char14-card.png	Olet aika huono pomo.	12	Ai..	0	0	0	12	Enh‰n ole	0	0	0
-7	Toni	char14-card.png	Kuulin mahtavasta mahdollisuudesta, veljenpoikani voi hankkia meille halvalla toimistotarvikkeita!	10	Otetaan alennus!	0	0	-5	11	Hankimme tarvikkeet t‰ydell‰ hinnalla.	0	0	-15
-10	Toni	char14-card.png	Veljeni teki projektille lahjoituksen, koska tuimme h‰nen poikansa bisnest‰!	13	Mahtavaa!	0	0	10	13	Jes!	0	0	10
-11	Toni	char14-card.png	Kuulin, ett‰ niit‰ toimistotarvikkeita ei oltu hankittu t‰ysin laillisesti.	14	Jaaha	0	0	0	14	Mist‰ min‰ arvasin	0	0	0
-12	Toni	char14-card.png	BAD ENDING	-1	Ups..	0	0	0	-1	UpsÖ	0	0	0
-13	Toni	char14-card.png	GOOD ENDING	-1	Hurraa!	0	0	0	-1	Hurraa!	0	0	0
-14	Toni	char14-card.png	NEUTRAL ENDING	-1	Huoh	0	0	0	-1	Huoh	0	0	0
+0	Toni	char14-card	Kuulin mahtavasta sijoitusmahdollisuudesta, meid√§n kannattaa laittaa kaikki rahat Catto-coiniin!	1	Tarvitsemme rahat projektin yll√§pit√§miseen.	-5	0	0	12	Mahtava vinkki, sijoitetaan!	0	-100	0
+1	Toni	char14-card	Kuulin, ett√§ Sirkka tekee kaiken tahallaan v√§√§r√§ll√§ k√§dell√§. Eik√∂ ole outoa?	2	Oho, onhan se aika outoa!	-10	0	0	2	Sirkka on vasenk√§tinen.	5	0	0
+2	Toni	char14-card	Matti valittaa, koska laitan pienet kahvikupit aina yl√§hyllylle, mutta h√§n ei koskaan tyhjenn√§ tiskikonetta. 	3	Puhun Matille, jotta h√§n tekee osansa.	-5	0	0	3	Laita jatkossa pienet kahvikupit alahyllylle, jotta pienemm√§t el√§imet ylett√§v√§t niihin.	15	0	0
+3	Toni	char14-card	Kuulin kirjanpit√§j√§lt√§ ett√§ budjetissa on ylij√§√§m√§√§, annatko meille bonukset?	4	Tietenkin!	25	-40	10	4	Meid√§n pit√§√§ k√§ytt√§√§ rahat j√§rkev√§mmin.	-25	40	-10
+4	Toni	char14-card	Matti on hidas ja h√§n putoaa helposti k√§rryilt√§ kun selit√§n h√§nelle asioita.	5	Selit√§ asiat hitaammin ja selke√§mmin Matille.	25	0	-10	5	Matti oppii kyll√§ pysym√§√§n tahdissa.	-30	0	10
+5	Toni	char14-card	En juurikaan n√§e perhett√§ni ty√∂tuntieni takia, voinko siirty√§ y√∂vuoroon?	6	Tarvitsemme panostasi p√§iv√§vuorossa.	-10	0	20	7	Voit jatkossa ty√∂skennell√§ y√∂vuorossa.	15	0	-30
+6	Toni	char14-card	Minulla on huono p√§iv√§.	8	Tsemppi√§!	-20	0	-10	9	Tarjoa apua/taukoa	14	0	5
+8	Toni	char14-card	K√§rsin burnoutista.	9	Tsemppi√§!	-27	0	0	7	Ohjaa hoitoon	10	0	0
+9	Toni	char14-card	Olet aika huono pomo.	12	Ai..	0	0	0	12	Enh√§n ole	0	0	0
+7	Toni	char14-card	Kuulin mahtavasta mahdollisuudesta, veljenpoikani voi hankkia meille halvalla toimistotarvikkeita!	10	Otetaan alennus!	0	0	-5	11	Hankimme tarvikkeet t√§ydell√§ hinnalla.	0	0	-15
+10	Toni	char14-card	Veljeni teki projektille lahjoituksen, koska tuimme h√§nen poikansa bisnest√§!	13	Mahtavaa!	0	0	10	13	Jes!	0	0	10
+11	Toni	char14-card	Kuulin, ett√§ niit√§ toimistotarvikkeita ei oltu hankittu t√§ysin laillisesti.	14	Jaaha	0	0	0	14	Mist√§ min√§ arvasin	0	0	0
+12	Toni	char14-card	BAD ENDING	-1	Ups..	0	0	0	-1	Ups‚Ä¶	0	0	0
+13	Toni	char14-card	GOOD ENDING	-1	Hurraa!	0	0	0	-1	Hurraa!	0	0	0
+14	Toni	char14-card	NEUTRAL ENDING	-1	Huoh	0	0	0	-1	Huoh	0	0	0

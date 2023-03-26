@@ -16,10 +16,12 @@ namespace ProjectC
         const string outOfMoney = "no money";
         const string outOfEnergy = "burnout";
 
+        SceneLoader loader;
+
         // Start is called before the first frame update
         void Start()
         {
-            
+            loader = GetComponent<SceneLoader>();
         }
 
         // Update is called once per frame
@@ -118,13 +120,16 @@ namespace ProjectC
             switch(state)
             {
                 case outOfHappiness:
-                    Debug.Log("Game ends because happiness ran out");
+                    StoryControl.gameEndText = "Onnellisuus loppui!";
+                    loader.LoadScene("GameOver");
                     break;
                 case outOfMoney:
-                    Debug.Log("Game ends because money ran out");
+                    StoryControl.gameEndText = "Rahat loppuivat!";
+                    loader.LoadScene("GameOver");
                     break;
                 case outOfEnergy:
-                    Debug.Log("Game ends because of no energy");
+                    StoryControl.gameEndText = "Energiat loppuivat!";
+                    loader.LoadScene("GameOver");
                     break;
             }
         }

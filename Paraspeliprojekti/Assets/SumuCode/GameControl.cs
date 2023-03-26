@@ -14,6 +14,7 @@ namespace ProjectC
         [SerializeField] private TMP_Text optionText;
         [SerializeField] private TMP_Text nameText;
         [SerializeField] private SpriteRenderer image;
+        [SerializeField] private GameObject backgroundCard;
         int branchCount;
         int currBranch;
         string optionLeft, optionRight;
@@ -109,6 +110,10 @@ namespace ProjectC
                 // and then the game ends
                 if (allBranches.Count - 1 > 0)
                 {
+                    if(allBranches.Count - 1 == 1)
+                    {
+                        backgroundCard.SetActive(false);
+                    }
                     allBranches.Remove(allBranches[currBranch]);
                     RandomBranch();
                 }
