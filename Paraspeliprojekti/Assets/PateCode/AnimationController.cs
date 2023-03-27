@@ -17,7 +17,9 @@ namespace ProjectC
             try
             {
                 blindsAnim = GameObject.Find("Blinds").GetComponent<Animator>();
-            } catch(NullReferenceException e) { }
+            } catch(NullReferenceException e) {
+                Debug.Log(e);
+            }
         }
 
         private void Start()

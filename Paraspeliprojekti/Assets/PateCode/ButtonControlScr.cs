@@ -12,6 +12,7 @@ namespace ProjectC
         AnimationController animCtrl;
         GameObject mainButtons;
         GameObject optionsButtons;
+        GameObject exitCheck;
         SoundManager soundManager;
         [HideInInspector] public float sfxVolume;
         [HideInInspector] public float musicVolume;
@@ -27,7 +28,9 @@ namespace ProjectC
             animCtrl = gameObject.GetComponent<AnimationController>();
             optionsButtons = GameObject.Find("OptionContainer");
             mainButtons = GameObject.Find("MainContainer");
+            exitCheck = GameObject.Find("ExitCheck");
             optionsButtons.SetActive(false);
+            exitCheck.SetActive(false);
         }
 
         private void Start()
@@ -74,6 +77,27 @@ namespace ProjectC
             animCtrl.OpenBlinds();
             yield return new WaitForSeconds(0.5f);
             mainButtons.SetActive(true);
+        }
+        //loads the new game
+        public void LoadGame()
+        {
+            Debug.Log("Load Game");
+        }
+        //truns check both on and off
+        public void ExitButton()
+        {
+            if (exitCheck.activeInHierarchy == true)
+            {
+                exitCheck.SetActive(false);
+            } else
+            {
+                exitCheck.SetActive(true);
+            }
+        }
+        //closes the application
+        public void ExitGame()
+        {
+            Application.Quit();
         }
         //used to change sfx volume
         public void SfxSlider(float v)

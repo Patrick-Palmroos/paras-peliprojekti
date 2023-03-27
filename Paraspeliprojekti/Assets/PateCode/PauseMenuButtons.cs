@@ -18,6 +18,10 @@ namespace ProjectC
         [SerializeField] TextMeshProUGUI sfxSlider;
         [SerializeField] TextMeshProUGUI musicSlider;
         Slider sfx, music;
+        [SerializeField] Swipe swipe;
+        [SerializeField] TextMeshProUGUI optionText;
+        bool cardEnabled = true;
+
 
         private void Awake()
         {
@@ -39,14 +43,14 @@ namespace ProjectC
             soundManager.PlayAudio("Game Music");
         }
 
-        //turns main menu buttons off and options menu on by calling the coroutine below
+        //turns on options buttons
         public void OptionsMenu()
         {
             mainButtons.SetActive(false);
             optionsButtons.SetActive(true);
         }
 
-        //turns options menu buttons off and main menu on by calling the coroutine below
+        //Returns the game to main menu
         public void MainMenu()
         {
             StartCoroutine(MainMenuCoroutine());
@@ -58,14 +62,19 @@ namespace ProjectC
             {
                 optionsButtons.SetActive(false);
             }
+            if (cardEnabled)
+            {
+                DisableCard();
+            }
             mainButtons.SetActive(true);
         }
-
+        //closes pause menu and returns to the game
         public void ClosePauseMenu()
         {
+            EnableCard();
             mainButtons.SetActive(false);
         }
-
+        //coroutine that loads main menu
         IEnumerator MainMenuCoroutine()
         {
             animCtrl.FadeIn();
@@ -86,6 +95,25 @@ namespace ProjectC
             musicVolume = v;
             musicSlider.text = ((int)(v * 100)).ToString();
             soundManager.UpdateMixer(v, "Music Volume");
+        }
+        //disables the games card since Time.timeScale didnt like me today
+        private void DisableCard()
+        {
+            cardEnabled = false;
+            swipe.enabled = false;
+            optionText.enabled = false;
+        }
+        //enables the games card since Time.timeScale didnt like me today
+        private void EnableCard()
+        {
+            cardEnabled = true;
+            swipe.enabled = true;
+            optionText.enabled = true;
+        }
+        //============>>>>>>> SAVE GAME @SUMU <<<<<<<<<<<<===================
+        public void SaveGame()
+        {
+            Debug.Log("Game saved");
         }
     }
 }
