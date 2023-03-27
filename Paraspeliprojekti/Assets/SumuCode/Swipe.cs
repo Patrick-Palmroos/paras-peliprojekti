@@ -11,8 +11,9 @@ namespace ProjectC
         private bool dragging = false;
         private Vector2 screenPos;
         private Vector3 worldPos;
+        private Vector3 startPos;
 
-        private float checkThreshold = 1.5f;
+        private float checkThreshold = 0.8f;
         private float distanceMoved;
         private string state = "Blank";
 
@@ -20,6 +21,7 @@ namespace ProjectC
         {
             control = GameObject.Find("GameControl").GetComponent<GameControl>();
             control.SendMessage("ChangeText", "");
+            startPos = transform.position;
         }
 
         private void Update()
@@ -130,7 +132,7 @@ namespace ProjectC
             }
             control.SendMessage("ChangeText", "");
             dragging = false;
-            transform.position = Vector2.zero;
+            transform.position = startPos;
             foreach (Transform child in transform)
             {
                 child.localPosition = Vector2.zero;
