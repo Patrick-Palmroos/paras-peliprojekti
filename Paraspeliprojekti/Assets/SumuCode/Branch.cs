@@ -58,8 +58,6 @@ namespace ProjectC
             foreach (var line in lines)
             {
                 string[] parts = line.Split('\t');
-
-                print(parts[0]);
                 int id = int.Parse(parts[0].Trim());
                 string name = parts[1];
                 string imageName = parts[2];
@@ -94,7 +92,6 @@ namespace ProjectC
 
                 nodes[id] = node;
             }
-
             RootNode = GetNode(0);
         }
 

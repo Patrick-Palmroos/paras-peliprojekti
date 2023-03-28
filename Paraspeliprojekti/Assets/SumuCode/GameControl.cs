@@ -20,11 +20,13 @@ namespace ProjectC
         string optionLeft, optionRight;
         bool endGame = false;
         private Meters meters;
+        private SaveLoad loader;
 
         // Start is called before the first frame update
         void Start()
         {
             meters = GetComponent<Meters>();
+            loader = GetComponent<SaveLoad>();
             allBranches = GetComponents<Branch>().ToList<Branch>();
             branches = new List<Branch>();
             foreach (Branch b in allBranches)
@@ -33,7 +35,15 @@ namespace ProjectC
                 b.LoadFromFile();
                 b.currNode = b.RootNode;
             }
-            RandomBranch();
+
+            if(StoryControl.state == StoryControl.StartState.LoadGame)
+            {
+                loader.LoadData();
+            }
+            else
+            {
+                RandomBranch();
+            }
         }
 
         // Displays current prompt and options on screen
@@ -183,6 +193,11 @@ namespace ProjectC
         {
             this.currBranch = currBranch;
             GetCurrentOptions(branches[currBranch]);
+        }
+
+        public int GetBranchCount()
+        {
+            return allBranches.Count;
         }
     }
 }

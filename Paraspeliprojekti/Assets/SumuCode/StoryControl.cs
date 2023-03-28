@@ -7,11 +7,29 @@ namespace ProjectC
     public class StoryControl : MonoBehaviour
     {
         public static string gameEndText = "Game over!";
+        private static StoryControl storyControl;
+        public static StartState state = StartState.NewGame;
+
+        public enum StartState
+        {
+            NewGame,
+            LoadGame
+        }
 
         // Start is called before the first frame update
         void Start()
         {
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject);
+
+            // prevents duplicates
+            if (storyControl == null)
+            {
+                storyControl = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         // Update is called once per frame

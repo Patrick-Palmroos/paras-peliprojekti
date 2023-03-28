@@ -22,6 +22,8 @@ namespace ProjectC
         [SerializeField] TextMeshProUGUI optionText;
         bool cardEnabled = true;
 
+        SaveLoad loader;
+
 
         private void Awake()
         {
@@ -33,6 +35,7 @@ namespace ProjectC
             mainButtons = GameObject.Find("MainContainer");
             optionsButtons.SetActive(false);
             mainButtons.SetActive(false);
+            loader = FindObjectOfType<SaveLoad>();
         }
         private void Start()
         {
@@ -97,14 +100,14 @@ namespace ProjectC
             soundManager.UpdateMixer(v, "Music Volume");
         }
         //disables the games card since Time.timeScale didnt like me today
-        private void DisableCard()
+        public void DisableCard()
         {
             cardEnabled = false;
             swipe.enabled = false;
             optionText.enabled = false;
         }
         //enables the games card since Time.timeScale didnt like me today
-        private void EnableCard()
+        public void EnableCard()
         {
             cardEnabled = true;
             swipe.enabled = true;
@@ -113,6 +116,7 @@ namespace ProjectC
         //============>>>>>>> SAVE GAME @SUMU <<<<<<<<<<<<===================
         public void SaveGame()
         {
+            loader.SaveData();
             Debug.Log("Game saved");
         }
     }

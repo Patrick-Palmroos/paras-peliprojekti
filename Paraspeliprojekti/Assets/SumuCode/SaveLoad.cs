@@ -14,12 +14,21 @@ namespace ProjectC
         private const string ENERGY = "Energy";
         private const string MONEY = "Money";
         private const string CURRENTBRANCH = "Current branch";
+        private const string SAVEEXISTS = "Save exists";
 
         private void Start()
         {
             branches = GetComponents<Branch>();
             meters = GetComponent<Meters>();
             control = GetComponent<GameControl>();
+        }
+
+        private void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.A))
+            {
+                PlayerPrefs.DeleteAll();
+            }
         }
 
         public void SaveData()
@@ -53,6 +62,7 @@ namespace ProjectC
             PlayerPrefs.SetInt(ENERGY, meters.GetEnergy());
             PlayerPrefs.SetInt(MONEY, meters.GetMoney());
             PlayerPrefs.SetInt(CURRENTBRANCH, control.GetCurrBranch());
+            PlayerPrefs.SetInt(SAVEEXISTS, 1);
         }
 
         public void LoadData()

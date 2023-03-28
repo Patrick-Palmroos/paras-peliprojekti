@@ -20,6 +20,8 @@ namespace ProjectC
         [SerializeField] TextMeshProUGUI musicSlider;
         Slider sfx, music;
 
+        [SerializeField] Button loadButton;
+
         private void Awake()
         {
             sfx = GameObject.FindGameObjectWithTag("sfx").GetComponent<Slider>();
@@ -40,6 +42,10 @@ namespace ProjectC
             sfx.value = soundManager.GetVolume("sfx");
             sfxSlider.text = ((int)(sfx.value * 100)).ToString();
             soundManager.PlayAudio("Menu Music");
+
+            // disables load button if there is nothing to load
+            if(!PlayerPrefs.HasKey("Save exists"))
+                loadButton.interactable = false;
         }
         //Unity UI button cant start a couroutine so a wrapper is used.
         public void NewGameWrapper() {
@@ -81,6 +87,8 @@ namespace ProjectC
         //loads the new game
         public void LoadGame()
         {
+            StoryControl.state = StoryControl.StartState.LoadGame;
+            StartCoroutine(NewGameButton());
             Debug.Log("Load Game");
         }
         //truns check both on and off
