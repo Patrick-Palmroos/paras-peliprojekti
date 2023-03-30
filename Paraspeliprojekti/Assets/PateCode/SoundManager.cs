@@ -13,6 +13,7 @@ namespace ProjectC
         [SerializeField] private AudioMixerGroup sfxGroup;
         float sfxVol = 100f, musicVol = 100f;
         [SerializeField] private Sound[] soundArr;
+        SoundManager temp;
 
         private void Awake()
         {
@@ -39,15 +40,13 @@ namespace ProjectC
         private void Start()
         {
             DontDestroyOnLoad(this.gameObject);
-            GameObject[] tempArr = GameObject.FindGameObjectsWithTag("SoundManager");
-            if (tempArr.Length > 1)
+            
+            if (temp == null)
             {
-                if (tempArr[0] != this.gameObject) {
-                    Destroy(tempArr[0].gameObject);
-                } else
-                {
-                    Destroy(tempArr[1].gameObject);
-                }
+                temp = this;
+            } else
+            {
+                Destroy(gameObject);
             }
         }
 
