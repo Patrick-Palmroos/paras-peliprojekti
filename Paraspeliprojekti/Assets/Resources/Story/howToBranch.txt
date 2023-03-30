@@ -1,13 +1,25 @@
-The branch files are TSV (Tab Separated Values) and each row is it's own card in the game
+How to add cards:
+- Separate each section with TAB
+- do not put .png or .jpg after image name
+- do not leave empty rows
 
-1: The ID of the card
+Sections:
+1: The ID of the card (must be more than 0)
 2: The prompt that will be displayed on the card
-3: Left child card ID
+	- Start with [RANDOM] if this can be encountered randomly (including first cards of storylines)
+	- Start with [LOWENERGY] if this can show only when low in energy
+	- Start with [LOWMONEY] if this can show only when low in money
+	- Start with [LOWHAPPINESS] if this can show only when low in happiness
+3: Left child card ID 
+	- -1 if this is the last card of the storyline
+	- 0 if this is a random encounter card
 4: Option that leads to left child
 5: How much the left option will affect to Happiness (0 if it doesn't)
 6: How much the left option will affect to Money (0 if it doesn't)
 7: How much the left option will affect to Energy (0 if it doesn't)
-8: Right child card ID
+8: Right child card ID 
+	- -1 if this is the last card of the storyline
+	- 0 if this is a random encounter card
 9: Option that leads to right child
 10: How much the right option will affect to Happiness (0 if it doesn't)
 11: How much the right option will affect to Money (0 if it doesn't)
