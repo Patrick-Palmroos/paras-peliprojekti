@@ -116,7 +116,7 @@ namespace ProjectC
         //============>>>>>>> SAVE GAME @SUMU <<<<<<<<<<<<===================
         public void SaveGame()
         {
-            loader.SaveData();
+            loader.SaveGame();
             Debug.Log("Game saved");
         }
     }

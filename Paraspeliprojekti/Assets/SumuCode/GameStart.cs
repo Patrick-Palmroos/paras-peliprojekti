@@ -10,7 +10,7 @@ namespace ProjectC
         private HelpPhase phase = HelpPhase.Start;
         PauseMenuButtons pause;
         SaveLoad loader;
-        GameControl control;
+        // GameControl control;
         
         enum HelpPhase
         {
@@ -25,7 +25,7 @@ namespace ProjectC
         {
             pause = FindObjectOfType<PauseMenuButtons>();
             loader = GetComponent<SaveLoad>();
-            control = GetComponent<GameControl>();
+            // control = GetComponent<GameControl>();
             meters.SetActive(false);
             indicators.SetActive(false);
             if(StoryControl.state == StoryControl.StartState.LoadGame)

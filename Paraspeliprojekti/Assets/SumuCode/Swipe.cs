@@ -6,7 +6,8 @@ namespace ProjectC
 {
     public class Swipe : MonoBehaviour
     {
-        GameControl control;
+        GameFlow flowControl;
+        ButtonControls buttonControls;
 
         private bool dragging = false;
         private Vector2 screenPos;
@@ -19,8 +20,9 @@ namespace ProjectC
 
         private void Start()
         {
-            control = GameObject.Find("GameControl").GetComponent<GameControl>();
-            control.SendMessage("ChangeText", "");
+            flowControl = FindObjectOfType<GameFlow>();
+            buttonControls = FindObjectOfType<ButtonControls>();
+            flowControl.SendMessage("ChangeText", "");
             startPos = transform.position;
         }
 
@@ -72,7 +74,7 @@ namespace ProjectC
                     if (state != "Right")
                     {
                         state = "Right";
-                        control.SendMessage("ChangeText", state);
+                        flowControl.SendMessage("ChangeText", state);
                     }
                 }
                 else
@@ -82,7 +84,7 @@ namespace ProjectC
                     if (state != "Left")
                     {
                         state = "Left";
-                        control.SendMessage("ChangeText", state);
+                        flowControl.SendMessage("ChangeText", state);
                     }
                 }
             }
@@ -93,7 +95,7 @@ namespace ProjectC
                 if (state != "Blank")
                 {
                     state = "Blank";
-                    control.SendMessage("ChangeText", "");
+                    flowControl.SendMessage("ChangeText", "");
                 }
             }
         }
@@ -128,9 +130,9 @@ namespace ProjectC
             // Send a message that the swipe has happened
             if (distanceMoved > checkThreshold)
             {
-                control.SendMessage("Swiped", state);
+                flowControl.SendMessage("Swiped", state);
             }
-            control.SendMessage("ChangeText", "");
+            flowControl.SendMessage("ChangeText", "");
             dragging = false;
             transform.position = startPos;
             foreach (Transform child in transform)
@@ -142,6 +144,11 @@ namespace ProjectC
                     child.localPosition = promptPos;
                 }
             }
+        }
+
+        public void AnimationStopped()
+        {
+            buttonControls.ChangeTexts();
         }
     }
 }

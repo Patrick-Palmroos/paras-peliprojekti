@@ -7,10 +7,10 @@ namespace ProjectC
 {
     public class GameFlow : MonoBehaviour
     {
-        private int currentNodeId = 1;
+        [HideInInspector] public int currentNodeId = 1;
         private List<StoryNode> storyNodes;
-        // private List<StoryNode> randomNodes;
-        private List<int> continuedStoryIds, randomNodeIds, nextInStoryIds, endNodeIds;
+        [HideInInspector] public List<int> randomNodeIds, nextInStoryIds, endNodeIds;
+        [HideInInspector] public List<int> lowMoneyIds, lowEnergyIds, lowHappinessIds;
         public string fileName;
         [SerializeField] private TMP_Text cardText, optionText, nameText;
         [SerializeField] private SpriteRenderer image;
@@ -19,34 +19,88 @@ namespace ProjectC
         private bool endGame = false;
 
         Meters meters;
+        SaveLoad loader;
+        private const string RANDOMNODE = "[RANDOM]";
+        private const string LOWMONEY = "[LOWMONEY]";
+        private const string LOWENERGY = "[LOWENERGY]";
+        private const string LOWHAPPINESS = "[LOWHAPPINESS]";
+
+        private int lowThreshold = 20;
 
         // Start is called before the first frame update
         void Start()
         {
             meters = FindObjectOfType<Meters>();
+            loader = FindObjectOfType<SaveLoad>();
+            LoadFromFile();
+
+            if (StoryControl.state == StoryControl.StartState.LoadGame)
+            {
+                loader.LoadGame();
+            }
+            else
+            {
+                CheckStatus();
+            }
         }
 
-        // Update is called once per frame
-        void Update()
+        public void CheckStatus()
         {
-        
+
+            // Checks if any status is low before giving completely random cards
+            if (meters.GetHappiness() < lowThreshold && lowHappinessIds.Count > 0)
+            {
+                // LOW HAPPINESS
+                currentNodeId = RandomId(lowHappinessIds);
+                lowHappinessIds.Remove(currentNodeId);
+            } 
+            else if (meters.GetMoney() < lowThreshold && lowMoneyIds.Count > 0)
+            {
+                // LOW MONEY
+                currentNodeId = RandomId(lowMoneyIds);
+                lowMoneyIds.Remove(currentNodeId);
+            }
+            else if (meters.GetEnergy() < lowThreshold && lowEnergyIds.Count > 0)
+            {
+                // LOW ENERGY
+                currentNodeId = RandomId(lowEnergyIds);
+                lowEnergyIds.Remove(currentNodeId);
+            }
+            else
+            {
+                RandomCard();
+            }
+            GetCurrentOptions();
         }
 
+        // Gives a random card that hasn't been played yet
         public void RandomCard()
         {
             if (nextInStoryIds.Count > 0)
             {
-                // if a story can be continued, randomly decide to continue it or not
-                int chance = Random.Range(1, 5);
-                if(chance <= 2)
+                // If a story can be continued, first check if random cards also exist
+                if (randomNodeIds.Count > 0)
                 {
-                    currentNodeId = RandomId(continuedStoryIds);
-                    continuedStoryIds.Remove(currentNodeId);
+                    // there is a chance a story card will still be played
+                    int chance = Random.Range(1, 5);
+                    if (chance <= 2)
+                    {
+                        // PLAY STORY CARD
+                        currentNodeId = RandomId(nextInStoryIds);
+                        nextInStoryIds.Remove(currentNodeId);
+                    }
+                    else
+                    {
+                        // PLAY RANDOM CARD
+                        currentNodeId = RandomId(randomNodeIds);
+                        randomNodeIds.Remove(currentNodeId);
+                    }
                 }
                 else
                 {
-                    currentNodeId = RandomId(randomNodeIds);
-                    randomNodeIds.Remove(currentNodeId);
+                    // There is no random cards so the story must be continued
+                    currentNodeId = RandomId(nextInStoryIds);
+                    nextInStoryIds.Remove(currentNodeId);
                 }
             }
             else
@@ -65,6 +119,10 @@ namespace ProjectC
                     {
                         currentNodeId = RandomId(endNodeIds);
                     }
+                    else
+                    {
+                        GameEnd();
+                    }
                 }
             }
         }
@@ -75,7 +133,8 @@ namespace ProjectC
             return list[randomNumber];
         }
 
-        public void GetCurrentOption()
+        // Displays current options and texts on screen
+        public void GetCurrentOptions()
         {
             StoryNode currNode = GetNodeById(currentNodeId);
 
@@ -110,9 +169,17 @@ namespace ProjectC
             return null;
         }
 
+        // Reads the text file
         public void LoadFromFile()
         {
             storyNodes = new List<StoryNode>();
+            nextInStoryIds = new List<int>();
+            endNodeIds = new List<int>();
+            randomNodeIds = new List<int>();
+            lowEnergyIds = new List<int>();
+            lowHappinessIds = new List<int>();
+            lowMoneyIds = new List<int>();
+
             TextAsset textData = Resources.Load("Story/" + fileName) as TextAsset;
             string txt = textData.text;
             var lines = txt.Split("\n");
@@ -154,19 +221,31 @@ namespace ProjectC
                 };
 
                 // checks if the node is supposed to be random or not
-                if(description.ToUpper().StartsWith("[RANDOM]"))
+                if(description.StartsWith(RANDOMNODE))
                 {
-                    // randomNodes.Add(node);
+                    node.Prompt = description.Replace(RANDOMNODE, "");           
                     randomNodeIds.Add(id);
                 }
-                else
+                else if (description.StartsWith(LOWENERGY))
                 {
-                    // storyNodes.Add(node);
-                    continuedStoryIds.Add(id);
+                    node.Prompt = description.Replace(LOWENERGY, ""); 
+                    lowEnergyIds.Add(id);
+                }
+                else if (description.StartsWith(LOWHAPPINESS))
+                {
+                    node.Prompt = description.Replace(LOWHAPPINESS, "");
+                    lowHappinessIds.Add(id);
+                }
+                else if (description.StartsWith(LOWMONEY))
+                {
+                    node.Prompt = description.Replace(LOWMONEY, "");
+                    lowMoneyIds.Add(id);
                 }
 
                 storyNodes.Add(node);
             }
+
+            Debug.Log("Game loaded");
         }
 
         public void Swiped(string state)
@@ -185,9 +264,6 @@ namespace ProjectC
                     }
 
                     endNodeIds.Remove(currentNodeId);
-                    /*
-                    allBranches.Remove(allBranches[currBranch]);
-                    RandomBranch();*/
                 }
                 else
                 {
@@ -204,38 +280,68 @@ namespace ProjectC
                 if (left)
                 {
                     meters.AddToMeters(curr.LeftHappy, curr.LeftMoney, curr.LeftEnergy);
+                    int leftId = GetNodeById(currentNodeId).ChildLeft;
+                    if (leftId == 0)
+                    {
+
+                    }
+                    else if (GetNodeById(leftId).ChildLeft == -1)
+                    {
+                        endNodeIds.Add(leftId);
+                    }
+                    else if (leftId > 1)
+                    {
+                        nextInStoryIds.Add(leftId);
+                    }
                 }
                 else
                 {
                     meters.AddToMeters(curr.RightHappy, curr.RightMoney, curr.RightEnergy);
-                }
-                /*
-                branches[currBranch].GetNextNode(left);
-
-                if (branches[currBranch].RandomBranch())
-                {
-                    if (branches[currBranch].NodeCount() <= 0)
+                    int rightId = GetNodeById(currentNodeId).ChildRight;
+                    if(rightId == 0)
                     {
-                        allBranches.Remove(branches[currBranch]);
-                        branches.Remove(branches[currBranch]);
-                        Debug.Log("All randoms are played");
-                        if (allBranches.Count <= 0)
-                        {
-                            GameEnd();
-                            return;
-                        }
+
+                    }
+                    else if (GetNodeById(rightId).ChildRight == -1)
+                    {
+                        endNodeIds.Add(rightId);
+                    }
+                    else if (rightId > 1)
+                    {
+                        nextInStoryIds.Add(rightId);
                     }
                 }
-                else
-                {
-                    if (branches[currBranch].IsLastNode(branches[currBranch].currNode.Id))
-                    {
-                        Debug.Log("Next node is the last node");
-                        branches.Remove(branches[currBranch]);
-                    }
-                }*/
+            }
+            CheckStatus();
+        }
 
-                // RandomBranch();
+        // Shows the text depending on which side the card is being swiped to
+        // Called from another script
+        public void ChangeText(string state)
+        {
+            switch (state)
+            {
+                case "Right":
+                    optionText.text = optionRight;
+                    break;
+                case "Left":
+                    optionText.text = optionLeft;
+                    break;
+                case "":
+                    optionText.text = "";
+                    break;
+            }
+        }
+
+        public string GetOption(bool left)
+        {
+            if(left)
+            {
+                return GetNodeById(currentNodeId).OptionLeft;
+            }
+            else
+            {
+                return GetNodeById(currentNodeId).OptionRight;
             }
         }
 
@@ -244,6 +350,11 @@ namespace ProjectC
         {
             SceneLoader sceneLoader = GetComponent<SceneLoader>();
             sceneLoader.LoadScene("GameOver");
+        }
+
+        public void GameLoaded()
+        {
+            CheckStatus();
         }
     }
 }

@@ -38,7 +38,7 @@ namespace ProjectC
 
             if(StoryControl.state == StoryControl.StartState.LoadGame)
             {
-                loader.LoadData();
+                // loader.LoadData();
             }
             else
             {

@@ -9,6 +9,7 @@ namespace ProjectC
         public static string gameEndText = "Game over!";
         private static StoryControl storyControl;
         public static StartState state = StartState.NewGame;
+        public static bool buttonControls = false;
 
         public enum StartState
         {
@@ -30,12 +31,6 @@ namespace ProjectC
             {
                 Destroy(gameObject);
             }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
         }
     }
 }

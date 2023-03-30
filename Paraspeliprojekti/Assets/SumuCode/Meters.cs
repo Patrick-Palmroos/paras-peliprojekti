@@ -97,7 +97,7 @@ namespace ProjectC
         // Adds points to the meters
         public void AddToMeters(int addHappy, int addMoney, int addEnergy)
         {
-            Debug.Log("Added " + addHappy + " happiness, " + addMoney + " money, and " + addEnergy + " energy");
+            // Debug.Log("Added " + addHappy + " happiness, " + addMoney + " money, and " + addEnergy + " energy");
             happy += addHappy;
             money += addMoney;
             energy += addEnergy;
