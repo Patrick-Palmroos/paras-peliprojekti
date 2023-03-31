@@ -142,6 +142,7 @@ namespace ProjectC
             optionRight = currNode.OptionRight;
             cardText.text = currNode.Prompt;
             nameText.text = currNode.Name;
+            Debug.Log(currNode.Name);
 
             // changes the pic but only if it's a different one than the previous
             if (image.sprite.name != currNode.ImageName)
@@ -205,7 +206,7 @@ namespace ProjectC
                 StoryNode node = new StoryNode
                 {
                     Id = id,
-                    Name = name,
+                    Name = cardName,
                     ImageName = imageName,
                     Prompt = description,
                     OptionLeft = leftOption,
