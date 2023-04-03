@@ -11,7 +11,6 @@ namespace ProjectC
         [SerializeField] Button leftButton, rightButton;
         [SerializeField] GameObject card, cardBackground, indicators;
         Animator cardAnimator;
-        Vector3 originalPos;
         Vector3 buttonPos;
         Vector3 indicatorOriginalPos;
         Vector3 indicatorPos;
@@ -27,7 +26,6 @@ namespace ProjectC
             flowControl = FindObjectOfType<GameFlow>();
             cardAnimator = card.GetComponent<Animator>();
             cardAnimator.enabled = false;
-            originalPos = card.transform.position;
             buttonPos = new Vector3(0, -0.5f, 0);
             indicatorOriginalPos = indicators.transform.position;
             indicatorPos = new Vector3(0, -625, 0);
@@ -41,8 +39,10 @@ namespace ProjectC
             leftButton.gameObject.SetActive(activate);
             rightButton.gameObject.SetActive(activate);
             card.GetComponent<Swipe>().enabled = !activate;
+            if (cardAnimator == null)
+                cardAnimator = card.GetComponent<Animator>();
 
-            if(activate)
+            if (activate)
             {
                 // changes locations of certain objects
                 card.transform.position = buttonPos;
@@ -55,11 +55,11 @@ namespace ProjectC
             else
             {
                 // sets all back to their original locations
-                card.transform.position = originalPos;
-                cardBackground.transform.position = originalPos;
+                card.transform.position = new Vector3(0, -0.79f, 0);
+                cardBackground.transform.position = card.transform.position;
                 indicators.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0);
                 indicators.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0);
-                indicators.transform.position = indicatorOriginalPos;
+                indicators.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
                 cardAnimator.enabled = false;
             }
         }
