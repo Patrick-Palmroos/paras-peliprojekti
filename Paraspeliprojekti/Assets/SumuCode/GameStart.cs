@@ -40,12 +40,12 @@ namespace ProjectC
                 if (!swipeControls)
                 {
                     GetComponent<ButtonControls>().ButtonControlTutorialPositions();
-                    startText.GetComponent<TMP_Text>().text = "PROJEKTI ON ALKANUT \n \n" +
-                        "Valitse kortin alle tulevilla nappuloilla";
                 }
 
                 pause.DisableCard();
             }
+
+            ChangeLanguage();
         }
 
         public void TapScreen()
@@ -75,6 +75,43 @@ namespace ProjectC
                     }
 
                     break;
+            }
+        }
+
+        private void ChangeLanguage()
+        {
+            if(StoryControl.IsFinnish())
+            {
+                if (swipeControls)
+                {
+                    startText.GetComponent<TMP_Text>().text = "PROJEKTI ON ALKANUT \n \n" +
+                    "Opeta t‰ss‰ miten peli‰ pelataan";
+                }
+                else
+                {
+                    startText.GetComponent<TMP_Text>().text = "PROJEKTI ON ALKANUT \n \n" +
+                        "Valitse kortin alle tulevilla nappuloilla";
+                }
+
+                meters.GetComponent<TMP_Text>().text = "Teht‰v‰si on pit‰‰ n‰m‰ mittarit tasapainossa p‰‰st‰m‰tt‰ mit‰‰n nollaan";
+                indicators.GetComponent<TMP_Text>().text = "N‰m‰ merkit kertovat, mihin mittareihin kortin valinta tulee mahdollisesti vaikuttamaan";
+                buttonIndicators.GetComponent<TMP_Text>().text = "N‰m‰ merkit kertovat, mihin mittareihin kortin valinta tulee mahdollisesti vaikuttamaan";
+            }
+            else
+            {
+                if (swipeControls)
+                {
+                    startText.GetComponent<TMP_Text>().text = "PROJECT HAS BEGUN \n \n" +
+                    "Teach how to play here";
+                }
+                else
+                {
+                    startText.GetComponent<TMP_Text>().text = "PROJECT HAS BEGUN \n \n" +
+                        "Chooce by using the buttons down below";
+                }
+                meters.GetComponent<TMP_Text>().text = "Your mission is to keep these meters in balance without letting them reach 0";
+                indicators.GetComponent<TMP_Text>().text = "These squares indicate which meters the choice will possibly affect";
+                buttonIndicators.GetComponent<TMP_Text>().text = "These squares indicate which meters the choice will possibly affect";
             }
         }
     }

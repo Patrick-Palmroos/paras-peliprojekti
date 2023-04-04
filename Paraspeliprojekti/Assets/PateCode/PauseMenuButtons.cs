@@ -26,7 +26,6 @@ namespace ProjectC
         [SerializeField] TMP_Dropdown gameMode;
         ButtonControls buttonControlScript;
 
-
         private void Awake()
         {
             sfx = GameObject.FindGameObjectWithTag("sfx").GetComponent<Slider>();
