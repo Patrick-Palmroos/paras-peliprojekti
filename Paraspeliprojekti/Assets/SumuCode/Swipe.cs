@@ -68,7 +68,8 @@ namespace ProjectC
                 if (Physics2D.Raycast(worldPos, Vector2.zero))
                 {
                     RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
-                    if (hit.collider.gameObject.tag == "Card" && Input.GetTouch(0).phase == TouchPhase.Began)
+                    if (hit.collider.gameObject.tag == "Card" && Input.GetTouch(0).phase == TouchPhase.Began 
+                        && !cardAnim)
                     {
                         StartDrag();
                     }
@@ -133,7 +134,7 @@ namespace ProjectC
             if (cardAnim) {
                 if (swiped) {
                     if (zeroToOne > 0) {
-                        zeroToOne -= Time.deltaTime * 2.7f;
+                        zeroToOne -= Time.deltaTime * 3.7f;
                         bgImage.transform.localScale = new Vector2(zeroToOne, 1);
                     }
                     else {
@@ -142,8 +143,7 @@ namespace ProjectC
                     }
                 } else {
                     if (zeroToOne < 1) {
-                        Debug.Log("should");
-                        zeroToOne += Time.deltaTime * 2.7f;
+                        zeroToOne += Time.deltaTime * 3.7f;
                         transform.localScale = new Vector2(zeroToOne, 1);
                     }
                     else {
@@ -166,7 +166,7 @@ namespace ProjectC
             // starts dragging from where touch starts
             Vector2 newPos = new Vector2(dragStartPos.x - worldPos.x, (dragStartPos.y - worldPos.y) + 0.79f);
             transform.position = new Vector2(Mathf.Lerp(0, -newPos.x, 1f), 
-                Mathf.Lerp(-0.79f, -newPos.y, 0.15f));
+                Mathf.Lerp(-0.79f, -newPos.y, 0.2f));
 
             distanceMoved = Mathf.Abs(transform.localPosition.x - 0);
             // Resets the children too
@@ -186,21 +186,21 @@ namespace ProjectC
         {
             // If the card was over the threshold when drag ended
             // Send a message that the swipe has happened and do animations
+            dragging = false;
             if (distanceMoved > checkThreshold)
             {
                 swiped = true;
                 zeroToOne = 1f;
                 cardAnim = true;
-                yield return new WaitForSeconds(0.4f);
+                yield return new WaitForSeconds(0.3f);
 
                 flowControl.SendMessage("Swiped", state);
                 gameObject.transform.localScale = new Vector2(0, 1);
                 transform.position = startPos;
                 swiped = false;
-                yield return new WaitForSeconds(0.4f);
+                yield return new WaitForSeconds(0.3f);
                 cardAnim = false;
             }
-            dragging = false;
             flowControl.SendMessage("ChangeText", "");
             foreach (Transform child in transform)
             {

@@ -13,6 +13,7 @@ namespace ProjectC
         public SoundType soundType;
 
         public bool loop;
+        public bool onAwake;
         public string audioclipName;
         public AudioClip audioClip;
         [HideInInspector] public AudioSource audioSource;
