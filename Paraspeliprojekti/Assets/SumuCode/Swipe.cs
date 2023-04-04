@@ -222,10 +222,6 @@ namespace ProjectC
                 yield return new WaitForSeconds(0.3f);
                 cardAnim = false;
             }
-            gameObject.transform.eulerAngles = new Vector3(
-                gameObject.transform.eulerAngles.x,
-                gameObject.transform.eulerAngles.y,
-                0);
             if (velocitySwipe)
             {
                 velocitySwipe = false;
