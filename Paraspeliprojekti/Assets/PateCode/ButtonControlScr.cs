@@ -23,6 +23,7 @@ namespace ProjectC
         // Sumu's additions
         [SerializeField] Button loadButton;
         [SerializeField] TMP_Dropdown language, gameMode;
+        LanguageControl languages;
 
 
         private void Awake()
@@ -36,6 +37,7 @@ namespace ProjectC
             exitCheck = GameObject.Find("ExitCheck");
             optionsButtons.SetActive(false);
             exitCheck.SetActive(false);
+            languages = FindObjectOfType<LanguageControl>();
         }
 
         private void Start()
@@ -144,6 +146,7 @@ namespace ProjectC
         private void LanguageChanged(TMP_Dropdown languageOptions)
         {
             StoryControl.ChangeLanguage(languageOptions.value == 0);
+            languages.LanguageChanged();
         }
 
         private void GameModeChanged(TMP_Dropdown gameModeOptions)

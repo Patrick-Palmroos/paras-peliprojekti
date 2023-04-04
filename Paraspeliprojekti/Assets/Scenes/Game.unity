@@ -155,9 +155,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 875842035}
-  - {fileID: 919269479}
   - {fileID: 1611746733}
   - {fileID: 180705264}
+  - {fileID: 919269479}
   - {fileID: 1366221517}
   m_Father: {fileID: 1095849539}
   m_RootOrder: 4
@@ -849,7 +849,7 @@ RectTransform:
   m_Children:
   - {fileID: 134718595}
   m_Father: {fileID: 56385930}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3626,6 +3626,7 @@ GameObject:
   - component: {fileID: 822672202}
   - component: {fileID: 822672203}
   - component: {fileID: 822672208}
+  - component: {fileID: 822672209}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -3753,6 +3754,20 @@ MonoBehaviour:
   card: {fileID: 740236044}
   cardBackground: {fileID: 1736636117}
   indicators: {fileID: 1827576476}
+--- !u!114 &822672209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822672196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4226f402fc3940843a70579f89952ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseTitle: {fileID: 0}
+  backToMenu: {fileID: 0}
 --- !u!1 &834345171
 GameObject:
   m_ObjectHideFlags: 0
@@ -4407,7 +4422,7 @@ RectTransform:
   m_Children:
   - {fileID: 1608386255}
   m_Father: {fileID: 56385930}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7781,7 +7796,7 @@ RectTransform:
   m_Children:
   - {fileID: 1296531866}
   m_Father: {fileID: 56385930}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
