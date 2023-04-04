@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace ProjectC
 {
     public class GameStart : MonoBehaviour
     {
-        [SerializeField] private GameObject helpScreen, startText, meters, indicators;
+        [SerializeField] private GameObject helpScreen, startText, meters, indicators, buttonIndicators;
         private HelpPhase phase = HelpPhase.Start;
         PauseMenuButtons pause;
         SaveLoad loader;
-        // GameControl control;
+        bool swipeControls;
         
         enum HelpPhase
         {
@@ -25,23 +26,26 @@ namespace ProjectC
         {
             pause = FindObjectOfType<PauseMenuButtons>();
             loader = GetComponent<SaveLoad>();
-            // control = GetComponent<GameControl>();
+            swipeControls = StoryControl.IsSwipeMode();
+            print(swipeControls);
             meters.SetActive(false);
             indicators.SetActive(false);
+            buttonIndicators.SetActive(false);
             if(StoryControl.state == StoryControl.StartState.LoadGame)
             {
                 helpScreen.SetActive(false);
             }
             else
             {
+                if (!swipeControls)
+                {
+                    GetComponent<ButtonControls>().ButtonControlTutorialPositions();
+                    startText.GetComponent<TMP_Text>().text = "PROJEKTI ON ALKANUT \n \n" +
+                        "Valitse kortin alle tulevilla nappuloilla";
+                }
+
                 pause.DisableCard();
             }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
         }
 
         public void TapScreen()
@@ -56,12 +60,20 @@ namespace ProjectC
 
                 case HelpPhase.Indicators:
                     meters.SetActive(false);
-                    indicators.SetActive(true);
+                    if (swipeControls)
+                        indicators.SetActive(true);
+                    else
+                        buttonIndicators.SetActive(true);
                     break;
 
                 case HelpPhase.Close:
                     helpScreen.SetActive(false);
                     pause.EnableCard();
+                    if (!swipeControls)
+                    {
+                        GetComponent<ButtonControls>().ActivateButtonControls(true);
+                    }
+
                     break;
             }
         }
