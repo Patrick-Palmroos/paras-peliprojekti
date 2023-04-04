@@ -20,7 +20,11 @@ namespace ProjectC
         [SerializeField] TextMeshProUGUI musicSlider;
         Slider sfx, music;
 
+        // Sumu's additions
         [SerializeField] Button loadButton;
+        [SerializeField] TMP_Dropdown language, gameMode;
+        LanguageControl languages;
+
 
         private void Awake()
         {
@@ -33,6 +37,7 @@ namespace ProjectC
             exitCheck = GameObject.Find("ExitCheck");
             optionsButtons.SetActive(false);
             exitCheck.SetActive(false);
+            languages = FindObjectOfType<LanguageControl>();
         }
 
         private void Start()
@@ -46,7 +51,18 @@ namespace ProjectC
             // disables load button if there is nothing to load
             if(!PlayerPrefs.HasKey("Save exists"))
                 loadButton.interactable = false;
+
+            // changes the values if they're not default
+            if (StoryControl.IsFinnish() == false)
+                language.value = 1;
+            if (StoryControl.IsSwipeMode() == false)
+                gameMode.value = 1;
+
+            // adds listeners to dropdowns
+            language.onValueChanged.AddListener(delegate { LanguageChanged(language); });
+            gameMode.onValueChanged.AddListener(delegate { GameModeChanged(language); });
         }
+
         //Unity UI button cant start a couroutine so a wrapper is used.
         public void NewGameWrapper() {
             StartCoroutine(NewGameButton());
@@ -87,6 +103,7 @@ namespace ProjectC
         //loads the new game
         public void LoadGame()
         {
+            // tells the story control that a save should be loaded
             StoryControl.state = StoryControl.StartState.LoadGame;
             StartCoroutine(NewGameButton());
             Debug.Log("Load Game");
@@ -120,6 +137,21 @@ namespace ProjectC
             musicVolume = v;
             musicSlider.text = ((int)(v * 100)).ToString();
             soundManager.UpdateMixer(v, "Music Volume");
+        }
+
+
+        // -------------------
+        // Sumu's part starts here
+        // -------------------
+        private void LanguageChanged(TMP_Dropdown languageOptions)
+        {
+            StoryControl.ChangeLanguage(languageOptions.value == 0);
+            languages.LanguageChanged();
+        }
+
+        private void GameModeChanged(TMP_Dropdown gameModeOptions)
+        {
+            StoryControl.ChangeGameMode(gameModeOptions.value == 0);
         }
     }
 }

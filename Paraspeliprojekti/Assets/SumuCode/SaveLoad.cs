@@ -74,11 +74,6 @@ namespace ProjectC
                 Debug.Log("File does not exist");
             }
 
-            if(PlayerPrefs.HasKey(BUTTONCONTROLS))
-            {
-                buttonControls.ActivateButtonControls(PlayerPrefs.GetInt(BUTTONCONTROLS) == 1);
-            }
-
             flowControl.GameLoaded();
         }
     }

@@ -21,7 +21,7 @@ namespace ProjectC
         private const string BUTTONCONTROLS = "Button controls";
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             flowControl = FindObjectOfType<GameFlow>();
             cardAnimator = card.GetComponent<Animator>();
@@ -51,6 +51,8 @@ namespace ProjectC
                 indicators.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 1);
                 indicators.GetComponent<RectTransform>().anchoredPosition = indicatorPos;
                 cardAnimator.enabled = true;
+                leftButton.transform.Find("Text").GetComponent<TMP_Text>().text = flowControl.GetOption(true);
+                rightButton.transform.Find("Text").GetComponent<TMP_Text>().text = flowControl.GetOption(false);
             }
             else
             {
@@ -62,6 +64,17 @@ namespace ProjectC
                 indicators.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
                 cardAnimator.enabled = false;
             }
+        }
+
+        // if the player starts the game with button controls
+        // move items to their correct positions in the tutorial too
+        public void ButtonControlTutorialPositions()
+        {
+            card.transform.position = new Vector3(0, -0.5f, 0);
+            cardBackground.transform.position = card.transform.position;
+            indicators.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 1);
+            indicators.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 1);
+            indicators.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -625);
         }
 
         // chooses options from buttons

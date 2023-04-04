@@ -23,6 +23,8 @@ namespace ProjectC
         bool cardEnabled = true;
 
         SaveLoad loader;
+        [SerializeField] TMP_Dropdown gameMode;
+        ButtonControls buttonControlScript;
 
 
         private void Awake()
@@ -35,7 +37,9 @@ namespace ProjectC
             mainButtons = GameObject.Find("MainContainer");
             optionsButtons.SetActive(false);
             mainButtons.SetActive(false);
+
             loader = FindObjectOfType<SaveLoad>();
+            buttonControlScript = FindObjectOfType<ButtonControls>();
         }
         private void Start()
         {
@@ -44,6 +48,12 @@ namespace ProjectC
             sfx.value = soundManager.GetVolume("sfx");
             sfxSlider.text = ((int)(sfx.value * 100)).ToString();
             soundManager.PlayAudio("Game Music");
+
+            // dropdown menu 
+            if (StoryControl.IsSwipeMode() == false)
+                gameMode.value = 1;
+
+            gameMode.onValueChanged.AddListener(delegate { GameModeChanged(gameMode); });
         }
 
         //turns on options buttons
@@ -74,7 +84,8 @@ namespace ProjectC
         //closes pause menu and returns to the game
         public void ClosePauseMenu()
         {
-            EnableCard();
+            if (StoryControl.IsSwipeMode())
+                EnableCard();
             mainButtons.SetActive(false);
         }
         //coroutine that loads main menu
@@ -118,6 +129,12 @@ namespace ProjectC
         {
             loader.SaveGame();
             Debug.Log("Game saved");
+        }
+
+        public void GameModeChanged(TMP_Dropdown gameModeOptions)
+        {
+            StoryControl.ChangeGameMode(gameModeOptions.value == 0);
+            buttonControlScript.ActivateButtonControls(!StoryControl.IsSwipeMode());
         }
     }
 }

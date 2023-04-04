@@ -11,7 +11,7 @@ namespace ProjectC
         private List<StoryNode> storyNodes;
         [HideInInspector] public List<int> randomNodeIds, nextInStoryIds, endNodeIds;
         [HideInInspector] public List<int> lowMoneyIds, lowEnergyIds, lowHappinessIds;
-        public string fileName;
+        public string fileName, engFileName;
         [SerializeField] private TMP_Text cardText, optionText, nameText;
         [SerializeField] private SpriteRenderer image;
         [SerializeField] private GameObject backgroundCard;
@@ -181,7 +181,12 @@ namespace ProjectC
             lowHappinessIds = new List<int>();
             lowMoneyIds = new List<int>();
 
-            TextAsset textData = Resources.Load("Story/" + fileName) as TextAsset;
+            TextAsset textData;
+            if (StoryControl.IsFinnish())
+                textData = Resources.Load("Story/" + fileName) as TextAsset;
+            else
+                textData = Resources.Load("Story/" + engFileName) as TextAsset;
+
             string txt = textData.text;
             var lines = txt.Split("\n");
 
@@ -355,7 +360,10 @@ namespace ProjectC
 
         public void GameLoaded()
         {
-            CheckStatus();
+            if (!StoryControl.IsSwipeMode())
+                GetComponent<ButtonControls>().ActivateButtonControls(true);
+
+            GetCurrentOptions();
         }
     }
 }
