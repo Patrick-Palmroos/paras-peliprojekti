@@ -24,7 +24,7 @@ namespace ProjectC
         private float distanceMoved;
         private float turnDistanceMoved;
         private string state = "Blank";
-        private string velocityState = "";
+        private string setState = "";
         private Rigidbody2D rb;
 
         private void Start()
@@ -43,11 +43,12 @@ namespace ProjectC
             {
                 if (velocitySwipe)
                 {
-                    StartCoroutine(StopDrag(0.9f, velocityState));
+                    StartCoroutine(StopDrag(1, setState));
                 }
                 else
                 {
-                    StartCoroutine(StopDrag(checkThreshold, state));
+                    setState = state;
+                    StartCoroutine(StopDrag(distanceMoved, setState));
                 }
                 return;
             }
@@ -130,7 +131,7 @@ namespace ProjectC
             //swipe animation
             if (swiped)
             {
-                switch (state)
+                switch (setState)
                 {
                     case "Right":
                         transform.position = new Vector2(Mathf.Lerp(transform.position.x,
@@ -207,17 +208,13 @@ namespace ProjectC
             // Send a message that the swipe has happened and do animations
             dragging = false;
             flowControl.SendMessage("ChangeText", "");
-            if (distanceMoved > threshold)
+            if (threshold > checkThreshold)
             {
-                if (velocitySwipe)
-                {
-                    velocitySwipe = false;
-                }
                 swiped = true;
                 zeroToOne = 1f;
                 cardAnim = true;
                 yield return new WaitForSeconds(0.3f);
-
+                Debug.Log(currState);
                 flowControl.SendMessage("Swiped", currState);
                 gameObject.transform.localScale = new Vector2(0, 1);
                 transform.position = startPos;
@@ -229,6 +226,10 @@ namespace ProjectC
                 gameObject.transform.eulerAngles.x,
                 gameObject.transform.eulerAngles.y,
                 0);
+            if (velocitySwipe)
+            {
+                velocitySwipe = false;
+            }
             foreach (Transform child in transform)
             {
                 child.localPosition = Vector2.zero;
@@ -250,7 +251,7 @@ namespace ProjectC
             if (dragging)
             {
                 velocitySwipe = true;
-                velocityState = leftOrRight;
+                setState = leftOrRight;
             }
         }
     }

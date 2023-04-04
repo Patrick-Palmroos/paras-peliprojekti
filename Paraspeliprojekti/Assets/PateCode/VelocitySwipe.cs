@@ -32,14 +32,14 @@ namespace ProjectC
                 float swipeDelta = lastMousePos.x - currPos;
                 if (swipeDelta > 0)
                 {
-                    state = "left";
+                    state = "Left";
                 } else
                 {
-                    state = "right";
+                    state = "Right";
                 }
-                Debug.Log(swipeDelta);
                 if (Mathf.Abs(swipeDelta) > threshhold)
                 {
+                    Debug.Log(swipeDelta);
                     swipeScr.VelocitySwipeTrue(state);
                 }
             }

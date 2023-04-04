@@ -3428,7 +3428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interval: 0.01
-  threshhold: 0
+  threshhold: 0.2
 --- !u!1 &754024676
 GameObject:
   m_ObjectHideFlags: 0
