@@ -34,6 +34,8 @@ namespace ProjectC
                 {
                     sound.audioSource.loop = true;
                 }
+
+                sound.audioSource.playOnAwake = sound.onAwake;
             }
         }
 

@@ -120,15 +120,39 @@ namespace ProjectC
             switch(state)
             {
                 case outOfHappiness:
-                    StoryControl.gameEndText = "Onnellisuus loppui!";
+                    if (StoryControl.IsFinnish())
+                    {
+                        StoryControl.gameEndText = "Onnellisuus loppui!";
+                    }
+                    else
+                    {
+                        StoryControl.gameEndText = "Ran out of happiness!";
+                    }
+
                     loader.LoadScene("GameOver");
                     break;
                 case outOfMoney:
-                    StoryControl.gameEndText = "Rahat loppuivat!";
+                    if (StoryControl.IsFinnish())
+                    {
+                        StoryControl.gameEndText = "Rahat loppuivat!";
+                    }
+                    else
+                    {
+                        StoryControl.gameEndText = "Ran out of money";
+                    }
+
                     loader.LoadScene("GameOver");
                     break;
                 case outOfEnergy:
-                    StoryControl.gameEndText = "Energiat loppuivat!";
+                    if (StoryControl.IsFinnish())
+                    {
+                        StoryControl.gameEndText = "Energiat loppuivat!";
+                    }
+                    else
+                    {
+                        StoryControl.gameEndText = "Ran out of energy";
+                    }
+
                     loader.LoadScene("GameOver");
                     break;
             }

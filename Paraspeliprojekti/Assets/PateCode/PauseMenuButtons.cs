@@ -23,7 +23,10 @@ namespace ProjectC
         bool cardEnabled = true;
 
         SaveLoad loader;
-
+        [SerializeField] TMP_Dropdown gameMode;
+        ButtonControls buttonControlScript;
+        [SerializeField] GameObject darken;
+        [SerializeField] TMP_Text saveGame, gameSaved;
 
         private void Awake()
         {
@@ -35,7 +38,9 @@ namespace ProjectC
             mainButtons = GameObject.Find("MainContainer");
             optionsButtons.SetActive(false);
             mainButtons.SetActive(false);
+
             loader = FindObjectOfType<SaveLoad>();
+            buttonControlScript = FindObjectOfType<ButtonControls>();
         }
         private void Start()
         {
@@ -44,6 +49,13 @@ namespace ProjectC
             sfx.value = soundManager.GetVolume("sfx");
             sfxSlider.text = ((int)(sfx.value * 100)).ToString();
             soundManager.PlayAudio("Game Music");
+
+            // dropdown menu 
+            if (StoryControl.IsSwipeMode() == false)
+                gameMode.value = 1;
+
+            gameMode.onValueChanged.AddListener(delegate { GameModeChanged(gameMode); });
+            darken.SetActive(false);
         }
 
         //turns on options buttons
@@ -70,13 +82,18 @@ namespace ProjectC
                 DisableCard();
             }
             mainButtons.SetActive(true);
+            darken.SetActive(true);
         }
+
         //closes pause menu and returns to the game
         public void ClosePauseMenu()
         {
-            EnableCard();
+            if (StoryControl.IsSwipeMode())
+                EnableCard();
             mainButtons.SetActive(false);
+            darken.SetActive(false);
         }
+
         //coroutine that loads main menu
         IEnumerator MainMenuCoroutine()
         {
@@ -117,7 +134,45 @@ namespace ProjectC
         public void SaveGame()
         {
             loader.SaveGame();
-            Debug.Log("Game saved");
+            StartCoroutine(SavedGame());
+        }
+
+        IEnumerator SavedGame()
+        {
+            float timer = 0;
+            float duration = 1;
+            saveGame.gameObject.SetActive(false);
+            gameSaved.gameObject.SetActive(true);
+            while(timer < duration)
+            {
+                timer += Time.deltaTime;
+                gameSaved.color = new Color(0, 0, 0, 1 - timer);
+                yield return null;
+            }
+            gameSaved.gameObject.SetActive(false);
+            saveGame.gameObject.SetActive(true);
+        }
+
+        public void GameModeChanged(TMP_Dropdown gameModeOptions)
+        {
+            StoryControl.ChangeGameMode(gameModeOptions.value == 0);
+            buttonControlScript.ActivateButtonControls(!StoryControl.IsSwipeMode());
+            if (StoryControl.IsSwipeMode())
+            {
+                DisableCard();
+            }
+        }
+
+        public void TouchOffMenu()
+        {
+            if (optionsButtons.activeInHierarchy)
+            {
+                PauseMenu();
+            }
+            else
+            {
+                ClosePauseMenu();
+            }
         }
     }
 }
