@@ -7,7 +7,7 @@ namespace ProjectC
 {
     public class GameLanguageControl : MonoBehaviour
     {
-        [SerializeField] private TMP_Text pauseTitle, saveGame, options, backToMenu, closePause;
+        [SerializeField] private TMP_Text pauseTitle, saveGame, saved, options, backToMenu, closePause;
         [SerializeField] private TMP_Text sfx, music, backToOptions, controlsTitle;
         [SerializeField] private TMP_Dropdown controls;
         // Start is called before the first frame update
@@ -28,6 +28,7 @@ namespace ProjectC
         {
             pauseTitle.text = "Tauko";
             saveGame.text = "Tallenna peli";
+            saved.text = "Tallennettu";
             options.text = "Asetukset";
             backToMenu.text = "Takaisin p‰‰valikkoon";
             closePause.text = "Jatka peli‰";
@@ -47,6 +48,7 @@ namespace ProjectC
         {
             pauseTitle.text = "Pause";
             saveGame.text = "Save game";
+            saved.text = "Game saved";
             options.text = "Options";
             backToMenu.text = "Back to main menu";
             closePause.text = "Continue";

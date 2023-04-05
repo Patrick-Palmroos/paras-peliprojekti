@@ -66,6 +66,13 @@ namespace ProjectC
             }
         }
 
+        // toggles button interactability depending on the pause status
+        public void GamePaused()
+        {
+            rightButton.interactable = (!rightButton.interactable);
+            leftButton.interactable = (!leftButton.interactable);
+        }
+
         // if the player starts the game with button controls
         // move items to their correct positions in the tutorial too
         public void ButtonControlTutorialPositions()

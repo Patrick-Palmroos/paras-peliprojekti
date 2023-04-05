@@ -25,6 +25,8 @@ namespace ProjectC
         SaveLoad loader;
         [SerializeField] TMP_Dropdown gameMode;
         ButtonControls buttonControlScript;
+        [SerializeField] GameObject darken;
+        [SerializeField] TMP_Text saveGame, gameSaved;
 
         private void Awake()
         {
@@ -53,6 +55,7 @@ namespace ProjectC
                 gameMode.value = 1;
 
             gameMode.onValueChanged.AddListener(delegate { GameModeChanged(gameMode); });
+            darken.SetActive(false);
         }
 
         //turns on options buttons
@@ -79,14 +82,20 @@ namespace ProjectC
                 DisableCard();
             }
             mainButtons.SetActive(true);
+            darken.SetActive(true);
+            buttonControlScript.GamePaused();
         }
+
         //closes pause menu and returns to the game
         public void ClosePauseMenu()
         {
             if (StoryControl.IsSwipeMode())
                 EnableCard();
             mainButtons.SetActive(false);
+            darken.SetActive(false);
+            buttonControlScript.GamePaused();
         }
+
         //coroutine that loads main menu
         IEnumerator MainMenuCoroutine()
         {
@@ -127,7 +136,23 @@ namespace ProjectC
         public void SaveGame()
         {
             loader.SaveGame();
-            Debug.Log("Game saved");
+            StartCoroutine(SavedGame());
+        }
+
+        IEnumerator SavedGame()
+        {
+            float timer = 0;
+            float duration = 1;
+            saveGame.gameObject.SetActive(false);
+            gameSaved.gameObject.SetActive(true);
+            while(timer < duration)
+            {
+                timer += Time.deltaTime;
+                gameSaved.color = new Color(0, 0, 0, 1 - timer);
+                yield return null;
+            }
+            gameSaved.gameObject.SetActive(false);
+            saveGame.gameObject.SetActive(true);
         }
 
         public void GameModeChanged(TMP_Dropdown gameModeOptions)
