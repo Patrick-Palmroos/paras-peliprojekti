@@ -1837,16 +1837,25 @@ MonoBehaviour:
   soundArr:
   - soundType: 0
     loop: 0
-    audioclipName: Select
-    audioClip: {fileID: 8300000, guid: 6de722cc1c6c39b4e9e6033edbb33e65, type: 3}
+    onAwake: 0
+    audioclipName: Click
+    audioClip: {fileID: 8300000, guid: 68df0a3b88560424eaf28ed6ce031c54, type: 3}
+    audioSource: {fileID: 0}
+  - soundType: 0
+    loop: 0
+    onAwake: 0
+    audioclipName: Slider
+    audioClip: {fileID: 8300000, guid: 6d770991b33b5b24f8fbf4a8831d39aa, type: 3}
     audioSource: {fileID: 0}
   - soundType: 1
     loop: 1
+    onAwake: 0
     audioclipName: Menu Music
     audioClip: {fileID: 8300000, guid: 381ae340d8fa56e4c9628d3c52129cad, type: 3}
     audioSource: {fileID: 0}
   - soundType: 1
     loop: 1
+    onAwake: 0
     audioclipName: Game Music
     audioClip: {fileID: 8300000, guid: 58032ff34ad113c4f9ffdd8d950b6efa, type: 3}
     audioSource: {fileID: 0}
@@ -2094,6 +2103,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Select
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 443084654}
+        m_TargetAssemblyTypeName: ProjectC.SoundManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &461577422
@@ -2708,6 +2729,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 443084654}
+        m_TargetAssemblyTypeName: ProjectC.SoundManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Slider
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &656734711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3050,7 +3083,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 443084654}
+        m_TargetAssemblyTypeName: ProjectC.SoundManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &695018936
 MonoBehaviour:
@@ -3564,6 +3609,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Select
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 443084654}
+        m_TargetAssemblyTypeName: ProjectC.SoundManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1055854042
@@ -4150,6 +4207,18 @@ MonoBehaviour:
           m_StringArgument: Select
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 443084654}
+        m_TargetAssemblyTypeName: ProjectC.SoundManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1173098391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4426,6 +4495,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 443084654}
+        m_TargetAssemblyTypeName: ProjectC.SoundManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Slider
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1262470754
@@ -5061,7 +5142,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 443084654}
+        m_TargetAssemblyTypeName: ProjectC.SoundManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1382202879
 MonoBehaviour:
@@ -5549,6 +5642,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 443084654}
+        m_TargetAssemblyTypeName: ProjectC.SoundManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1651544494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5818,6 +5923,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 443084654}
+        m_TargetAssemblyTypeName: ProjectC.SoundManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1716170939
@@ -6535,6 +6652,18 @@ MonoBehaviour:
           m_StringArgument: Select
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 443084654}
+        m_TargetAssemblyTypeName: ProjectC.SoundManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1859196318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6667,6 +6796,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Select
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 443084654}
+        m_TargetAssemblyTypeName: ProjectC.SoundManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1953116325

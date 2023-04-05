@@ -159,6 +159,10 @@ namespace ProjectC
         {
             StoryControl.ChangeGameMode(gameModeOptions.value == 0);
             buttonControlScript.ActivateButtonControls(!StoryControl.IsSwipeMode());
+            if (StoryControl.IsSwipeMode())
+            {
+                DisableCard();
+            }
         }
     }
 }

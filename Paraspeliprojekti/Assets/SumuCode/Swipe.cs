@@ -11,6 +11,8 @@ namespace ProjectC
         [SerializeField] GameObject bgImage;
         private float zeroToOne = 1;
         private bool swiped = false;
+        private bool velocitySwipe = false;
+        public float turnMultiplier;
         private bool cardAnim = false;
         private bool dragging = false;
         private Vector2 screenPos;
@@ -18,9 +20,11 @@ namespace ProjectC
         private Vector3 worldPos;
         private Vector3 startPos;
 
-        private float checkThreshold = 0.8f;
+        private float checkThreshold = 0.9f;
         private float distanceMoved;
+        private float turnDistanceMoved;
         private string state = "Blank";
+        private string setState = "";
         private Rigidbody2D rb;
 
         private void Start()
@@ -37,7 +41,15 @@ namespace ProjectC
             // When dragging stops
             if(dragging && Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended)
             {
-                StartCoroutine(StopDrag());
+                if (velocitySwipe)
+                {
+                    StartCoroutine(StopDrag(1, setState));
+                }
+                else
+                {
+                    setState = state;
+                    StartCoroutine(StopDrag(distanceMoved, setState));
+                }
                 return;
             }
             //returns the card to its original position
@@ -114,10 +126,12 @@ namespace ProjectC
 
         private void FixedUpdate()
         {
+            //cards distance from point 0;
+            turnDistanceMoved = transform.localPosition.x - 0;
             //swipe animation
             if (swiped)
             {
-                switch (state)
+                switch (setState)
                 {
                     case "Right":
                         transform.position = new Vector2(Mathf.Lerp(transform.position.x,
@@ -152,6 +166,12 @@ namespace ProjectC
                     }
                 }
             }
+
+            float turnAngle = turnDistanceMoved * turnMultiplier * -1f;
+            gameObject.transform.eulerAngles = new Vector3(
+                gameObject.transform.eulerAngles.x,
+                gameObject.transform.eulerAngles.y,
+                turnAngle);
         }
 
         void StartDrag()
@@ -168,7 +188,7 @@ namespace ProjectC
             transform.position = new Vector2(Mathf.Lerp(0, -newPos.x, 1f), 
                 Mathf.Lerp(-0.79f, -newPos.y, 0.2f));
 
-            distanceMoved = Mathf.Abs(transform.localPosition.x - 0);
+            distanceMoved = Mathf.Abs(turnDistanceMoved);
             // Resets the children too
             foreach (Transform child in transform)
             {
@@ -182,26 +202,30 @@ namespace ProjectC
         }
 
         // Resets the position to center
-        IEnumerator StopDrag()
+        IEnumerator StopDrag(float threshold, string currState)
         {
             // If the card was over the threshold when drag ended
             // Send a message that the swipe has happened and do animations
             dragging = false;
-            if (distanceMoved > checkThreshold)
+            flowControl.SendMessage("ChangeText", "");
+            if (threshold > checkThreshold)
             {
                 swiped = true;
                 zeroToOne = 1f;
                 cardAnim = true;
                 yield return new WaitForSeconds(0.3f);
-
-                flowControl.SendMessage("Swiped", state);
+                Debug.Log(currState);
+                flowControl.SendMessage("Swiped", currState);
                 gameObject.transform.localScale = new Vector2(0, 1);
                 transform.position = startPos;
                 swiped = false;
                 yield return new WaitForSeconds(0.3f);
                 cardAnim = false;
             }
-            flowControl.SendMessage("ChangeText", "");
+            if (velocitySwipe)
+            {
+                velocitySwipe = false;
+            }
             foreach (Transform child in transform)
             {
                 child.localPosition = Vector2.zero;
@@ -216,6 +240,15 @@ namespace ProjectC
         public void AnimationStopped()
         {
             buttonControls.ChangeTexts();
+        }
+
+        public void VelocitySwipeTrue(string leftOrRight)
+        {
+            if (dragging)
+            {
+                velocitySwipe = true;
+                setState = leftOrRight;
+            }
         }
     }
 }
