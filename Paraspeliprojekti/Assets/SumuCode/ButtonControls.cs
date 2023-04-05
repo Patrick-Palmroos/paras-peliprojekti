@@ -9,7 +9,7 @@ namespace ProjectC
     public class ButtonControls : MonoBehaviour
     {
         [SerializeField] Button leftButton, rightButton;
-        [SerializeField] GameObject card, cardBackground, indicators;
+        [SerializeField] GameObject card, cardBackground, anotherBackground, indicators;
         Animator cardAnimator;
         Vector3 buttonPos;
         Vector3 indicatorOriginalPos;
@@ -47,6 +47,7 @@ namespace ProjectC
                 // changes locations of certain objects
                 card.transform.position = buttonPos;
                 cardBackground.transform.position = buttonPos;
+                anotherBackground.transform.position = buttonPos;
                 indicators.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 1);
                 indicators.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 1);
                 indicators.GetComponent<RectTransform>().anchoredPosition = indicatorPos;
@@ -59,18 +60,12 @@ namespace ProjectC
                 // sets all back to their original locations
                 card.transform.position = new Vector3(0, -0.79f, 0);
                 cardBackground.transform.position = card.transform.position;
+                anotherBackground.transform.position = card.transform.position;
                 indicators.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0);
                 indicators.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0);
                 indicators.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
                 cardAnimator.enabled = false;
             }
-        }
-
-        // toggles button interactability depending on the pause status
-        public void GamePaused()
-        {
-            rightButton.interactable = (!rightButton.interactable);
-            leftButton.interactable = (!leftButton.interactable);
         }
 
         // if the player starts the game with button controls
@@ -79,6 +74,7 @@ namespace ProjectC
         {
             card.transform.position = new Vector3(0, -0.5f, 0);
             cardBackground.transform.position = card.transform.position;
+            anotherBackground.transform.position = card.transform.position;
             indicators.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 1);
             indicators.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 1);
             indicators.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -625);

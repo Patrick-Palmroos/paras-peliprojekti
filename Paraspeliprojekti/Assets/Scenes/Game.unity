@@ -1677,7 +1677,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 595993639}
         m_TargetAssemblyTypeName: ProjectC.PauseMenuButtons, Assembly-CSharp
-        m_MethodName: ClosePauseMenu
+        m_MethodName: TouchOffMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4131,6 +4131,7 @@ MonoBehaviour:
   rightButton: {fileID: 1345739391}
   card: {fileID: 740236044}
   cardBackground: {fileID: 1736636117}
+  anotherBackground: {fileID: 1286033595}
   indicators: {fileID: 1827576476}
 --- !u!114 &822672209
 MonoBehaviour:

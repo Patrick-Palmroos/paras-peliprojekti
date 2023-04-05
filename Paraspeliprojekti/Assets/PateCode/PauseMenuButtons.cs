@@ -83,7 +83,6 @@ namespace ProjectC
             }
             mainButtons.SetActive(true);
             darken.SetActive(true);
-            buttonControlScript.GamePaused();
         }
 
         //closes pause menu and returns to the game
@@ -93,7 +92,6 @@ namespace ProjectC
                 EnableCard();
             mainButtons.SetActive(false);
             darken.SetActive(false);
-            buttonControlScript.GamePaused();
         }
 
         //coroutine that loads main menu
@@ -162,6 +160,18 @@ namespace ProjectC
             if (StoryControl.IsSwipeMode())
             {
                 DisableCard();
+            }
+        }
+
+        public void TouchOffMenu()
+        {
+            if (optionsButtons.activeInHierarchy)
+            {
+                PauseMenu();
+            }
+            else
+            {
+                ClosePauseMenu();
             }
         }
     }
