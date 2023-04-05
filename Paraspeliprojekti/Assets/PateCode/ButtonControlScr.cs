@@ -60,11 +60,12 @@ namespace ProjectC
 
             // adds listeners to dropdowns
             language.onValueChanged.AddListener(delegate { LanguageChanged(language); });
-            gameMode.onValueChanged.AddListener(delegate { GameModeChanged(language); });
+            gameMode.onValueChanged.AddListener(delegate { GameModeChanged(gameMode); });
         }
 
         //Unity UI button cant start a couroutine so a wrapper is used.
         public void NewGameWrapper() {
+            StoryControl.state = StoryControl.StartState.NewGame;
             StartCoroutine(NewGameButton());
         }
         //loads new game scene asynchronatically.
@@ -151,6 +152,7 @@ namespace ProjectC
 
         private void GameModeChanged(TMP_Dropdown gameModeOptions)
         {
+            Debug.Log(gameModeOptions.value);
             StoryControl.ChangeGameMode(gameModeOptions.value == 0);
         }
     }
