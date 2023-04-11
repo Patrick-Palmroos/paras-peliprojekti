@@ -40,3 +40,4 @@
 40	Toni	char14-card	NEUTRAL ENDING	-1	Huoh	0	0	0	-1	Huoh	0	0	0
 41	Toni	char14-card	[LOWMONEY]Rahasi ovat melko vähissä....	0	Niin on anna rahaa	0	100	0	0	Ei hätää	0	0	0
 42	Miaurmentraut	char_Miaurmentraut	[LOWHAPPINESS]Kaapissa ei ole enään maitoa. Voidaanko ostaa sitä kahvin sekaan?	0	Ei missään nimessä! Turha ostos!	-20	0	-5	0	Tottakai! Eihän kahvia ilman maitoa voi juoda!	40	-20	10
+99999	Boss	card-background-v1.1	Hävisit pelin	-1	oh no	0	0	0	-1	oh no	0	0	0
