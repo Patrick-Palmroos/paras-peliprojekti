@@ -39,7 +39,6 @@ namespace ProjectC
                 }
                 if (Mathf.Abs(swipeDelta) > threshhold)
                 {
-                    Debug.Log(swipeDelta);
                     swipeScr.VelocitySwipeTrue(state);
                 }
             }

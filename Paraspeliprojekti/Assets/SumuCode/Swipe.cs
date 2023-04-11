@@ -20,12 +20,14 @@ namespace ProjectC
         private Vector3 worldPos;
         private Vector3 startPos;
 
-        private float checkThreshold = 0.9f;
+        public float mult, min, max;
+        private float checkThreshold = 0.1f;
+        private float moveSpeed = 0.16f;
         private float distanceMoved;
         private float turnDistanceMoved;
         private string state = "Blank";
         private string setState = "";
-        private Rigidbody2D rb;
+        VignetteAnim vignette;
 
         private void Start()
         {
@@ -33,7 +35,7 @@ namespace ProjectC
             buttonControls = FindObjectOfType<ButtonControls>();
             flowControl.SendMessage("ChangeText", "");
             startPos = transform.position;
-            rb = gameObject.GetComponent<Rigidbody2D>();
+            vignette = gameObject.GetComponent<VignetteAnim>();
         }
 
         private void Update()
@@ -122,6 +124,23 @@ namespace ProjectC
                     flowControl.SendMessage("ChangeText", "");
                 }
             }
+            
+            if (distanceMoved > checkThreshold * 3f)
+            {
+                if (moveSpeed < max)
+                {
+                    moveSpeed += Time.deltaTime * mult;
+                }
+            } else
+            {
+                if (moveSpeed > min)
+                {
+                    moveSpeed -= Time.deltaTime * mult / 2;
+                } else if (moveSpeed < min)
+                {
+                    moveSpeed = min;
+                }
+            }
         }
 
         private void FixedUpdate()
@@ -165,6 +184,9 @@ namespace ProjectC
                         transform.localScale = new Vector2(zeroToOne, 1);
                     }
                 }
+            } else
+            {
+                vignette.MoveVignette(turnDistanceMoved);
             }
 
             float turnAngle = turnDistanceMoved * turnMultiplier * -1f;
@@ -185,7 +207,7 @@ namespace ProjectC
         {
             // starts dragging from where touch starts
             Vector2 newPos = new Vector2(dragStartPos.x - worldPos.x, (dragStartPos.y - worldPos.y) + 0.79f);
-            transform.position = new Vector2(Mathf.Lerp(0, -newPos.x, 1f), 
+            transform.position = new Vector2(Mathf.Lerp(0, -newPos.x, moveSpeed), 
                 Mathf.Lerp(-0.79f, -newPos.y, 0.2f));
 
             distanceMoved = Mathf.Abs(turnDistanceMoved);
@@ -208,8 +230,9 @@ namespace ProjectC
             // Send a message that the swipe has happened and do animations
             dragging = false;
             flowControl.SendMessage("ChangeText", "");
-            if (threshold > checkThreshold)
+            if (threshold > checkThreshold * 3f)
             {
+                vignette.ResetVignette();
                 swiped = true;
                 zeroToOne = 1f;
                 cardAnim = true;
