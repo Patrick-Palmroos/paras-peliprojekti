@@ -27,19 +27,6 @@ namespace ProjectC
         // Update is called once per frame
         void Update()
         {
-
-            // FOR TESTING PURPOSES ONLY
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                AddToMeters(20, 10, 1);
-            }
-
-            // FOR TESTING PURPOSES ONLY
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                AddToMeters(-20, -10, -1);
-            }
-
             // Adjusts the meters if the values are changed
             if(ValuesChanged())
             {
@@ -48,6 +35,7 @@ namespace ProjectC
                 Adjust(energyMeter, energyMeter.fillAmount, ConvertToFillAmount(energy));
             }
 
+            /*
             // GAME ENDS
             if (happy <= 0)
             {
@@ -63,6 +51,7 @@ namespace ProjectC
             {
                 GameEnd(outOfEnergy);
             }
+            */
         }
 
         // Shows the indicators if the choice can affect that value
@@ -97,10 +86,16 @@ namespace ProjectC
         // Adds points to the meters
         public void AddToMeters(int addHappy, int addMoney, int addEnergy)
         {
-            // Debug.Log("Added " + addHappy + " happiness, " + addMoney + " money, and " + addEnergy + " energy");
             happy += addHappy;
             money += addMoney;
             energy += addEnergy;
+
+            if (happy > 100)
+                happy = 100;
+            if (money > 100)
+                money = 100;
+            if (energy > 100)
+                energy = 100;
         }
 
         // Converts the values to fill amount for the image
@@ -115,6 +110,7 @@ namespace ProjectC
             meter.fillAmount = Mathf.Lerp(from, to, Time.deltaTime * meterSpeed);
         }
 
+        /*
         private void GameEnd(string state)
         {
             switch(state)
@@ -156,7 +152,7 @@ namespace ProjectC
                     loader.LoadScene("GameOver");
                     break;
             }
-        }
+        }*/
 
         public int GetHappiness()
         {
@@ -178,6 +174,50 @@ namespace ProjectC
             this.happy = happiness;
             this.energy = energy;
             this.money = money;
+        }
+
+        public bool GameWillEnd(int affectHappiness, int affectMoney, int affectEnergy)
+        {
+            if (happy + affectHappiness <= 0)
+            {
+                if (StoryControl.IsFinnish())
+                {
+                    StoryControl.gameEndText = "Onnellisuus loppui!";
+                }
+                else
+                {
+                    StoryControl.gameEndText = "Ran out of happiness!";
+                }
+                return true;
+            }
+
+            if (money + affectMoney <= 0)
+            {
+                if (StoryControl.IsFinnish())
+                {
+                    StoryControl.gameEndText = "Rahat loppuivat!";
+                }
+                else
+                {
+                    StoryControl.gameEndText = "Ran out of money";
+                }
+                return true;
+            }
+
+            if (energy + affectEnergy <= 0)
+            {
+                if (StoryControl.IsFinnish())
+                {
+                    StoryControl.gameEndText = "Energiat loppuivat!";
+                }
+                else
+                {
+                    StoryControl.gameEndText = "Ran out of energy";
+                }
+                return true;
+            }
+
+            return false;
         }
     }
 }

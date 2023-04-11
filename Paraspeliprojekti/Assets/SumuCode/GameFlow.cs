@@ -17,6 +17,7 @@ namespace ProjectC
         [SerializeField] private GameObject backgroundCard;
         private string optionLeft, optionRight;
         private bool endGame = false;
+        private bool loseGame = false;
 
         Meters meters;
         SaveLoad loader;
@@ -27,6 +28,7 @@ namespace ProjectC
         private const string ALLHIGH = "[ALLHIGH]";
 
         private const string NARRATORCARD = "placeholder_tilannekortti";
+        // private const string ENDINGCARD = "card-background-v1.1";
 
         private int lowThreshold = 20;
 
@@ -49,9 +51,13 @@ namespace ProjectC
 
         public void CheckStatus()
         {
-
             // Checks if any status is low before giving completely random cards
-            if (meters.GetHappiness() < lowThreshold && lowHappinessIds.Count > 0)
+            if(loseGame)
+            {
+                Debug.Log("game will end");
+                currentNodeId = 99999;
+            }
+            else if (meters.GetHappiness() < lowThreshold && lowHappinessIds.Count > 0)
             {
                 // LOW HAPPINESS
                 currentNodeId = RandomId(lowHappinessIds);
@@ -166,7 +172,7 @@ namespace ProjectC
                 Sprite cardImage = Resources.Load<Sprite>("Art/Character cards/" + currNode.ImageName);
                 image.sprite = cardImage;
             }
-
+            Debug.Log(currNode.Prompt);
             if (currNode.ImageName != NARRATORCARD)
             {
                 ToggleCardTexts(false);
@@ -290,6 +296,14 @@ namespace ProjectC
 
         public void Swiped(string state)
         {
+            // swiping the lose game card
+            if (loseGame)
+            {
+                GameEnd();
+                return;
+            }
+
+
             bool left = (state == "Left");
             if (endGame)
             {
@@ -319,6 +333,9 @@ namespace ProjectC
 
                 if (left)
                 {
+                    if (meters.GameWillEnd(curr.LeftHappy, curr.LeftMoney, curr.LeftEnergy))
+                        loseGame = true;
+
                     meters.AddToMeters(curr.LeftHappy, curr.LeftMoney, curr.LeftEnergy);
                     int leftId = GetNodeById(currentNodeId).ChildLeft;
                     if (leftId == 0)
@@ -336,6 +353,9 @@ namespace ProjectC
                 }
                 else
                 {
+                    if (meters.GameWillEnd(curr.RightHappy, curr.RightMoney, curr.RightEnergy))
+                        loseGame = true;
+
                     meters.AddToMeters(curr.RightHappy, curr.RightMoney, curr.RightEnergy);
                     int rightId = GetNodeById(currentNodeId).ChildRight;
                     if(rightId == 0)

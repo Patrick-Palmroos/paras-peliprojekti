@@ -8,6 +8,7 @@ namespace ProjectC
     public class GameStart : MonoBehaviour
     {
         [SerializeField] private GameObject helpScreen, startText, meters, indicators, buttonIndicators;
+        [SerializeField] private GameObject card;
         private HelpPhase phase = HelpPhase.Start;
         PauseMenuButtons pause;
         SaveLoad loader;
@@ -69,6 +70,7 @@ namespace ProjectC
                 case HelpPhase.Close:
                     helpScreen.SetActive(false);
                     pause.EnableCard();
+                    card.GetComponent<Animation>().Play("shake");
                     if (!swipeControls)
                     {
                         GetComponent<ButtonControls>().ActivateButtonControls(true);

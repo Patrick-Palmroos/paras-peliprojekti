@@ -3296,6 +3296,7 @@ GameObject:
   - component: {fileID: 740236052}
   - component: {fileID: 740236049}
   - component: {fileID: 740236050}
+  - component: {fileID: 740236053}
   m_Layer: 0
   m_Name: Card
   m_TagString: Card
@@ -3411,6 +3412,22 @@ MonoBehaviour:
   multiplier: 0.15
   colorMultiplier: 0.3
   resetMult: 4
+--- !u!111 &740236053
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740236044}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 6174d3fee1dc1cb44b380316000a8fae, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 6174d3fee1dc1cb44b380316000a8fae, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &754024676
 GameObject:
   m_ObjectHideFlags: 0
@@ -3764,6 +3781,7 @@ MonoBehaviour:
   meters: {fileID: 1294855892}
   indicators: {fileID: 1437903058}
   buttonIndicators: {fileID: 944825687}
+  card: {fileID: 740236044}
 --- !u!114 &822672207
 MonoBehaviour:
   m_ObjectHideFlags: 0

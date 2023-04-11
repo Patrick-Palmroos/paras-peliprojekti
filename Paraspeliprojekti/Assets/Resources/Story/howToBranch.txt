@@ -12,6 +12,7 @@ Sarakkeet:
 	- Ei ole mitään väliä mitä tässä lukee jos kyseessä on tilannekortti
 	- (siinä tilanteessa laita vaikka "-" tai jotain)
 3: Kuvan nimi ilman tiedostomuotopäätettä
+	- Jos tämä kortti on kuvaton tilannekortti, laita tähän "placeholder_tilannekortti" (MUUTA TÄMÄ MYÖHEMMIN)
 4: Kortin varsinainen teksti
 	- Aloita [RANDOM] jos tämä kortti voi tulla milloin tahansa (mukaanlukien storylinejen ensimmäiset kortit)
 	- Aloita [LOWENERGY] jos tämä kortti voi tulla vain kun on alhainen energia
