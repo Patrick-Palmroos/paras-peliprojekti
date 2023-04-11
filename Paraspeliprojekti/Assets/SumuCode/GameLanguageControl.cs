@@ -7,8 +7,8 @@ namespace ProjectC
 {
     public class GameLanguageControl : MonoBehaviour
     {
-        [SerializeField] private TMP_Text pauseTitle, saveGame, saved, options, backToMenu, closePause;
-        [SerializeField] private TMP_Text sfx, music, backToOptions, controlsTitle;
+        [SerializeField] private TMP_Text saveConfirmation;
+        [SerializeField] private TMP_Text sfx, music, closeOptions, controlsTitle;
         [SerializeField] private TMP_Dropdown controls;
         // Start is called before the first frame update
         void Start()
@@ -26,15 +26,10 @@ namespace ProjectC
 
         private void ChangeToFinnish()
         {
-            pauseTitle.text = "Tauko";
-            saveGame.text = "Tallenna peli";
-            saved.text = "Tallennettu";
-            options.text = "Asetukset";
-            backToMenu.text = "Takaisin päävalikkoon";
-            closePause.text = "Jatka peliä";
+            saveConfirmation.text = "Tallennettu";
             sfx.text = "Äänitehosteet";
             music.text = "Musiikki";
-            backToOptions.text = "Takaisin";
+            closeOptions.text = "Sulje";
             controlsTitle.text = "Pelimuoto:";
             controls.options[0].text = "Pyyhkäisy";
             controls.options[1].text = "Painikkeet";
@@ -46,15 +41,10 @@ namespace ProjectC
 
         private void ChangeToEnglish()
         {
-            pauseTitle.text = "Pause";
-            saveGame.text = "Save game";
-            saved.text = "Game saved";
-            options.text = "Options";
-            backToMenu.text = "Back to main menu";
-            closePause.text = "Continue";
+            saveConfirmation.text = "Game saved";
             sfx.text = "Sfx";
             music.text = "Music";
-            backToOptions.text = "Back";
+            closeOptions.text = "Close";
             controlsTitle.text = "Game mode:";
             controls.options[0].text = "Swipe";
             controls.options[1].text = "Buttons";

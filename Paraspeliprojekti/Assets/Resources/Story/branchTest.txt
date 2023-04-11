@@ -1,4 +1,4 @@
-1	Sirkka	char19-card	[RANDOM]Olen uusi täällä, saisinko esittelykierroksen?	2	Ei millään ehdi	-10	0	10	13	Tottakai	15	0	-5
+1	Sirkka	placeholder_tilannekortti	[RANDOM]Olen uusi täällä, saisinko esittelykierroksen?	2	Ei millään ehdi	-10	0	10	13	Tottakai	15	0	-5
 2	Sirkka	char19-card	Huomaat, että Sirkka on vähän hukassa	3	Pyydä jotakuta auttamaan	5	0	-10	16	Anna hänelle tilaa	-15	5	-5
 3	Sirkka	char19-card	Olet menossa syömään, ja huomaat Sirkan tekevän edelleen töitä	4	Kutsu hänetkin syömään	10	0	0	8	Anna hänen työskennellä	-5	0	-5
 4	Sirkka	char19-card	Minun tuntosarveni ovat hyvin herkkänä tässä ympäristössä. Onko oma työtila mahdollinen?	5	Teen parhaani, että saat oman työtilan	30	-20	-10	9	Ei ole, kukaan ei saa erityiskohtelua	-20	15	5

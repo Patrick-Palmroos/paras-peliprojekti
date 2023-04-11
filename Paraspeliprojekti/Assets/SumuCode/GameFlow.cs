@@ -10,9 +10,9 @@ namespace ProjectC
         [HideInInspector] public int currentNodeId = 1;
         private List<StoryNode> storyNodes;
         [HideInInspector] public List<int> randomNodeIds, nextInStoryIds, endNodeIds;
-        [HideInInspector] public List<int> lowMoneyIds, lowEnergyIds, lowHappinessIds;
+        [HideInInspector] public List<int> lowMoneyIds, lowEnergyIds, lowHappinessIds, allhighIds;
         public string fileName, engFileName;
-        [SerializeField] private TMP_Text cardText, optionText, nameText;
+        [SerializeField] private TMP_Text cardText, optionText, nameText, narratorText;
         [SerializeField] private SpriteRenderer image;
         [SerializeField] private GameObject backgroundCard;
         private string optionLeft, optionRight;
@@ -24,6 +24,9 @@ namespace ProjectC
         private const string LOWMONEY = "[LOWMONEY]";
         private const string LOWENERGY = "[LOWENERGY]";
         private const string LOWHAPPINESS = "[LOWHAPPINESS]";
+        private const string ALLHIGH = "[ALLHIGH]";
+
+        private const string NARRATORCARD = "placeholder_tilannekortti";
 
         private int lowThreshold = 20;
 
@@ -133,6 +136,22 @@ namespace ProjectC
             return list[randomNumber];
         }
 
+        void ToggleCardTexts(bool isNarratorCard)
+        {
+            if(isNarratorCard)
+            {
+                narratorText.gameObject.SetActive(true);
+                cardText.gameObject.SetActive(false);
+                nameText.gameObject.SetActive(false);
+            }
+            else
+            {
+                narratorText.gameObject.SetActive(false);
+                cardText.gameObject.SetActive(true);
+                nameText.gameObject.SetActive(true);
+            }
+        }
+
         // Displays current options and texts on screen
         public void GetCurrentOptions()
         {
@@ -140,15 +159,24 @@ namespace ProjectC
 
             optionLeft = currNode.OptionLeft;
             optionRight = currNode.OptionRight;
-            cardText.text = currNode.Prompt;
-            nameText.text = currNode.Name;
-            Debug.Log(currNode.Name);
 
             // changes the pic but only if it's a different one than the previous
             if (image.sprite.name != currNode.ImageName)
             {
                 Sprite cardImage = Resources.Load<Sprite>("Art/Character cards/" + currNode.ImageName);
                 image.sprite = cardImage;
+            }
+
+            if (currNode.ImageName != NARRATORCARD)
+            {
+                ToggleCardTexts(false);
+                cardText.text = currNode.Prompt;
+                nameText.text = currNode.Name;
+            }
+            else
+            {
+                ToggleCardTexts(true);
+                narratorText.text = currNode.Prompt;
             }
 
             bool affectsHappy = (currNode.LeftHappy != 0 || currNode.RightHappy != 0);
@@ -180,6 +208,7 @@ namespace ProjectC
             lowEnergyIds = new List<int>();
             lowHappinessIds = new List<int>();
             lowMoneyIds = new List<int>();
+            allhighIds = new List<int>();
 
             TextAsset textData;
             if (StoryControl.IsFinnish())
@@ -246,6 +275,11 @@ namespace ProjectC
                 {
                     node.Prompt = description.Replace(LOWMONEY, "");
                     lowMoneyIds.Add(id);
+                }
+                else if (description.StartsWith(ALLHIGH))
+                {
+                    node.Prompt = description.Replace(ALLHIGH, "");
+                    allhighIds.Add(id);
                 }
 
                 storyNodes.Add(node);
