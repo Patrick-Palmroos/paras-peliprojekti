@@ -8,9 +8,9 @@ namespace ProjectC
 {
     public class PauseMenuButtons : MonoBehaviour
     {
-        [SerializeField] string MaineMenuScene;
+        [SerializeField] string MainMenuScene;
         AnimationController animCtrl;
-        GameObject mainButtons;
+        // GameObject mainButtons;
         GameObject optionsButtons;
         SoundManager soundManager;
         [HideInInspector] public float sfxVolume;
@@ -23,10 +23,23 @@ namespace ProjectC
         bool cardEnabled = true;
 
         SaveLoad loader;
-        [SerializeField] TMP_Dropdown gameMode;
         ButtonControls buttonControlScript;
+        [SerializeField] TMP_Dropdown gameMode;
         [SerializeField] GameObject darken;
         [SerializeField] TMP_Text saveGame, gameSaved;
+
+        // new pause UI
+        [SerializeField] private GameObject saveBtn, settingsBtn, menuBtn, settingsScreen;
+        [SerializeField] private RectTransform background;
+        Vector3 saveBtnPos, settingsBtnPos, menuBtnPos;
+        Vector2 backgroundOpenSize, backgroundClosedSize;
+
+        bool animOn = false;
+        bool menuOpen = false;
+        float duration = 0.3f;
+
+        private string sfxVolumeName = "Sfx Volume";
+        private string musicVolumeName = "Music Volume";
 
         private void Awake()
         {
@@ -35,20 +48,25 @@ namespace ProjectC
             soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
             animCtrl = gameObject.GetComponent<AnimationController>();
             optionsButtons = GameObject.Find("OptionContainer");
-            mainButtons = GameObject.Find("MainContainer");
+            // mainButtons = GameObject.Find("MainContainer");
             optionsButtons.SetActive(false);
-            mainButtons.SetActive(false);
+            // mainButtons.SetActive(false);
 
             loader = FindObjectOfType<SaveLoad>();
             buttonControlScript = FindObjectOfType<ButtonControls>();
         }
         private void Start()
         {
-            music.value = soundManager.GetVolume("music");
+            // music.value = soundManager.GetVolume("music");
             musicSlider.text = ((int)(music.value * 100)).ToString();
-            sfx.value = soundManager.GetVolume("sfx");
+            // sfx.value = soundManager.GetVolume("sfx");
             sfxSlider.text = ((int)(sfx.value * 100)).ToString();
             soundManager.PlayAudio("Game Music");
+
+            music.value = PlayerPrefs.GetFloat(musicVolumeName);
+            sfx.value = PlayerPrefs.GetFloat(sfxVolumeName);
+            soundManager.UpdateMixer(music.value, musicVolumeName);
+            soundManager.UpdateMixer(sfx.value, sfxVolumeName);
 
             // dropdown menu 
             if (StoryControl.IsSwipeMode() == false)
@@ -56,13 +74,37 @@ namespace ProjectC
 
             gameMode.onValueChanged.AddListener(delegate { GameModeChanged(gameMode); });
             darken.SetActive(false);
+
+            sfx.value = PlayerPrefs.GetFloat(sfxVolumeName);
+            music.value = PlayerPrefs.GetFloat(musicVolumeName);
+
+            // new pause UI initiation
+            saveBtnPos = saveBtn.transform.localPosition;
+            settingsBtnPos = settingsBtn.transform.localPosition;
+            menuBtnPos = menuBtn.transform.localPosition;
+            saveBtn.transform.localPosition = Vector3.zero;
+            settingsBtn.transform.localPosition = Vector3.zero;
+            menuBtn.transform.localPosition = Vector3.zero;
+            backgroundOpenSize = background.sizeDelta;
+            backgroundClosedSize = new Vector2(110, 110);
+            background.sizeDelta = backgroundClosedSize;
+
+            saveBtn.SetActive(false);
+            settingsBtn.SetActive(false);
+            menuBtn.SetActive(false);
         }
 
         //turns on options buttons
         public void OptionsMenu()
         {
-            mainButtons.SetActive(false);
+            if (cardEnabled)
+            {
+                DisableCard();
+            }
+
+            StartCoroutine(CloseMenu());
             optionsButtons.SetActive(true);
+            darken.SetActive(true);
         }
 
         //Returns the game to main menu
@@ -71,28 +113,24 @@ namespace ProjectC
             StartCoroutine(MainMenuCoroutine());
         }
 
-        public void PauseMenu()
+        public void CloseOptions()
         {
-            if (optionsButtons.activeInHierarchy == true)
-            {
-                optionsButtons.SetActive(false);
-            }
-            if (cardEnabled)
-            {
-                DisableCard();
-            }
-            mainButtons.SetActive(true);
-            darken.SetActive(true);
+            if (StoryControl.IsSwipeMode())
+                EnableCard();
+
+            optionsButtons.SetActive(false);
+            darken.SetActive(false);
         }
 
+        /*
         //closes pause menu and returns to the game
         public void ClosePauseMenu()
         {
             if (StoryControl.IsSwipeMode())
                 EnableCard();
-            mainButtons.SetActive(false);
+            // mainButtons.SetActive(false);
             darken.SetActive(false);
-        }
+        }*/
 
         //coroutine that loads main menu
         IEnumerator MainMenuCoroutine()
@@ -100,21 +138,23 @@ namespace ProjectC
             animCtrl.FadeIn();
             yield return new WaitForSeconds(0.4f);
             soundManager.StopGroup(Sound.SoundType.music);
-            this.gameObject.GetComponent<SceneLoader>().LoadScene(MaineMenuScene);
+            this.gameObject.GetComponent<SceneLoader>().LoadScene(MainMenuScene);
         }
         //used to change sfx volume
         public void SfxSlider(float v)
         {
             sfxVolume = v;
             sfxSlider.text = ((int)(v * 100)).ToString();
-            soundManager.UpdateMixer(v, "Sfx Volume");
+            soundManager.UpdateMixer(v, sfxVolumeName);
+            PlayerPrefs.SetFloat(sfxVolumeName, v);
         }
         //used to change music volume
         public void MusicSlider(float v)
         {
             musicVolume = v;
             musicSlider.text = ((int)(v * 100)).ToString();
-            soundManager.UpdateMixer(v, "Music Volume");
+            soundManager.UpdateMixer(v, musicVolumeName);
+            PlayerPrefs.SetFloat(musicVolumeName, v);
         }
         //disables the games card since Time.timeScale didnt like me today
         public void DisableCard()
@@ -130,27 +170,27 @@ namespace ProjectC
             swipe.enabled = true;
             optionText.enabled = true;
         }
-        //============>>>>>>> SAVE GAME @SUMU <<<<<<<<<<<<===================
+
+
+        // --- NEW UI STUFF ---
+
+        public void ToggleMenu()
+        {
+            if (animOn)
+                return;
+
+            animOn = true;
+            if (menuOpen)
+                StartCoroutine(CloseMenu());
+            else
+                StartCoroutine(OpenMenu());
+        }
+
         public void SaveGame()
         {
             loader.SaveGame();
-            StartCoroutine(SavedGame());
-        }
-
-        IEnumerator SavedGame()
-        {
-            float timer = 0;
-            float duration = 1;
-            saveGame.gameObject.SetActive(false);
-            gameSaved.gameObject.SetActive(true);
-            while(timer < duration)
-            {
-                timer += Time.deltaTime;
-                gameSaved.color = new Color(0, 0, 0, 1 - timer);
-                yield return null;
-            }
-            gameSaved.gameObject.SetActive(false);
-            saveGame.gameObject.SetActive(true);
+            // StartCoroutine(SavedGame());
+            StartCoroutine(GameSaved());
         }
 
         public void GameModeChanged(TMP_Dropdown gameModeOptions)
@@ -163,15 +203,95 @@ namespace ProjectC
             }
         }
 
-        public void TouchOffMenu()
+        IEnumerator OpenMenu()
         {
-            if (optionsButtons.activeInHierarchy)
+            StartCoroutine(MoveMenuItems(saveBtn, saveBtnPos));
+            StartCoroutine(MoveMenuItems(settingsBtn, settingsBtnPos));
+            StartCoroutine(MoveMenuItems(menuBtn, menuBtnPos));
+            Coroutine bg = StartCoroutine(ChangeBackgroundSize(backgroundOpenSize));
+            yield return bg;
+            animOn = false;
+            menuOpen = true;
+        }
+
+        IEnumerator CloseMenu()
+        {
+            StartCoroutine(MoveMenuItems(saveBtn, Vector3.zero));
+            StartCoroutine(MoveMenuItems(settingsBtn, Vector3.zero));
+            StartCoroutine(MoveMenuItems(menuBtn, Vector3.zero));
+            Coroutine bg = StartCoroutine(ChangeBackgroundSize(backgroundClosedSize));
+            yield return bg;
+            animOn = false;
+            menuOpen = false;
+        }
+
+        IEnumerator MoveMenuItems(GameObject menuItem, Vector3 endPos)
+        {
+            if (!menuItem.activeInHierarchy)
+                menuItem.SetActive(true);
+
+            float timer = 0;
+            Vector3 startPos = menuItem.transform.localPosition;
+
+            // moves the menu item to a desired position
+            while (timer < duration)
             {
-                PauseMenu();
+                timer += Time.deltaTime;
+                menuItem.transform.localPosition = Vector3.Lerp(startPos, endPos, (timer / duration));
+                yield return new WaitForEndOfFrame();
             }
-            else
+
+            menuItem.transform.localPosition = endPos;
+
+            if (endPos == Vector3.zero)
+                menuItem.SetActive(false);
+        }
+
+        IEnumerator ChangeBackgroundSize(Vector2 endSize)
+        {
+            float timer = 0;
+            Vector2 startSize = background.sizeDelta;
+
+            // changes the background size to a desired size
+            while (timer < duration)
             {
-                ClosePauseMenu();
+                timer += Time.deltaTime;
+                background.sizeDelta = Vector2.Lerp(startSize, endSize, (timer / duration));
+                yield return new WaitForEndOfFrame();
+            }
+
+            background.sizeDelta = endSize;
+        }
+
+        IEnumerator SavedGame()
+        {
+            float timer = 0;
+            float duration = 1;
+            saveGame.gameObject.SetActive(false);
+            gameSaved.gameObject.SetActive(true);
+            while (timer < duration)
+            {
+                timer += Time.deltaTime;
+                gameSaved.color = new Color(0, 0, 0, 1 - timer);
+                yield return null;
+            }
+            gameSaved.gameObject.SetActive(false);
+            saveGame.gameObject.SetActive(true);
+        }
+
+        IEnumerator GameSaved()
+        {
+            float timer = 0;
+            float spinDuration = 0.4f;
+            float startRotation = 0;
+            float endRotation = 360;
+            
+            while (timer < spinDuration)
+            {
+                timer += Time.deltaTime;
+                float spin = Mathf.Lerp(startRotation, endRotation, (timer / spinDuration));
+                saveBtn.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, spin);
+                yield return null;
             }
         }
     }

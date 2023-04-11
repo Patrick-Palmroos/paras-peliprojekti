@@ -24,6 +24,8 @@ namespace ProjectC
         [SerializeField] Button loadButton;
         [SerializeField] TMP_Dropdown language, gameMode;
         LanguageControl languages;
+        private string sfxVolumeName = "Sfx Volume";
+        private string musicVolumeName = "Music Volume";
 
 
         private void Awake()
@@ -42,14 +44,24 @@ namespace ProjectC
 
         private void Start()
         {
-            music.value = soundManager.GetVolume("music");
+            // music.value = soundManager.GetVolume("music");
             musicSlider.text = ((int)(music.value * 100)).ToString();
-            sfx.value = soundManager.GetVolume("sfx");
+            // sfx.value = soundManager.GetVolume("sfx");
             sfxSlider.text = ((int)(sfx.value * 100)).ToString();
             soundManager.PlayAudio("Menu Music");
 
+            if (!PlayerPrefs.HasKey(sfxVolumeName))
+                PlayerPrefs.SetFloat(sfxVolumeName, 1);
+            if (!PlayerPrefs.HasKey(musicVolumeName))
+                PlayerPrefs.SetFloat(musicVolumeName, 1);
+
+            sfx.value = PlayerPrefs.GetFloat(sfxVolumeName);
+            music.value = PlayerPrefs.GetFloat(musicVolumeName);
+            soundManager.UpdateMixer(sfx.value, sfxVolumeName);
+            soundManager.UpdateMixer(music.value, musicVolumeName);
+
             // disables load button if there is nothing to load
-            if(!PlayerPrefs.HasKey("Save exists"))
+            if (!PlayerPrefs.HasKey("Save exists"))
                 loadButton.interactable = false;
 
             // changes the values if they're not default
@@ -130,14 +142,16 @@ namespace ProjectC
         {
             sfxVolume = v;
             sfxSlider.text = ((int)(v * 100)).ToString();
-            soundManager.UpdateMixer(v, "Sfx Volume");
+            soundManager.UpdateMixer(v, sfxVolumeName);
+            PlayerPrefs.SetFloat(sfxVolumeName, v);
         }
         //used to change music volume
         public void MusicSlider(float v)
         {
             musicVolume = v;
             musicSlider.text = ((int)(v * 100)).ToString();
-            soundManager.UpdateMixer(v, "Music Volume");
+            soundManager.UpdateMixer(v, musicVolumeName);
+            PlayerPrefs.SetFloat(musicVolumeName, v);
         }
 
 
