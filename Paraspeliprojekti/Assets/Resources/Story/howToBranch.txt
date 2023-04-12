@@ -1,26 +1,35 @@
-How to add cards:
-- Separate each section with TAB
-- do not put .png or .jpg after image name
-- do not leave empty rows
+HOWTO:
+- Tarkista ettei numerosarakkeissa ole ylim‰‰r‰isi‰ v‰lilyˆntej‰
+- Tarkista ettei viimeisen rivin j‰lkeen ole tyhj‰‰ enterlyˆnti‰
+- Erottele sektiot tabulaattorilla [TAB]
+- ƒl‰ laita kuvan nimeen .jpg / .png jne p‰‰tett‰, pelk‰st‰‰n kuvan nimi
 
-Sections:
-1: The ID of the card (must be more than 0)
-2: The prompt that will be displayed on the card
-	- Start with [RANDOM] if this can be encountered randomly (including first cards of storylines)
-	- Start with [LOWENERGY] if this can show only when low in energy
-	- Start with [LOWMONEY] if this can show only when low in money
-	- Start with [LOWHAPPINESS] if this can show only when low in happiness
-3: Left child card ID 
-	- -1 if this is the last card of the storyline
-	- 0 if this is a random encounter card
-4: Option that leads to left child
-5: How much the left option will affect to Happiness (0 if it doesn't)
-6: How much the left option will affect to Money (0 if it doesn't)
-7: How much the left option will affect to Energy (0 if it doesn't)
-8: Right child card ID 
-	- -1 if this is the last card of the storyline
-	- 0 if this is a random encounter card
-9: Option that leads to right child
-10: How much the right option will affect to Happiness (0 if it doesn't)
-11: How much the right option will affect to Money (0 if it doesn't)
-12: How much the right option will affect to Energy (0 if it doesn't)
+Sarakkeet:
+1: Kortin ID 
+	- ƒl‰ laita nollaa
+	- Katso, ettei toista korttia ole samalla ID:ll‰
+2: Hahmon nimi
+	- Ei ole mit‰‰n v‰li‰ mit‰ t‰ss‰ lukee jos kyseess‰ on tilannekortti
+	- (siin‰ tilanteessa laita vaikka "-" tai jotain)
+3: Kuvan nimi ilman tiedostomuotop‰‰tett‰
+	- Jos t‰m‰ kortti on kuvaton tilannekortti, laita t‰h‰n "placeholder_tilannekortti" (MUUTA TƒMƒ MY÷HEMMIN)
+4: Kortin varsinainen teksti
+	- Aloita [RANDOM] jos t‰m‰ kortti voi tulla milloin tahansa (mukaanlukien storylinejen ensimm‰iset kortit)
+	- Aloita [LOWENERGY] jos t‰m‰ kortti voi tulla vain kun on alhainen energia
+	- Aloita [LOWMONEY] jos t‰m‰ kortti voi tulla vain kun rahat on v‰hiss‰
+	- Aloita [LOWHAPPINESS] jos t‰m‰ kortti voi tulla vain kun onnellisuus on v‰hiss‰
+	- Aloita [ALLHIGH] jos t‰m‰ kortti voi tulla vain kun kaikki mittarit ovat korkealla
+5: Vasemman lapsen ID
+	- Jos t‰m‰ kortti tulee pelin lopuksi, laita t‰h‰n -1
+	- Jos t‰m‰ kortti ei johda mihink‰‰n, laita t‰h‰n 0
+6: Vasen teksti
+7: Kuinka paljon vasemmasta vaihtoehdosta saa onnellisuutta (0 jos ei yht‰‰n)
+8: Kuinka paljon vasemmasta vaihtoehdosta saa rahaa (0 jos ei yht‰‰n)
+9: Kuinka paljon vasemmasta vaihtoehdosta saa energiaa (0 jos ei yht‰‰n)
+10: Oikean lapsen ID
+	- Jos t‰m‰ kortti tulee pelin lopuksi, laita t‰h‰n -1
+	- Jos t‰m‰ kortti ei johda mihink‰‰n, laita t‰h‰n 0
+11: oikeanpuoleinen teksti
+12: Kuinka paljon oikeanpuoleisesta vaihtoehdosta saa onnellisuutta (0 jos ei yht‰‰n)
+13: Kuinka paljon oikeanpuoleisesta vaihtoehdosta saa rahaa (0 jos ei yht‰‰n)
+14: Kuinka paljon oikeanpuoleisesta vaihtoehdosta saa energiaa (0 jos ei yht‰‰n)

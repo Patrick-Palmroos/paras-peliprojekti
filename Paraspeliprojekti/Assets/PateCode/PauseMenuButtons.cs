@@ -10,13 +10,10 @@ namespace ProjectC
     {
         [SerializeField] string MainMenuScene;
         AnimationController animCtrl;
-        // GameObject mainButtons;
         GameObject optionsButtons;
         SoundManager soundManager;
-        [HideInInspector] public float sfxVolume;
-        [HideInInspector] public float musicVolume;
-        [SerializeField] TextMeshProUGUI sfxSlider;
-        [SerializeField] TextMeshProUGUI musicSlider;
+        [HideInInspector] public float sfxVolume, musicVolume;
+        [SerializeField] TextMeshProUGUI sfxSlider, musicSlider;
         Slider sfx, music;
         [SerializeField] Swipe swipe;
         [SerializeField] TextMeshProUGUI optionText;
@@ -26,7 +23,7 @@ namespace ProjectC
         ButtonControls buttonControlScript;
         [SerializeField] TMP_Dropdown gameMode;
         [SerializeField] GameObject darken;
-        [SerializeField] TMP_Text saveGame, gameSaved;
+        [SerializeField] GameObject savedConfirmation;
 
         // new pause UI
         [SerializeField] private GameObject saveBtn, settingsBtn, menuBtn, settingsScreen;
@@ -48,25 +45,28 @@ namespace ProjectC
             soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
             animCtrl = gameObject.GetComponent<AnimationController>();
             optionsButtons = GameObject.Find("OptionContainer");
-            // mainButtons = GameObject.Find("MainContainer");
             optionsButtons.SetActive(false);
-            // mainButtons.SetActive(false);
 
             loader = FindObjectOfType<SaveLoad>();
             buttonControlScript = FindObjectOfType<ButtonControls>();
         }
         private void Start()
         {
-            // music.value = soundManager.GetVolume("music");
-            musicSlider.text = ((int)(music.value * 100)).ToString();
-            // sfx.value = soundManager.GetVolume("sfx");
-            sfxSlider.text = ((int)(sfx.value * 100)).ToString();
             soundManager.PlayAudio("Game Music");
+
+            // on default, sets the volume sliders to full volume
+            if (!PlayerPrefs.HasKey(sfxVolumeName))
+                PlayerPrefs.SetFloat(sfxVolumeName, 1);
+            if (!PlayerPrefs.HasKey(musicVolumeName))
+                PlayerPrefs.SetFloat(musicVolumeName, 1);
 
             music.value = PlayerPrefs.GetFloat(musicVolumeName);
             sfx.value = PlayerPrefs.GetFloat(sfxVolumeName);
             soundManager.UpdateMixer(music.value, musicVolumeName);
             soundManager.UpdateMixer(sfx.value, sfxVolumeName);
+
+            musicSlider.text = ((int)(music.value * 100)).ToString();
+            sfxSlider.text = ((int)(sfx.value * 100)).ToString();
 
             // dropdown menu 
             if (StoryControl.IsSwipeMode() == false)
@@ -121,16 +121,6 @@ namespace ProjectC
             optionsButtons.SetActive(false);
             darken.SetActive(false);
         }
-
-        /*
-        //closes pause menu and returns to the game
-        public void ClosePauseMenu()
-        {
-            if (StoryControl.IsSwipeMode())
-                EnableCard();
-            // mainButtons.SetActive(false);
-            darken.SetActive(false);
-        }*/
 
         //coroutine that loads main menu
         IEnumerator MainMenuCoroutine()
@@ -189,8 +179,8 @@ namespace ProjectC
         public void SaveGame()
         {
             loader.SaveGame();
-            // StartCoroutine(SavedGame());
             StartCoroutine(GameSaved());
+            savedConfirmation.GetComponent<Animator>().SetTrigger("saved");
         }
 
         public void GameModeChanged(TMP_Dropdown gameModeOptions)
@@ -261,22 +251,6 @@ namespace ProjectC
             }
 
             background.sizeDelta = endSize;
-        }
-
-        IEnumerator SavedGame()
-        {
-            float timer = 0;
-            float duration = 1;
-            saveGame.gameObject.SetActive(false);
-            gameSaved.gameObject.SetActive(true);
-            while (timer < duration)
-            {
-                timer += Time.deltaTime;
-                gameSaved.color = new Color(0, 0, 0, 1 - timer);
-                yield return null;
-            }
-            gameSaved.gameObject.SetActive(false);
-            saveGame.gameObject.SetActive(true);
         }
 
         IEnumerator GameSaved()
