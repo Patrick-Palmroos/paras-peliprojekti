@@ -109,14 +109,12 @@ namespace ProjectC
                 StartCoroutine(FlashMeter(moneyFlash, red));
             }
 
-            if (addEnergy > 0)
-            {
-                StartCoroutine(FlashMeter(energyFlash, green));
-            }
-            else if (addEnergy < 0)
-            {
-                StartCoroutine(FlashMeter(energyFlash, red));
-            }
+            if (happy > 100)
+                happy = 100;
+            if (money > 100)
+                money = 100;
+            if (energy > 100)
+                energy = 100;
         }
 
         // Converts the values to fill amount for the image
