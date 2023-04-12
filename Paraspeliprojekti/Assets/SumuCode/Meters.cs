@@ -9,8 +9,6 @@ namespace ProjectC
     {
         [SerializeField] Image happyMeter, moneyMeter, energyMeter;
         [SerializeField] Image affectHappy, affectMoney, affectEnergy;
-        [SerializeField] Image happyFlash, moneyFlash, energyFlash;
-        [SerializeField] Color32 green, red;
         [SerializeField] private int happy, money, energy;
         int factor = 100;
         private float meterSpeed = 3f;
@@ -91,34 +89,6 @@ namespace ProjectC
             happy += addHappy;
             money += addMoney;
             energy += addEnergy;
-<<<<<<< HEAD
-            //flashes the meter either green or red if player makes the right choice(PATRICK CODE)
-            if (addHappy > 0)
-            {
-                StartCoroutine(FlashMeter(happyFlash, green));
-            } else if (addHappy < 0)
-            {
-                StartCoroutine(FlashMeter(happyFlash, red));
-            }
-
-            if (addMoney > 0)
-            {
-                StartCoroutine(FlashMeter(moneyFlash, green));
-            }
-            else if (addMoney < 0)
-            {
-                StartCoroutine(FlashMeter(moneyFlash, red));
-            }
-
-            if (addEnergy > 0)
-            {
-                StartCoroutine(FlashMeter(energyFlash, green));
-            }
-            else if (addEnergy < 0)
-            {
-                StartCoroutine(FlashMeter(energyFlash, red));
-            }
-=======
 
             if (happy > 100)
                 happy = 100;
@@ -126,7 +96,6 @@ namespace ProjectC
                 money = 100;
             if (energy > 100)
                 energy = 100;
->>>>>>> 111cc26c513c5f191a95674eb971433f93e73f73
         }
 
         // Converts the values to fill amount for the image
@@ -207,25 +176,6 @@ namespace ProjectC
             this.money = money;
         }
 
-<<<<<<< HEAD
-        IEnumerator FlashMeter(Image flash, Color32 chosenColor)
-        {
-            flash.color = chosenColor;
-            for (int i = 150; i < 200; i++)
-            {
-                flash.color = new Color32(chosenColor.r,
-                    chosenColor.g, chosenColor.b,
-                    (byte)i);
-                yield return null;
-            }
-            for (int a = 200; a > 0; a--)
-            {
-                flash.color = new Color32(chosenColor.r,
-                    chosenColor.g, chosenColor.b,
-                    (byte)a);
-                yield return null;
-            }
-=======
         public bool GameWillEnd(int affectHappiness, int affectMoney, int affectEnergy)
         {
             if (happy + affectHappiness <= 0)
@@ -268,7 +218,6 @@ namespace ProjectC
             }
 
             return false;
->>>>>>> 111cc26c513c5f191a95674eb971433f93e73f73
         }
     }
 }
