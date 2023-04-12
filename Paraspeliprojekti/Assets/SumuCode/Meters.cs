@@ -109,6 +109,15 @@ namespace ProjectC
                 StartCoroutine(FlashMeter(moneyFlash, red));
             }
 
+            if (addEnergy > 0)
+            {
+                StartCoroutine(FlashMeter(energyFlash, green));
+            }
+            else if (addEnergy < 0)
+            {
+                StartCoroutine(FlashMeter(energyFlash, red));
+            }
+
             if (happy > 100)
                 happy = 100;
             if (money > 100)
