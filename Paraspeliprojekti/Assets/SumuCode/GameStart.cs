@@ -70,7 +70,10 @@ namespace ProjectC
                 case HelpPhase.Close:
                     helpScreen.SetActive(false);
                     pause.EnableCard();
-                    card.GetComponent<Animation>().Play("shake");
+
+                    if(PlayerPrefs.GetInt(StoryControl.GameModeString()) == 0)
+                        card.GetComponent<Animation>().Play("shake");
+
                     if (!swipeControls)
                     {
                         GetComponent<ButtonControls>().ActivateButtonControls(true);

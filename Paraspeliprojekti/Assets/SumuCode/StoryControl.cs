@@ -86,5 +86,10 @@ namespace ProjectC
 
             return true;
         }
+
+        public static string GameModeString()
+        {
+            return GAMEMODE;
+        }
     }
 }
