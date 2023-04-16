@@ -1,7 +1,0 @@
-0	charName	imageName	(side)This is the first card.	1	option 1	0	5	2	2	option 2	0	-5	-2
-1	charName	imageName	(side)This is the left branch.	3	option 3	2	-2	2	4	option 4	-2	2	2
-2	charName	imageName	(side)This is the right branch.	5	option 5	-1	-1	3	6	option 6	1	1	-3
-3	charName	imageName	(side)This is the left-left branch.	-1	ok cool	0	0	0	-1	ok cool	0	0	0
-4	charName	imageName	(side)This is the left-right branch.	-1	ok cool	0	0	0	-1	ok cool	0	0	0
-5	charName	imageName	(side)This is the right-left branch.	-1	ok cool	0	0	0	-1	ok cool	0	0	0
-6	charName	imageName	(side)This is the right-right branch.	-1	ok cool	0	0	0	-1	ok cool	0	0	0

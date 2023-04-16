@@ -90,15 +90,17 @@ namespace ProjectC
                 if (swipeControls)
                 {
                     startText.GetComponent<TMP_Text>().text = "PROJEKTI ON ALKANUT \n \n" +
-                    "Opeta t‰ss‰ miten peli‰ pelataan";
+                    "Sin‰ olet projektinvet‰j‰. Sinulle esitet‰‰n tyˆpaikalla tapahtuvia tilanteita kortti kerrallaan, ja teht‰v‰si on valita paras toimenpide kussakin tilanteessa. \n" +
+                    "Tee valinta vet‰m‰ll‰ kortti vasemmalle tai oikealle. Vastausvaihtoehdot tulevat n‰kyviin korttia liikuttamalla.";
                 }
                 else
                 {
                     startText.GetComponent<TMP_Text>().text = "PROJEKTI ON ALKANUT \n \n" +
-                        "Valitse kortin alle tulevilla nappuloilla";
+                    "Sin‰ olet projektinvet‰j‰. Sinulle esitet‰‰n tyˆpaikalla tapahtuvia tilanteita kortti kerrallaan, ja teht‰v‰si on valita paras toimenpide kussakin tilanteessa. \n" +
+                    "Tee valinta painamalla kortin alle ilmestyvi‰ nappuloita.";
                 }
 
-                meters.GetComponent<TMP_Text>().text = "Teht‰v‰si on pit‰‰ n‰m‰ mittarit tasapainossa p‰‰st‰m‰tt‰ mit‰‰n nollaan";
+                meters.GetComponent<TMP_Text>().text = "Teht‰v‰n‰si on myˆs pit‰‰ n‰m‰ mittarit tasapainossa p‰‰st‰m‰tt‰ mit‰‰n niist‰ nollaan.";
                 indicators.GetComponent<TMP_Text>().text = "N‰m‰ merkit kertovat, mihin mittareihin kortin valinta tulee mahdollisesti vaikuttamaan";
                 buttonIndicators.GetComponent<TMP_Text>().text = "N‰m‰ merkit kertovat, mihin mittareihin kortin valinta tulee mahdollisesti vaikuttamaan";
             }
@@ -106,15 +108,17 @@ namespace ProjectC
             {
                 if (swipeControls)
                 {
-                    startText.GetComponent<TMP_Text>().text = "PROJECT HAS BEGUN \n \n" +
-                    "Teach how to play here";
+                    startText.GetComponent<TMP_Text>().text = "THE PROJECT HAS BEGUN \n \n" +
+                    "You are the project manager. You will be presented with situations that happens in the workplace, one card at a time. Your mission is to choose the best option in each scenario. \n" +
+                    "Make a choice by swiping the card to either left or right. The options will appear when you move the card.";
                 }
                 else
                 {
                     startText.GetComponent<TMP_Text>().text = "PROJECT HAS BEGUN \n \n" +
-                        "Chooce by using the buttons down below";
+                    "You are the project manager. You will be presented with situations that happens in the workplace, one card at a time. Your mission is to choose the best option in each scenario. \n" +
+                    "Make a choice by tapping the buttons that will appear under the card.";
                 }
-                meters.GetComponent<TMP_Text>().text = "Your mission is to keep these meters in balance without letting them reach 0";
+                meters.GetComponent<TMP_Text>().text = "Another mission of yours is to keep these meters in balance without letting any of them go to zero.";
                 indicators.GetComponent<TMP_Text>().text = "These squares indicate which meters the choice will possibly affect";
                 buttonIndicators.GetComponent<TMP_Text>().text = "These squares indicate which meters the choice will possibly affect";
             }
