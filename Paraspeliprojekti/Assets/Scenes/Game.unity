@@ -3610,7 +3610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interval: 0.01
-  threshhold: 0.2
+  threshhold: 0.15
 --- !u!114 &740236052
 MonoBehaviour:
   m_ObjectHideFlags: 0
