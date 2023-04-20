@@ -28,6 +28,7 @@ namespace ProjectC
         private string state = "Blank";
         private string setState = "";
         VignetteAnim vignette;
+        SoundManager soundManager;
 
         private void Start()
         {
@@ -36,6 +37,7 @@ namespace ProjectC
             flowControl.SendMessage("ChangeText", "");
             startPos = transform.position;
             vignette = gameObject.GetComponent<VignetteAnim>();
+            soundManager = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
         }
 
         private void Update()
@@ -124,7 +126,7 @@ namespace ProjectC
                     flowControl.SendMessage("ChangeText", "");
                 }
             }
-            
+            //snap effect when moving the card beyond a threshold
             if (distanceMoved > checkThreshold * 3f)
             {
                 if (moveSpeed < max)
@@ -200,6 +202,7 @@ namespace ProjectC
         {
             dragging = true;
             dragStartPos = worldPos;
+            soundManager.PlayAudio("Swipe1");
         }
 
         // Card follows the touch position
@@ -208,7 +211,7 @@ namespace ProjectC
             // starts dragging from where touch starts
             Vector2 newPos = new Vector2(dragStartPos.x - worldPos.x, (dragStartPos.y - worldPos.y) + 0.79f);
             transform.position = new Vector2(Mathf.Lerp(0, -newPos.x, moveSpeed), 
-                Mathf.Lerp(-0.79f, -newPos.y, 0.2f));
+                Mathf.Lerp(-0.79f, -newPos.y + 0.5f, 0.2f));
 
             distanceMoved = Mathf.Abs(turnDistanceMoved);
             // Resets the children too
@@ -232,6 +235,7 @@ namespace ProjectC
             flowControl.SendMessage("ChangeText", "");
             if (threshold > checkThreshold * 3f)
             {
+                soundManager.PlayAudio("Swipe2");
                 vignette.ResetVignette();
                 swiped = true;
                 zeroToOne = 1f;
