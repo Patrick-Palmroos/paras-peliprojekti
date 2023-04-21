@@ -3610,7 +3610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interval: 0.01
-  threshhold: 0.2
+  threshhold: 0.15
 --- !u!114 &740236052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5851,6 +5851,18 @@ MonoBehaviour:
     onAwake: 0
     audioclipName: Game Music
     audioClip: {fileID: 8300000, guid: 58032ff34ad113c4f9ffdd8d950b6efa, type: 3}
+    audioSource: {fileID: 0}
+  - soundType: 0
+    loop: 0
+    onAwake: 0
+    audioclipName: Swipe1
+    audioClip: {fileID: 8300000, guid: 28f8810602a6dfd4ca27776b78a4fc04, type: 3}
+    audioSource: {fileID: 0}
+  - soundType: 0
+    loop: 0
+    onAwake: 0
+    audioclipName: Swipe2
+    audioClip: {fileID: 8300000, guid: 125944ce9f197c9478c0fa3979b86d4c, type: 3}
     audioSource: {fileID: 0}
 --- !u!4 &1142438213
 Transform:

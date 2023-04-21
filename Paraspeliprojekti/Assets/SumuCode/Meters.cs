@@ -249,19 +249,19 @@ namespace ProjectC
     IEnumerator FlashMeter(Image flash, Color32 chosenColor)
         {
             flash.color = chosenColor;
-            for (int i = 150; i < 200; i++)
+            for (int i = 150; i < 200; i += 10)
             {
                 flash.color = new Color32(chosenColor.r,
                     chosenColor.g, chosenColor.b,
                     (byte)i);
-                yield return null;
+                yield return new WaitForSeconds(0.03f);
             }
-            for (int a = 200; a > 0; a--)
+            for (int a = 200; a > 0; a -= 12)
             {
                 flash.color = new Color32(chosenColor.r,
                     chosenColor.g, chosenColor.b,
                     (byte)a);
-                yield return null;
+                yield return new WaitForSeconds(0.03f);
             }
         }
     }

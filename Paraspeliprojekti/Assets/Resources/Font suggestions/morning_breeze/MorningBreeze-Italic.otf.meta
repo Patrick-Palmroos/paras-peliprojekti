@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 2b4a36e0345883041ac6a6863a3fd5a3
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Morning Breeze
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 819b10d71fd8f934cb4a762f1a65b189, type: 3}
+  - {fileID: 12800000, guid: 475f0354d9173ff41802ab50292dbef8, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
