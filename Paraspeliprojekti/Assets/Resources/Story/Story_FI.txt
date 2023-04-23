@@ -40,4 +40,6 @@
 40	Toni	char14-card	NEUTRAL ENDING	-1	Huoh	0	0	0	-1	Huoh	0	0	0
 41	Toni	char14-card	[LOWMONEY]Rahasi ovat melko vähissä....	0	Niin on anna rahaa	0	100	0	0	Ei hätää	0	0	0
 42	Miaurmentraut	char_Miaurmentraut	[LOWHAPPINESS]Kaapissa ei ole enään maitoa. Voidaanko ostaa sitä kahvin sekaan?	0	Ei missään nimessä! Turha ostos!	-20	0	-5	0	Tottakai! Eihän kahvia ilman maitoa voi juoda!	40	-20	10
+43	Kirjanpitäjä	char11-v1-card	[LOWMONEY]Projektin rahatilanne näyttää huolestuttavalta, tarvitsemme lisää varoja.	0	Leikkaa työntekijöiden palkkoja.	-13	30	0	0	Pidä rahankeräystilaisuus.	0	30	-5
+44	Cinos	char20-card	[LOWENERGY]Moni työntekijä on ylikuormittunut.	0	Anna työntekijöille palkallinen vapaapäivä.	20	30	-10	0	Päästä työntekijät aikaisemmin kotiin.	0	0	30	
 99999	Boss	card-background-v1.1	Hävisit pelin	-1	oh no	0	0	0	-1	oh no	0	0	0
