@@ -24,17 +24,17 @@
 24	Sirkka	placeholder_tilannekortti	Saat puhelinsoiton, jossa sanotaan, että toimistolla on tapahtunut pienimuotoinen tulipalo. Tulostin oli syttynyt palamaan, ja on nyt käyttökelvoton. Kukaan ei kuitenkaan loukkaantunut."	25	"Voi ei!"	0	-10	0	25	Syytä Tonia	-10	-10	0
 25	Sirkka	placeholder_tilannekortti	Uuden tulostimen tilaamisen lisäksi toimistotilaa täytyy hieman ehostaa tulipalon aiheuttamien vaurioiden jäljiltä.	0	"Voi ei!"	0	-20	0	0	Syytä Tonia	-10	-20	0
 26	Toni	char14-card	[RANDOM]Kuulin mahtavasta sijoitusmahdollisuudesta, meidän kannattaa laittaa kaikki rahat Catto-coiniin!	27	Tarvitsemme rahat projektin ylläpitämiseen.	-5	0	0	38	Mahtava vinkki, sijoitetaan!	0	-100	0
-27	Toni	char14-card	Kuulin, että Sirkka tekee kaiken tahallaan väärällä kädellä. Eikö ole outoa?	28	Oho, onhan se aika outoa!	-8	0	0	28	Sirkka on vasenkätinen.	5	0	0
-28	Toni	char14-card	Matti valittaa, koska laitan pienet kahvikupit aina ylähyllylle, mutta hän ei koskaan tyhjennä tiskikonetta. 	29	Puhun Matille, jotta hän tekee osansa.	-5	0	0	29	Laita jatkossa pienet kahvikupit alahyllylle.	15	0	0
-29	Toni	char14-card	Kuulin kirjanpitäjältä että budjetissa on ylijäämää, annatko meille bonukset?	30	Tietenkin!	25	-40	10	30	Meidän pitää käyttää rahat järkevämmin.	-20	40	-10
-30	Toni	char14-card	Matti on hidas ja hän putoaa helposti kärryiltä kun selitän hänelle asioita.	31	Selitä asiat hitaammin ja selkeämmin Matille.	25	0	-8	31	Matti oppii kyllä pysymään tahdissa.	-30	0	10
-31	Toni	char14-card	En juurikaan näe perhettäni työtuntieni takia, voinko siirtyä yövuoroon?	32	Tarvitsemme panostasi päivävuorossa.	-10	0	18	35	Voit jatkossa työskennellä yövuorossa.	15	0	-22
-32	Toni	char14-card	Minulla on huono päivä.	33	Tsemppiä!	-15	0	-8	35	Tarjoa apua/taukoa	10	0	0
-33	Toni	char14-card	Kärsin burnoutista.	34	Tsemppiä!	-27	0	0	35	Ohjaa hoitoon	10	0	0
+27	Toni	char14-card	Kuulin, että Sirkka tekee kaiken tahallaan väärällä kädellä. Eikö olekkin outoa?	28	"Oho, onhan se aika outoa!"	-8	0	0	28	"Sirkka on vasenkätinen."	5	0	0
+28	Toni	char14-card	Cinos valittaa, koska laitan pienet kahvikupit aina ylähyllylle, mutta hän ei koskaan tyhjennä tiskikonetta. 	29	"Puhun Cinosille, jotta hän tekee osansa."	-5	0	0	29	"Laita jatkossa pienet kahvikupit alahyllylle jotta muut ylettävät niihin."	15	0	0
+29	Toni	char14-card	Kuulin kirjanpitäjältä että budjetissa on ylijäämää, annatko meille bonukset?	30	"Tietenkin!"	25	-40	10	30	"Meidän pitää käyttää rahat järkevämmin."	-20	40	-10
+30	Toni	char14-card	Matti on hidas ja hän putoaa helposti kärryiltä kun selitän hänelle asioita.	31	"Selitä asiat hitaammin ja selkeämmin Matille."	25	0	-8	31	"Matti oppii kyllä pysymään tahdissa."	-30	0	10
+31	Toni	char14-card	En juurikaan näe perhettäni työtuntieni takia, voinko siirtyä yövuoroon?	32	"Tarvitsemme panostasi päivävuorossa."	-10	0	18	35	"Voit jatkossa työskennellä yövuorossa."	15	0	-22
+32	Toni	char14-card	Minulla on huono päivä.	33	"Tsemppiä!"	-15	0	-8	35	Tarjoa apua/taukoa	10	0	0
+33	Toni	char14-card	Kärsin burnoutista.	34	"Tsemppiä!"	-27	0	0	35	Ohjaa hoitoon	10	0	0
 34	Toni	char14-card	Olet aika huono pomo.	38	Ai..	0	0	0	28	Enhän ole	0	0	0
-35	Toni	char14-card	Kuulin mahtavasta mahdollisuudesta, veljenpoikani voi hankkia meille halvalla toimistotarvikkeita!	36	Otetaan alennus!	0	-5	0	37	Hankimme tarvikkeet täydellä hinnalla.	0	-15	0
-36	Toni	char14-card	Veljeni teki projektille lahjoituksen, koska tuimme hänen poikansa bisnestä!	39	Mahtavaa!	10	15	5	39	Jes!	10	15	5
-37	Toni	char14-card	Kuulin, että niitä toimistotarvikkeita ei oltu hankittu täysin laillisesti.	40	Jaaha	0	0	0	40	Ai..	0	0	0
+35	Toni	char14-card	Veljenpoikani voi hankkia meille halvalla toimistotarvikkeita.	36	Otetaan alennus!	0	0	0	37	"Hankimme tarvikkeet täydellä hinnalla."	0	-10	0
+36	Toni	char14-card	Veljeni teki projektille lahjoituksen! Hän on hyvin kiitollinen siitä, että tuimme hänen poikansa bisnestä.	39	"Mahtavaa!"	10	15	5	39	"Jes!"	10	15	5
+37	Toni	char14-card	Joudun jättäytymään projektista akuutin perhetilanteen takia.	40	Selvä	0	0	0	40	Ai..	0	0	0
 38	Toni	char14-card	BAD ENDING	-1	Ups..	0	0	0	-1	Ups…	0	0	0
 39	Toni	char14-card	GOOD ENDING	-1	Hurraa!	0	0	0	-1	Hurraa!	0	0	0
 40	Toni	char14-card	NEUTRAL ENDING	-1	Huoh	0	0	0	-1	Huoh	0	0	0
