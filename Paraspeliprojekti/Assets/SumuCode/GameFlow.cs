@@ -232,6 +232,7 @@ namespace ProjectC
                 string cardName = parts[1];
                 string imageName = parts[2];
                 string description = parts[3];
+                Debug.Log(parts[0]);
                 int leftId = int.Parse(parts[4].Trim());
                 string leftOption = parts[5];
                 int leftHappy = int.Parse(parts[6].Trim());

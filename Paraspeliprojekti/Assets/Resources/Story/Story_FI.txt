@@ -49,5 +49,5 @@
 49	Jackie	char10-v1-card	En tiedä mitä tekisin.	0	"Voit mennä kotiin tältä päivältä"	-10	0	0	0	"Voit auttaa minua."	5	0	0
 50	Mickey	char16-card	Miksi projektisuunnitelmassa on outoja lisäyksiä?	51	"Jackie."	-15	0	0	51	"En tiedä, selvitän asiaa."	5	0	-3
 51	Jackie	char10-v1-card	Hei, miten voin auttaa?	52	"Voitko tarkistaa projektisuunnitelman sisällön?"	10	0	0	0	"Teit virheitä, voitko käydä korjaamassa ne?"	-10	0	0
-52	Jackie	char10-v1-card	Kiitos, että olet antanut minulle mahdollisuuksia auttaa ja osallistua projektiin. -1	"Ei midist"	0	0	0	-1	"Kiva että olet ollut projektissa mukana!	0	0	0
+52	Jackie	char10-v1-card	Kiitos, että olet antanut minulle mahdollisuuksia auttaa ja osallistua projektiin.	-1	"Ei midist"	0	0	0	-1	"Kiva että olet ollut projektissa mukana!	0	0	0
 99999	Boss	card-background-v1.1	Hävisit pelin	-1	oh no	0	0	0	-1	oh no	0	0	0
