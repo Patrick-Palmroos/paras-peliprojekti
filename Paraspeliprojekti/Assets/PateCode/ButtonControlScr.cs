@@ -22,6 +22,7 @@ namespace ProjectC
 
         // Sumu's additions
         [SerializeField] Button loadButton;
+        [SerializeField] GameObject creditsScreen;
         [SerializeField] TMP_Dropdown language, gameMode;
         LanguageControl languages;
         private string sfxVolumeName = "Sfx Volume";
@@ -73,6 +74,7 @@ namespace ProjectC
             // adds listeners to dropdowns
             language.onValueChanged.AddListener(delegate { LanguageChanged(language); });
             gameMode.onValueChanged.AddListener(delegate { GameModeChanged(gameMode); });
+            creditsScreen.SetActive(false);
         }
 
         //Unity UI button cant start a couroutine so a wrapper is used.
@@ -168,6 +170,11 @@ namespace ProjectC
         {
             Debug.Log(gameModeOptions.value);
             StoryControl.ChangeGameMode(gameModeOptions.value == 0);
+        }
+
+        public void ToggleCredits()
+        {
+            creditsScreen.SetActive(!creditsScreen.activeInHierarchy);
         }
     }
 }

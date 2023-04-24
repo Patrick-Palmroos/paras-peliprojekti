@@ -40,4 +40,9 @@
 40	Toni	char14-card	NEUTRAL ENDING	-1	Huoh	0	0	0	-1	Huoh	0	0	0
 41	Toni	char14-card	[LOWMONEY]Rahasi ovat melko vähissä....	0	Niin on anna rahaa	0	100	0	0	Ei hätää	0	0	0
 42	Miaurmentraut	char_Miaurmentraut	[LOWHAPPINESS]Kaapissa ei ole enään maitoa. Voidaanko ostaa sitä kahvin sekaan?	0	Ei missään nimessä! Turha ostos!	-20	0	-5	0	Tottakai! Eihän kahvia ilman maitoa voi juoda!	40	-20	10
+43	Jorma	placeholder_tilannekortti	[ALLHIGH]Jorma on palannut pitkältä lomaltaan. Hänen entinen työpisteensä on nykyään Tuiskun käytössä. Toimiston toisella puolella on vielä tyhjä työpiste	45	Pyydä Tuiskua siirtymään tyhjälle työpisteelle	-10	0	0	44	Pyydä Jormaa menemään tyhjälle työpisteelle	0	0	-10
+44	Jorma	char5-card	"En ymmärrä, miksi joku jääkarhu saa viedä minun paikkani. Se oli minun paikkani ensin"	45	"Ehkä voit pyytää Tuiskua vaihtamaan"	-10	0	0	46	"Emme halua pitää työpisteitä turhaan tyhjänä"	0	0	0
+45	Jorma	char5-card	"Minä olen sitä mieltä että ei kyllä kanat pysty tekemään kukkojen hommia yhtä hyvin kuin ne kukot"	46	[Älä sano mitään]	-10	0	-10	46	"Jorma sinä olet nyt väärässä"	10	0	0
+46	Jorma	char5-card	"Täälläkin työpaikassa pitäisi olla alaikäraja 25 kun ei nuo nuoret osaa mitään"	47	[Anna Jorman valittaa]	-10	0	-10	47	"Tuo ei kyllä pidä paikkaansa."	8	0	0
+47	Jorma	char5-card	"Nykyään ei kyllä yhtään arvosteta vanhempia. Katsotaan vaan niitä kännyköitä eikä edes eteensä katsota. Kyllä ennen kaikki oli paremmin"	0	[Älä reagoi Jormaan]	0	0	0	0	"Niinpä. Nuoret ovat pilalla."	-10	0	0
 99999	Boss	card-background-v1.1	Hävisit pelin	-1	oh no	0	0	0	-1	oh no	0	0	0
