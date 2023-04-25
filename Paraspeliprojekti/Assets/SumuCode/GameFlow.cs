@@ -204,6 +204,16 @@ namespace ProjectC
             return null;
         }
 
+        // Returns true if current card is the last card
+        public bool IsLastCard()
+        {
+            if (endGame)
+            {
+                return endNodeIds.Count - 1 <= 0;
+            }
+            return false;
+        }
+
         // Reads the text file
         public void LoadFromFile()
         {
