@@ -61,4 +61,15 @@
 61	Jorma	char5-card	“Kun ei kerta minun työpanostani arvosteta täällä niin minä lähden pois!”	0	Selvä	0	0	0	0	Hyvästi	0	0	0
 62	Matti	char21-card	“Minusta Jorman käytökseen pitäisi puuttua. Hän on hyvin törkeä.”	63	“Älä välitä Jorman puheista”	-7	0	-5	61	[Anna Jormalle varoitus]	0	0	0
 63	PUPU	char13-card	"Me työntekijät voimme huonosti Jorman takia. Tälle on tultava loppu."	61	[Ota Jorma puhutteluun]	0	0	0	0	"Koittakaa nyt kestää"	-50	0	-50
+64	Tuisku	char23-card	[RANDOM]“Anteeksi, missä täällä on unisex-vessat?”	65	"Ei meillä ole unisex-vessoja"	-10	0	0	0	"Tuolla käytävän päässä vasemmalla"	5	0	0
+65	Tuisku	char23-card	“Olisiko mahdollista, että tänne järjestettäisiin sukupuolineutraalit wc-tilat?”	0	"Toki"	10	0	7	0	"Ei"	-12	0	-8
+66	Tuisku	char23-card	[RANDOM]“Muut pääsee töihin autolla tai julkisilla ja mä vaan hiihdän…”	0	"Voimme järjestää sinulle kyydin"	8	-12	0	0	"Jaksaa jaksaa"	0	0	0
+67	Tuisku	char23-card	[RANDOM]“Minulle on kasaantunut kovin paljon töitä… Tästä yöstä tulee pitkä..”	68	[Anna osa Tuiskun töistä Jesselle]	0	0	0	0	"Pärjäile"	0	0	-10
+68	Tilanne	placeholder_tilannekortti	Jesse ei ole pärjännyt Tuiskun tehtävien kanssa kovin hyvin, ja koko työn laatu on heikentynyt huomattavasti.	69	[Käske Jesseä keskittymään paremmin]	-5	0	0	70	[Auta Jesseä]	10	0	-8
+69	Tuisku	char23-card	“Jesse on mun frendi ja hän tekee parhaansa. Ei kaikki pysty keskittymään käskystä.”	0	“Kyllä vähän pitäisi skarpata”	0	0	-10	0	“Olen pahoillani, se oli törkeästi sanottu”	0	0	8
+70	Jesse	char17-card	“Kiitos avustasi töiden kanssa, pystyn keskittymään paljon paremmin kun en tee yksin!”	0	"Eipä kestä"	0	0	9	0	"Ole hyvä"	0	0	9
+71	Tuisku	char23-card	[RANDOM]“Mutta missä viipyy Jason, hänen piti auttaa tämän pöydän siirtämisen kanssa!”	0	"Jumaleissön!"	0	0	0	0	"Mitä jos minä autan"	10	0	-10
+72	Tuisku	char23-card	[RANDOM]“Ihan niinku muutkin, mie oon pikkasen poikki”	0	“Muista pitää taukojakin välillä!”	0	-4	10	0	“Ei muuta ku ylös ja duuniin, rahan takii”	0	10	-8
+73	KROKO	char6-card	[RANDOM]“Hei, en ole nähnyt Tuiskua tänään, voisitko välittää tämän kutsun naaraiden iltaan hänelle?”	74	"Toki"	0	0	0	0	"Tuisku ei ole naaras"	12	0	0
+74	Tuisku	char23-card	“Mikä tämä kutsu oikein on? En ole naaras, olisi outoa mennä heidän iltaansa.”	0	"Eikun sinne vaan!"	-20	0	0	0	"Ai, anteeksi sekaannus"	0	0	0
 99999	Boss	card-background-v1.1	Hävisit pelin	-1	oh no	0	0	0	-1	oh no	0	0	0
