@@ -1,26 +1,26 @@
-1	Sirkka	char19-card	[RANDOM]"Hei! Olen täällä ensimmäistä kertaa."	2	"Hyvää päivää, Sirkka"	7	0	0	2	"Hei, anna kun esittelen sinulle paikkoja."	15	0	5
-2	Cinos	char20-card	"Minusta tuntuu, ettei Sirkka oikein osaa kulkea täällä."	3	"Voisitko sinä auttaa häntä?"	8	0	-10	3	"Minäpä esittelen hänelle paikkoja."	15	0	0
-3	Sirkka	char19-card	"Miten täällä toimitaan taukojen suhteen?"	4	"Saat itse päättää, koska taukoja pidetään."	10	0	-5	5	"Meillä on tietyt aikataulut kahvi- ja ruokatauoille."	-5	0	15
-4	Cinos	char20-card	"En ole tainnut nähdä Sirkkaa kertaakaan tauolla."	6	"Hän on vain kovin ahkera työntekijä."	0	15	-10	6	"Täytyypä käydä muistuttamassa häntä, että pitäisi taukojakin välillä."	0	0	20
-5	Sirkka	char19-card	"Jos en kerennyt menemään tauolle määrättynä aikana, voinko silti mennä esimerkiksi vessaan tai hakea kahvia?"	6	"Ei, menetit silloin mahdollisuutesi taukoon."	-10	0	-5	6	"Tottakai saat. Aikataulut ovat enemmänkin suosituksia."	10	0	5
-6	Sirkka	char19-card	"Tuntosarveni eivät kestä näin montaa aistiärsykettä. Saisinko oman työtilan?"	8	"Et, kukaan ei saa erityiskohtelua"	-20	0	-15	7	"Teen parhaani, että saamme sinulle oman työtilan."	20	0	0
-7	Tilanne	placeholder_tilannekortti	Varastohuone olisi mahdollista uudelleensisustaa Sirkan työtilaksi, tai vaihtoehtoisesti voit hankkia sermejä ja äänieristeitä ja rakentaa Sirkalle oman työtilan toimiston perälle.	8	Uudelleensisusta varastohuone	0	10	-10	8	Rakenna Sirkan oma työtila toimiston perälle	20	-20	0
-8	Sirkka	placeholder_tilannekortti	Olet menossa syömään ja huomaat, että Sirkka tekee edelleen töitä.	9	Kutsu hänetkin syömään	10	0	0	9	Anna hänen työskennellä	-8	8	0
-9	Sirkka	placeholder_tilannekortti	Yrität puhua Sirkalle, mutta hänellä on kuulokkeet, eikä hän kuule sinua.	10	Kosketa olkapäätä	0	0	-12	10	Laita viesti tai odota katsekontaktia	8	0	8
-10	Sirkka	char19-card	"En tunnista työtovereitani, enkä muista heidän nimiään."	11	"Voin lähettää tiimin kuvat ja nimet sinulle, niin voit opetella siitä."	13	0	-5	11	"Kyllä sinä vielä opit."	-10	0	0
-11	Sirkka	char19-card	"Tämä paperin kahina muistuttaa minua kovasti minun lempipelistä Job That In:stä. Siinä tehdään projektia ja tasapainotellaan resursseja."	12	"Kiintoisaa."	0	0	0	14	"Noniin, menehän töihin siitä."	-12	0	0
-12	Sirkka	char19-card	"Siinä minun lempipelissäni oli sellainen hahmo kuin Tino. Hän oli vähän hajamielinen ja levitteli tavaroita ympäriinsä..."	13	[Jatka kuuntelua]	6	0	-4	14	"Minulla on nyt vähän kiire."	-6	0	4
-13	Jesse	char17-card	"Luulen, että Sirkka ei pidä minusta. Hän välttelee katsekontaktia, eikä puhu minulle oma-aloitteisesti."	15	"Ei tuo tarkoita, ettei hän pitäisi sinusta."	15	0	0	15	"Kannattaa kysyä Sirkalta, miksi hän ei pidä sinusta."	-7	0	-9
-14	Jesse	char17-card	"Luulen, että Sirkka ei pidä minusta. Hän välttelee katsekontaktia, eikä puhu minulle oma-aloitteisesti."	16	"Ei tuo tarkoita, ettei hän pitäisi sinusta."	15	0	0	16	"Kannattaa kysyä Sirkalta, miksi hän ei pidä sinusta."	-7	0	-9
-15	Sirkka	char19-card	"Kerran lempipelissäni oli sellainen tilanne, että Tino oli jättänyt tavaroita väätiin paikkoihin, ja se oli niin paha paloturvallisuusriski, että koko laitos syttyi palamaan!	17	"Oho!"	0	0	0	17	"Vai niin"	0	0	0
-16	Sirkka	char19-card	"Voisiko valoja hieman himmentää?"	18	"Kyllä voi."	10	0	0	18	"Ei me nyt pimeässä työskennellä."	-16	0	0
-17	Sirkka	char19-card	"Voisiko valoja hieman himmentää?"	19	"Kyllä voi."	10	0	0	19	"Ei me nyt pimeässä työskennellä."	-16	0	0
-18	Cinos	char20-card	"Sirkka kysyy projektista todella outoja kysymyksiä, mitkä minun mielestäni ovat ihan itsestäänselvyyksiä."	20	"Asiat eivät ole kaikille niin selkeitä kuin sinulle."	10	0	0	20	"Hän varmaan tekee sen tahallaan."	-16	0	0
-19	Cinos	char20-card	"Sirkka kysyy projektista todella outoja kysymyksiä, mitkä minun mielestäni ovat ihan itsestäänselvyyksiä."	21	"Asiat eivät ole kaikille niin selkeitä kuin sinulle."	10	0	0	21	"Hän varmaan tekee sen tahallaan."	-16	0	0
+1	Sirkka	char19-card	[RANDOM]Hei! Olen täällä ensimmäistä kertaa.	2	"Hyvää päivää, Sirkka"	5	0	0	2	"Hei, anna kun esittelen sinulle paikkoja."	10	0	5
+2	Cinos	char20-card	Minusta tuntuu, ettei Sirkka oikein osaa kulkea täällä.	3	"Voisitko sinä auttaa häntä?"	5	0	-10	3	"Minäpä esittelen hänelle paikkoja."	10	0	0
+3	Sirkka	char19-card	Miten täällä toimitaan taukojen suhteen?	4	"Saat itse päättää, koska taukoja pidetään."	10	0	-5	5	"Meillä on tietyt aikataulut kahvi- ja ruokatauoille."	-5	0	15
+4	Cinos	char20-card	En ole tainnut nähdä Sirkkaa kertaakaan tauolla.	6	"Hän on vain kovin ahkera työntekijä."	0	15	-10	6	"Täytyypä käydä muistuttamassa häntä, että pitäisi taukojakin välillä."	0	0	20
+5	Sirkka	char19-card	Jos en kerennyt menemään tauolle määrättynä aikana, voinko silti mennä esimerkiksi vessaan tai hakea kahvia?	6	"Ei, menetit silloin mahdollisuutesi taukoon."	-20	0	-5	6	"Tottakai saat. Aikataulut ovat enemmänkin suosituksia."	10	0	5
+6	Sirkka	char19-card	Tuntosarveni eivät kestä näin montaa aistiärsykettä. Saisinko oman työtilan?	8	"Et, kukaan ei saa erityiskohtelua"	-20	0	-15	7	"Teen parhaani, että saamme sinulle oman työtilan."	20	0	0
+7	Tilanne	placeholder_tilannekortti	Varastohuone olisi mahdollista uudelleensisustaa Sirkan työtilaksi, tai vaihtoehtoisesti voit hankkia sermejä ja äänieristeitä ja rakentaa Sirkalle oman työtilan toimiston perälle.	8	Uudelleensisusta varastohuone	0	10	-10	8	Rakenna Sirkan oma työtila toimiston perälle	15	-20	0
+8	Sirkka	placeholder_tilannekortti	Olet menossa syömään ja huomaat, että Sirkka tekee edelleen töitä.	9	Kutsu hänetkin syömään	10	0	0	9	Anna hänen työskennellä	-15	8	0
+9	Sirkka	placeholder_tilannekortti	Yrität puhua Sirkalle, mutta hänellä on kuulokkeet, eikä hän kuule sinua.	10	Kosketa olkapäätä	0	0	-18	10	Laita viesti tai odota katsekontaktia	8	0	8
+10	Sirkka	char19-card	En tunnista työtovereitani, enkä muista heidän nimiään.	11	"Voin lähettää tiimin kuvat ja nimet sinulle, niin voit opetella siitä."	13	0	-5	11	"Kyllä sinä vielä opit."	-20	0	0
+11	Sirkka	char19-card	Tämä paperin kahina muistuttaa minua kovasti minun lempipelistä Job That In:stä. Siinä tehdään projektia ja tasapainotellaan resursseja.	12	"Kiintoisaa."	0	0	0	14	"Noniin, menehän töihin siitä."	-18	0	0
+12	Sirkka	char19-card	Siinä minun lempipelissäni oli sellainen hahmo kuin Tino. Hän oli vähän hajamielinen ja levitteli tavaroita ympäriinsä...	13	[Jatka kuuntelua]	6	0	-4	14	"Minulla on nyt vähän kiire."	-6	0	4
+13	Jesse	char17-card	Luulen, että Sirkka ei pidä minusta. Hän välttelee katsekontaktia, eikä puhu minulle oma-aloitteisesti.	15	"Ei tuo tarkoita, ettei hän pitäisi sinusta."	10	0	0	15	"Kannattaa kysyä Sirkalta, miksi hän ei pidä sinusta."	-20	0	-9
+14	Jesse	char17-card	Luulen, että Sirkka ei pidä minusta. Hän välttelee katsekontaktia, eikä puhu minulle oma-aloitteisesti.	16	"Ei tuo tarkoita, ettei hän pitäisi sinusta."	10	0	0	16	"Kannattaa kysyä Sirkalta, miksi hän ei pidä sinusta."	-20	0	-9
+15	Sirkka	char19-card	Kerran lempipelissäni oli sellainen tilanne, että Tino oli jättänyt tavaroita väätiin paikkoihin, ja se oli niin paha paloturvallisuusriski, että koko laitos syttyi palamaan!	17	"Oho!"	0	0	0	17	"Vai niin"	0	0	0
+16	Sirkka	char19-card	Voisiko valoja hieman himmentää?	18	"Kyllä voi."	10	0	0	18	"Ei me nyt pimeässä työskennellä."	-16	0	0
+17	Sirkka	char19-card	Voisiko valoja hieman himmentää?	19	"Kyllä voi."	10	0	0	19	"Ei me nyt pimeässä työskennellä."	-16	0	0
+18	Cinos	char20-card	Sirkka kysyy projektista todella outoja kysymyksiä, mitkä minun mielestäni ovat ihan itsestäänselvyyksiä.	20	"Asiat eivät ole kaikille niin selkeitä kuin sinulle."	10	0	0	20	"Hän varmaan tekee sen tahallaan."	-16	0	0
+19	Cinos	char20-card	Sirkka kysyy projektista todella outoja kysymyksiä, mitkä minun mielestäni ovat ihan itsestäänselvyyksiä.	21	"Asiat eivät ole kaikille niin selkeitä kuin sinulle."	10	0	0	21	"Hän varmaan tekee sen tahallaan."	-16	0	0
 20	Sirkka	placeholder_tilannekortti	Tilaamasi kopiopaperikuljetus on saapunut. Lähetti ojentaa paketin sinulle.	23	Vie paperit tulostimen päälle.	0	0	0	23	Pyydä Tonia ottamaan paperit.	0	0	-10
 21	Sirkka	placeholder_tilannekortti	Tilaamasi kopiopaperikuljetus on saapunut. Lähetti ojentaa paketin sinulle.	23	Vie paperit tulostimen päälle.	0	0	0	22	Vie paperit toimistotilan pöydälle.	0	0	0
-22	Sirkka	char19-card	"Tuli tuosta paperikuljetuksesta ihan se minun lempipeli mieleen. Se tulipalo siinä tapahtui nimenomaan kopiopapereiden takia!"	0	"Oho, mikä sattuma!"	7	0	0	0	"Onpas merkillistä."	7	0	0
-23	Jesse	char17-card	"Näin Sirkan eilen kovin surullisena. Onkohan jotain sattunut?"	24	"Hänellä on varmaan vaan huono päivä."	0	0	0	24	"Ehkä voisit kysyä häneltä."	6	0	-5
+22	Sirkka	char19-card	Tuli tuosta paperikuljetuksesta ihan se minun lempipeli mieleen. Se tulipalo siinä tapahtui nimenomaan kopiopapereiden takia!	0	"Oho, mikä sattuma!"	7	0	0	0	"Onpas merkillistä."	7	0	0
+23	Jesse	char17-card	Näin Sirkan eilen kovin surullisena. Onkohan jotain sattunut?	24	"Hänellä on varmaan vaan huono päivä."	0	0	0	24	"Ehkä voisit kysyä häneltä."	6	0	-5
 24	Sirkka	placeholder_tilannekortti	Saat puhelinsoiton, jossa sanotaan, että toimistolla on tapahtunut pienimuotoinen tulipalo. Tulostin oli syttynyt palamaan, ja on nyt käyttökelvoton. Kukaan ei kuitenkaan loukkaantunut."	25	"Voi ei!"	0	-10	0	25	Syytä Tonia	-10	-10	0
 25	Sirkka	placeholder_tilannekortti	Uuden tulostimen tilaamisen lisäksi toimistotilaa täytyy hieman ehostaa tulipalon aiheuttamien vaurioiden jäljiltä.	0	"Voi ei!"	0	-20	0	0	Syytä Tonia	-10	-20	0
 26	Toni	char14-card	[RANDOM]Kuulin mahtavasta sijoitusmahdollisuudesta, meidän kannattaa laittaa kaikki rahat Catto-coiniin!	27	Tarvitsemme rahat projektin ylläpitämiseen.	-5	0	0	38	Mahtava vinkki, sijoitetaan!	0	-100	0
@@ -51,25 +51,44 @@
 51	Jackie	char10-v1-card	Hei, miten voin auttaa?	52	"Voitko tarkistaa projektisuunnitelman sisällön?"	10	0	0	0	"Teit virheitä, voitko käydä korjaamassa ne?"	-10	0	0
 52	Jackie	char10-v1-card	Kiitos, että olet antanut minulle mahdollisuuksia auttaa ja osallistua projektiin.	-1	"Ei midist"	0	0	0	-1	"Kiva että olet ollut projektissa mukana!	0	0	0
 53	Jorma	placeholder_tilannekortti	[ALLHIGH]Jorma on palannut pitkältä lomaltaan. Hänen entinen työpisteensä on nykyään Tuiskun käytössä. Toimiston toisella puolella on vielä tyhjä työpiste.	55	Pyydä Tuiskua siirtymään tyhjälle työpisteelle	-8	0	0	54	Pyydä Jormaa menemään tyhjälle työpisteelle	0	0	-10
-54	Jorma	char5-card	"En ymmättä, miksi joku jääkarhu saa viedä minun paikkani. Se oli minun ensin"	55	"Emme halua pitää työpisteitä turhaan tyhjänä"	0	0	0	55	"Ehkä voit pyytää Tuiskua vaihtamaan"	-10	0	0
-55	Jorma	char5-card	“Minä olen sitä mieltä että ei kyllä kanat pysty tekemään kukkojen hommia yhtä hyvin kuin ne kukot.”	56	[Älä sano mitään]	-10	0	-8	56	"Jorma sinä olet nyt väärässä"	7	0	0
-56	Jorma	char5-card	“Täälläkin työpaikassa pitäisi olla alaikäraja ainakin 25 kun ei nuo nuoret osaa mitään”	57	[Anna Jorman valittaa]	-10	0	-10	57	"Tuo ei kyllä pidä paikkaansa"	8	0	0
-57	Jorma	char5-card	“Nykyään ei kyllä yhtään arvosteta vanhempia. Katsotaan vaan niitä kännyköitä eikä edes eteensä katsota. Kyllä ennen kaikki oli paremmin.”	58	[Älä reagoi Jormaan]	0	0	0	58	"Niinpä. Nuoret on pilalla"	-5	0	0
-58	Jorma	char5-card	“Laiskiainen tällaisessa työssä, jo on aikoihin eletty. Eihän sellaista ole mitään järkeä edes palkata”	59	"Jokaisen panostus on ollut tärkeää, myös Matin."	10	0	0	59	[Anna Jorman valittaa]	-8	0	-10
-59	PUPU	char13-card	“Jorma on kahvihuoneessa kovin ilkeä muille työntekijöille.”	60	[Ota Jorma puhutteluun]	0	0	0	62	“Täytyy antaa ymmärrystä kun Jorma on sinua vanhempi.”	-9	0	-7
-60	Jorma	char5-card	“Väitätkö nyt sinäkin että minä olen jotenkin törkeä? Eikö mitään saa enää sanoa?”	61	“Minun täytyy antaa sinulle varoitus, käytöksesi häiritsee muita.”	0	0	4	62	“Ei, et tietenkään ole törkeä. Muut valittavat turhaan”	-10	0	0
-61	Jorma	char5-card	“Kun ei kerta minun työpanostani arvosteta täällä niin minä lähden pois!”	0	Selvä	0	0	0	0	Hyvästi	0	0	0
-62	Matti	char21-card	“Minusta Jorman käytökseen pitäisi puuttua. Hän on hyvin törkeä.”	63	“Älä välitä Jorman puheista”	-7	0	-5	61	[Anna Jormalle varoitus]	0	0	0
-63	PUPU	char13-card	"Me työntekijät voimme huonosti Jorman takia. Tälle on tultava loppu."	61	[Ota Jorma puhutteluun]	0	0	0	0	"Koittakaa nyt kestää"	-50	0	-50
-64	Tuisku	char23-card	[RANDOM]“Anteeksi, missä täällä on unisex-vessat?”	65	"Ei meillä ole unisex-vessoja"	-10	0	0	0	"Tuolla käytävän päässä vasemmalla"	5	0	0
-65	Tuisku	char23-card	“Olisiko mahdollista, että tänne järjestettäisiin sukupuolineutraalit wc-tilat?”	0	"Toki"	10	0	7	0	"Ei"	-12	0	-8
-66	Tuisku	char23-card	[RANDOM]“Muut pääsee töihin autolla tai julkisilla ja mä vaan hiihdän…”	0	"Voimme järjestää sinulle kyydin"	8	-12	0	0	"Jaksaa jaksaa"	0	0	0
-67	Tuisku	char23-card	[RANDOM]“Minulle on kasaantunut kovin paljon töitä… Tästä yöstä tulee pitkä..”	68	[Anna osa Tuiskun töistä Jesselle]	0	0	0	0	"Pärjäile"	0	0	-10
+54	Jorma	char5-card	En ymmättä, miksi joku jääkarhu saa viedä minun paikkani. Se oli minun ensin.	55	"Emme halua pitää työpisteitä turhaan tyhjänä"	0	0	0	55	"Ehkä voit pyytää Tuiskua vaihtamaan"	-10	0	0
+55	Jorma	char5-card	Minä olen sitä mieltä että ei kyllä kanat pysty tekemään kukkojen hommia yhtä hyvin kuin ne kukot.	56	[Älä sano mitään]	-10	0	-8	56	"Jorma sinä olet nyt väärässä"	7	0	0
+56	Jorma	char5-card	Täälläkin työpaikassa pitäisi olla alaikäraja ainakin 25 kun ei nuo nuoret osaa mitään	57	[Anna Jorman valittaa]	-10	0	-10	57	"Tuo ei kyllä pidä paikkaansa"	8	0	0
+57	Jorma	char5-card	Nykyään ei kyllä yhtään arvosteta vanhempia. Katsotaan vaan niitä kännyköitä eikä edes eteensä katsota. Kyllä ennen kaikki oli paremmin.	58	[Älä reagoi Jormaan]	0	0	0	58	"Niinpä. Nuoret on pilalla"	-5	0	0
+58	Jorma	char5-card	Laiskiainen tällaisessa työssä, jo on aikoihin eletty. Eihän sellaista ole mitään järkeä edes palkata	59	"Jokaisen panostus on ollut tärkeää, myös Matin."	10	0	0	59	[Anna Jorman valittaa]	-8	0	-10
+59	Jason	char13-card	Jorma on kahvihuoneessa kovin ilkeä muille työntekijöille.	60	[Ota Jorma puhutteluun]	0	0	0	62	“Täytyy antaa ymmärrystä kun Jorma on sinua vanhempi.”	-9	0	-7
+60	Jorma	char5-card	Väitätkö nyt sinäkin että minä olen jotenkin törkeä? Eikö mitään saa enää sanoa?	61	“Minun täytyy antaa sinulle varoitus, käytöksesi häiritsee muita.”	0	0	4	62	“Ei, et tietenkään ole törkeä. Muut valittavat turhaan”	-10	0	0
+61	Jorma	char5-card	Kun ei kerta minun työpanostani arvosteta täällä niin minä lähden pois!	0	Selvä	0	0	0	0	Hyvästi	0	0	0
+62	Matti	char21-card	Minusta Jorman käytökseen pitäisi puuttua. Hän on hyvin törkeä.	63	“Älä välitä Jorman puheista”	-7	0	-5	61	[Anna Jormalle varoitus]	0	0	0
+63	Jason	char13-card	Me työntekijät voimme huonosti Jorman takia. Tälle on tultava loppu.	61	[Ota Jorma puhutteluun]	0	0	0	0	"Koittakaa nyt kestää"	-50	0	-50
+64	Tuisku	char23-card	[RANDOM]Anteeksi, missä täällä on unisex-vessat?	65	"Ei meillä ole unisex-vessoja"	-10	0	0	0	"Tuolla käytävän päässä vasemmalla"	5	0	0
+65	Tuisku	char23-card	Olisiko mahdollista, että tänne järjestettäisiin sukupuolineutraalit wc-tilat?	0	"Toki"	10	0	7	0	"Ei"	-12	0	-8
+66	Tuisku	char23-card	[RANDOM]Muut pääsee töihin autolla tai julkisilla ja mä vaan hiihdän…	0	"Voimme järjestää sinulle kyydin"	8	-12	0	0	"Jaksaa jaksaa"	0	0	0
+67	Tuisku	char23-card	[RANDOM]Minulle on kasaantunut kovin paljon töitä… Tästä yöstä tulee pitkä..	68	[Anna osa Tuiskun töistä Jesselle]	0	0	0	0	"Pärjäile"	0	0	-10
 68	Tilanne	placeholder_tilannekortti	Jesse ei ole pärjännyt Tuiskun tehtävien kanssa kovin hyvin, ja koko työn laatu on heikentynyt huomattavasti.	69	[Käske Jesseä keskittymään paremmin]	-5	0	0	70	[Auta Jesseä]	10	0	-8
-69	Tuisku	char23-card	“Jesse on mun frendi ja hän tekee parhaansa. Ei kaikki pysty keskittymään käskystä.”	0	“Kyllä vähän pitäisi skarpata”	0	0	-10	0	“Olen pahoillani, se oli törkeästi sanottu”	0	0	8
-70	Jesse	char17-card	“Kiitos avustasi töiden kanssa, pystyn keskittymään paljon paremmin kun en tee yksin!”	0	"Eipä kestä"	0	0	9	0	"Ole hyvä"	0	0	9
-71	Tuisku	char23-card	[RANDOM]“Mutta missä viipyy Jason, hänen piti auttaa tämän pöydän siirtämisen kanssa!”	0	"Jumaleissön!"	0	0	0	0	"Mitä jos minä autan"	10	0	-10
-72	Tuisku	char23-card	[RANDOM]“Ihan niinku muutkin, mie oon pikkasen poikki”	0	“Muista pitää taukojakin välillä!”	0	-4	10	0	“Ei muuta ku ylös ja duuniin, rahan takii”	0	10	-8
-73	KROKO	char6-card	[RANDOM]“Hei, en ole nähnyt Tuiskua tänään, voisitko välittää tämän kutsun naaraiden iltaan hänelle?”	74	"Toki"	0	0	0	0	"Tuisku ei ole naaras"	12	0	0
-74	Tuisku	char23-card	“Mikä tämä kutsu oikein on? En ole naaras, olisi outoa mennä heidän iltaansa.”	0	"Eikun sinne vaan!"	-20	0	0	0	"Ai, anteeksi sekaannus"	0	0	0
+69	Tuisku	char23-card	Jesse on mun frendi ja hän tekee parhaansa. Ei kaikki pysty keskittymään käskystä.	0	“Kyllä vähän pitäisi skarpata”	0	0	-10	0	“Olen pahoillani, se oli törkeästi sanottu”	0	0	8
+70	Jesse	char17-card	Kiitos avustasi töiden kanssa, pystyn keskittymään paljon paremmin kun en tee yksin!	0	"Eipä kestä"	0	0	9	0	"Ole hyvä"	0	0	9
+71	Tuisku	char23-card	[RANDOM]Mutta missä viipyy Jason, hänen piti auttaa tämän pöydän siirtämisen kanssa!	0	"Jumaleissön!"	0	0	0	0	"Mitä jos minä autan"	10	0	-10
+72	Tuisku	char23-card	[RANDOM]Ihan niinku muutkin, mie oon pikkasen poikki	0	“Muista pitää taukojakin välillä!”	0	-4	10	0	“Ei muuta ku ylös ja duuniin, rahan takii”	0	10	-8
+73	Samantha	char6-card	[RANDOM]Hei, en ole nähnyt Tuiskua tänään, voisitko välittää tämän kutsun naaraiden iltaan hänelle?	74	"Toki"	0	0	0	0	"Tuisku ei ole naaras"	12	0	0
+74	Tuisku	char23-card	Mikä tämä kutsu oikein on? En ole naaras, olisi outoa mennä heidän iltaansa.	0	"Eikun sinne vaan!"	-20	0	0	0	"Ai, anteeksi sekaannus"	0	0	0
+75	Maria	char18-card	[RANDOM]Anteeksi, voisinko mitenkään lähteä kotiin? Minun lapseni on sairastunut ja tarvitsee apuani.	0	"Et voi, töissä on kiireitä"	0	10	-18	0	"Voit lähteä."	0	-10	14
+76	Greg	card-background-v1.1	[RANDOM]Hei, voisiko palavereista saada yhteenvedon kirjallisena?	0	"Tietenkin"	10	0	0	-8	"Ei, siihen menee liikaa aikaa"	-10	0	+9
+77	Greg	card-background-v1.1	[RANDOM]Voisiko projektin videomateriaaleihin saada tekstitykset?	0	"Tietenkin, pyydän Jasonia tekemään."	10	-5	-5	0	"Ei meillä ole aikaa sellaiseen"	-12	0	6
+78	Tilanne	placeholder_tilannekortti	[RANDOM]Tarvitsette projektin musiikkitiimiin vielä yhden jäsenen	0	[Pyydä Tuuliaa liittymään tiimiin]	0	0	15	79	[Pyydä Gregiä liittymään tiimiin]	0	0	-13
+79	Greg	card-background-v1.1	En voi tehdä musiikkitehtäviä. En voi kuulla musiikkia...	0	"Oho"	0	0	0	0	"Anteeksi, laitetaan Tuulia sinun tilallesi"	0	0	5
+80	Greg	card-background-v1.1	[RANDOM]Voisitko puhua minua kohti, jotta voin lukea huuliltasi?	0	"Katsotaan, jos muistan"	-17	0	-10	0	"Kyllä, teen parhaani"	10	0	0
+81	Tilanne	placeholder_tilannekortti	[RANDOM]Olet hississä matkalla kuusi kerrosta ylöspäin. Hississä on myös Jason.	0	[Rupattele niitä näitä]	0	0	-14	0	[Ole hiljaa]	0	0	0
+82	Tilanne	placeholder_tilannekortti	[RANDOM]Marian puhelin soi kesken palaverin. Hän sanoo, että se on hänen lapsensa.	0	"Puhelimet pitäisivät olla suljettuna palaverin ajan"	-20	0	0	0	"Ei hätää, voit vastata puheluun"	10	0	0
+83	Jasmin	char2-card	[RANDOM]Olisiko täällä jokin yksityinen tila, jonne voisin mennä tekemään jokapäiväisen rutiinini?	0	"On, seuraahan niin näytän"	10	0	12	0	"Ei sellaiseen ole aikaa"	-20	10	0
+84	Jasmin	char2-card	[RANDOM]Luulen, että joku varastelee toimistotavaroita. Olen joutunut hankkimaan jo kolme uutta kynää parin viikon aikana.	85	"Ei tässä ole mitään hätää."	0	-10	0	0	[Laita asiasta sähköpostia työtiimille]	0	0	-10
+85	Tilanne	placeholder_tilannekortti	Näet Jackien ottavan taskuunsa kynän, jonka tiedät kuuluvan Gregille.	0	"Hei, minä voin viedä sen Gregille"	0	0	-10	86	[Anna hänen ottaa se]	0	-10	0
+86	Tauno	char15-card	Teille on saapunut uusi paketti.	0	"Minä voin vastaanottaa sen!"	0	0	-10	87	[Anna Jackien vastaanottaa paketti]	0	-15	0
+87	Maria	char18-card	Toimistotavaroita on kadonnut hälyttävän paljon. Tähän täytyy puuttua.	88	"Kyllä meillä on varaa menettää tavaroita"	0	-20	0	0	[Ota Jackie puhutteluun]	-10	0	-10
+88	Jackie	char10-v1-card	Ei kai nyt muutaman toimistotavaran katoaminen mitään haittaa!	0	"Kyllä se haittaa, sinun täytyisi lopettaa."	0	10	-15	0	"No niin, ei se kyllä haittaakkaan"	0	-30	0
+89	Tuulia	cow-v1-card	[RANDOM]Olen menossa leikkaukseen viikon päästä. Toipumisaika on kovin pitkä. Voinko tehdä etätöitä sen aikaa?	0	"Ota sairaslomaa mieluummin"	0	-20	20	0	"Toki voit"	0	10	-20
+90	Tuulia	cow-v1-card	[RANDOM]Sain assistentiltasi kirjeen, missä minua kutsutaan sonniksi. En oikein pitänyt siitä. Olen lehmä.	0	"Eihän tuo ole mikään iso ongelma"	-20	0	0	0	"Aivan, otan asian puheeksi assistenttini kanssa."	10	0	0
+91	Samantha	char6-card	[RANDOM]Millä sanoilla minun olisi hyvä aloittaa esitelmä, jonka menen pitämään asiakkaille?	0	"Hyvät naiset ja herrat, tervetuloa..."	-10	0	0	0	"Arvoisat vieraat, tervetuloa..."	10	0	0
+92	Tilanne	placeholder_tilannekortti	[LOWHAPPINESS]Työporukka vaikuttaa hieman hajanaiselta. Koko porukan virkistysilta voisi olla mukava piristys heille.	0	Ei pidetä virkistäytymisiltaa	-15	0	-20	0	Pidetään virkistäytymisilta	20	-20	0
+93	Tilanne	placeholder_tilannekortti	[LOWENERGY]Monet työntekijät vaikuttavat olevan burnoutin partaalla.	0	Vähennä kuormittuneimpien työtunteja	0	-20	20	0	Ei ole varaa hellittää työtuntien suhteen	0	18	-15
 99999	Boss	card-background-v1.1	Hävisit pelin	-1	oh no	0	0	0	-1	oh no	0	0	0
