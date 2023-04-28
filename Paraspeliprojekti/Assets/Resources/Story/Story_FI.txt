@@ -39,7 +39,7 @@
 39	Toni	char14-card	GOOD ENDING	-1	Hurraa!	0	0	0	-1	Hurraa!	0	0	0
 40	Toni	char14-card	NEUTRAL ENDING	-1	Huoh	0	0	0	-1	Huoh	0	0	0
 41	Toni	char14-card	[LOWMONEY]Rahasi ovat melko vähissä....	0	Niin on anna rahaa	0	100	0	0	Ei hätää	0	0	0
-42	Miaurmentraut	char_Miaurmentraut	[LOWHAPPINESS]Kaapissa ei ole enään maitoa. Voidaanko ostaa sitä kahvin sekaan?	0	Ei missään nimessä! Turha ostos!	-20	0	-5	0	Tottakai! Eihän kahvia ilman maitoa voi juoda!	40	-20	10
+42	Tuulia	cow-v1-card	[RANDOM]Matti ei tee oikein mitään täällä..	94	"Otan hänet puhutteluun."	0	0	-15	0	"En kerkeä nyt"	-20	-10	0
 43	Kirjanpitäjä	char11-v1-card	[LOWMONEY]Projektin rahatilanne näyttää huolestuttavalta, tarvitsemme lisää varoja.	0	Leikkaa työntekijöiden palkkoja.	-13	30	0	0	Pidä rahankeräystilaisuus.	0	30	-5
 44	Cinos	char20-card	[LOWENERGY]Moni työntekijä on ylikuormittunut.	0	Anna työntekijöille palkallinen vapaapäivä.	20	30	-10	0	Päästä työntekijät aikaisemmin kotiin.	0	0	30	
 45	Jackie	char10-v1-card	[RANDOM]Voinko auttaa jotenkin projektin kanssa?	46	"Käy noutamassa maalitilaus W-kaupasta."	5	0	0	47	"Auta kirjanpitäjiä palkkalaskelmien kanssa."	5	0	0
@@ -91,4 +91,13 @@
 91	Samantha	char6-card	[RANDOM]Millä sanoilla minun olisi hyvä aloittaa esitelmä, jonka menen pitämään asiakkaille?	0	"Hyvät naiset ja herrat, tervetuloa..."	-10	0	0	0	"Arvoisat vieraat, tervetuloa..."	10	0	0
 92	Tilanne	placeholder_tilannekortti	[LOWHAPPINESS]Työporukka vaikuttaa hieman hajanaiselta. Koko porukan virkistysilta voisi olla mukava piristys heille.	0	Ei pidetä virkistäytymisiltaa	-15	0	-20	0	Pidetään virkistäytymisilta	20	-20	0
 93	Tilanne	placeholder_tilannekortti	[LOWENERGY]Monet työntekijät vaikuttavat olevan burnoutin partaalla.	0	Vähennä kuormittuneimpien työtunteja	0	-20	20	0	Ei ole varaa hellittää työtuntien suhteen	0	18	-15
-99999	Boss	card-background-v1.1	Hävisit pelin	-1	oh no	0	0	0	-1	oh no	0	0	0
+94	Matti	char21-card	Halusit puhua minulle jostain?	95	"Ryhdy hommiin"	0	0	0	95	"Sinusta valitettiin. Ala hommiin"	0	0	0
+95	Tuulia	cow-v1-card	Matti ei vieläkään tee mitään...	96 "Pitää puhua hänelle.."	0	0	0	96	Kutsu Matti uudelleen puhutteluun	0	0	0
+96	Matti	char21-card	Tiedän jo miksi kutsuit. Haittaako se nyt niin paljon ettei minua huvita tehdä kaikkea?	97	"Joudun olemaan yhteydessä ylemmälle taholle"	-10	0	0	100	"Pyydän nätisti viimeisen kerran."	0	-10	-20
+97	Tilanne	placeholder_tilannekortti	Sait ylemmältä taholta luvan alentaa Matin palkkaa jos häne ei saa töitään tehtyä.	98	Puhu Matille	0	0	0	98	Puhu Matille	0	0	0
+98	Matti	char21-card	No mitä nyt.	99	"Alennan palkkaasi nyt. Saat potkut jos et saa hommaa hoidettua"	-15	+20	0	102	"Viimeinen varoitus. Alennan palkkaasi jos et saa nyt tehtyä!"	0	0	-10
+99	Matti	char21-card	sain ne hommat nyt sitten tehtyä..	0	"Hyvä."	-15	20	10	0	"Vihdoin."	-15	20	10
+100	Matti	char21-card	Hommat on vähän jäljessä. Se tuskin haittaa?	97	"Joudun olemaan yhteydessä ylemmälle taholle"	-20	0	0	101	"Annan sinulle lisää aikaa"	10	-15	-10
+101	Tuulia cow-v1-card	Matti sai työnsä nyt tehtyä, mutta koko projekti on nyt jäljessä aikataulusta..	0	"Ai on vai.."	-20	-20	-10	0	"Aijaa.."	-20	-20	-10
+102	Matti char21-card	Hei sain nyt työt tehtyä ajoissa! Ethän alenna palkkaani?	0 "En tietenkään. Hyvin tehty!"	20	0	15	0	"Ansaitsen silti rangaistukseksi!"	-30	25	0
+99999	Boss	card-background-v1.1	Saat potkut	-1	oh no	0	0	0	-1	oh no	0	0	0
