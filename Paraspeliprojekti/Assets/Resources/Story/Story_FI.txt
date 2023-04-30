@@ -92,12 +92,12 @@
 92	Tilanne	placeholder_tilannekortti	[LOWHAPPINESS]Työporukka vaikuttaa hieman hajanaiselta. Koko porukan virkistysilta voisi olla mukava piristys heille.	0	Ei pidetä virkistäytymisiltaa	-15	0	-20	0	Pidetään virkistäytymisilta	20	-20	0
 93	Tilanne	placeholder_tilannekortti	[LOWENERGY]Monet työntekijät vaikuttavat olevan burnoutin partaalla.	0	Vähennä kuormittuneimpien työtunteja	0	-20	20	0	Ei ole varaa hellittää työtuntien suhteen	0	18	-15
 94	Matti	char21-card	Halusit puhua minulle jostain?	95	"Ryhdy hommiin"	0	0	0	95	"Sinusta valitettiin. Ala hommiin"	0	0	0
-95	Tuulia	cow-v1-card	Matti ei vieläkään tee mitään...	96 "Pitää puhua hänelle.."	0	0	0	96	Kutsu Matti uudelleen puhutteluun	0	0	0
+95	Tuulia	cow-v1-card	Matti ei vieläkään tee mitään...	96	"Pitää puhua hänelle.."	0	0	0	96	Kutsu Matti uudelleen puhutteluun	0	0	0
 96	Matti	char21-card	Tiedän jo miksi kutsuit. Haittaako se nyt niin paljon ettei minua huvita tehdä kaikkea?	97	"Joudun olemaan yhteydessä ylemmälle taholle"	-10	0	0	100	"Pyydän nätisti viimeisen kerran."	0	-10	-20
 97	Tilanne	placeholder_tilannekortti	Sait ylemmältä taholta luvan alentaa Matin palkkaa jos häne ei saa töitään tehtyä.	98	Puhu Matille	0	0	0	98	Puhu Matille	0	0	0
 98	Matti	char21-card	No mitä nyt.	99	"Alennan palkkaasi nyt. Saat potkut jos et saa hommaa hoidettua"	-15	+20	0	102	"Viimeinen varoitus. Alennan palkkaasi jos et saa nyt tehtyä!"	0	0	-10
 99	Matti	char21-card	sain ne hommat nyt sitten tehtyä..	0	"Hyvä."	-15	20	10	0	"Vihdoin."	-15	20	10
 100	Matti	char21-card	Hommat on vähän jäljessä. Se tuskin haittaa?	97	"Joudun olemaan yhteydessä ylemmälle taholle"	-20	0	0	101	"Annan sinulle lisää aikaa"	10	-15	-10
-101	Tuulia cow-v1-card	Matti sai työnsä nyt tehtyä, mutta koko projekti on nyt jäljessä aikataulusta..	0	"Ai on vai.."	-20	-20	-10	0	"Aijaa.."	-20	-20	-10
-102	Matti char21-card	Hei sain nyt työt tehtyä ajoissa! Ethän alenna palkkaani?	0 "En tietenkään. Hyvin tehty!"	20	0	15	0	"Ansaitsen silti rangaistukseksi!"	-30	25	0
+101	Tuulia	cow-v1-card	Matti sai työnsä nyt tehtyä, mutta koko projekti on nyt jäljessä aikataulusta..	0	"Ai on vai.."	-20	-20	-10	0	"Aijaa.."	-20	-20	-10
+102	Matti	char21-card	Hei sain nyt työt tehtyä ajoissa! Ethän alenna palkkaani?	0	"En tietenkään. Hyvin tehty!"	20	0	15	0	"Ansaitsen silti rangaistukseksi!"	-30	25	0
 99999	Boss	card-background-v1.1	Saat potkut	-1	oh no	0	0	0	-1	oh no	0	0	0
