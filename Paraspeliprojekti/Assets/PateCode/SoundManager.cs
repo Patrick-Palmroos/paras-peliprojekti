@@ -20,7 +20,7 @@ namespace ProjectC
             foreach (Sound sound in soundArr) {
                 sound.audioSource = gameObject.AddComponent<AudioSource>();
                 sound.audioSource.clip = sound.audioClip;
-
+                Debug.Log(sound.audioclipName + " " + sound.audioClip);
                 switch (sound.soundType) {
                     case Sound.SoundType.music:
                         sound.audioSource.outputAudioMixerGroup = musicGroup;

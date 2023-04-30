@@ -2232,6 +2232,18 @@ MonoBehaviour:
   - soundType: 0
     loop: 0
     onAwake: 0
+    audioclipName: Swipe2
+    audioClip: {fileID: 8300000, guid: 443d3f31eb94e7344932a331b1700eb0, type: 3}
+    audioSource: {fileID: 0}
+  - soundType: 0
+    loop: 0
+    onAwake: 0
+    audioclipName: Swipe1
+    audioClip: {fileID: 8300000, guid: e9f2bf1d2943ba04291d6c32669f0cfa, type: 3}
+    audioSource: {fileID: 0}
+  - soundType: 0
+    loop: 0
+    onAwake: 0
     audioclipName: Click
     audioClip: {fileID: 8300000, guid: 68df0a3b88560424eaf28ed6ce031c54, type: 3}
     audioSource: {fileID: 0}
