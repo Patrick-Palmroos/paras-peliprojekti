@@ -1,0 +1,105 @@
+1	Sirkka	char19-card	[RANDOM]Hey! It's my first time here	2	"Good day, Sirkka"	5	0	0	2	"Hey, let me show you around."	10	0	5
+2	Cinos	char20-card	I feel like Sirkka doesn't really know where everything is	3	"Could you help her?"	5	0	-10	3	"Oh, let me show her around"	10	0	0
+3	Sirkka	char19-card	So, what's the protocol with breaks here?	4	"You can decide when you want to take breaks."	10	0	-5	5	"We have set times for lunch and coffee breaks."	-5	0	15
+4	Cinos	char20-card	I don't think I've ever seen Sirkka at the break room.	6	"She's just very hard-working"	0	15	-10	6	"I should remind her to take breaks too."	0	0	20
+5	Sirkka	char19-card	If I didn't manage to go on a break during the specified time, can I still go to the bathroom or grab some coffee?	6	"No, you've lost your opportunity for a break then"	-20	0	-5	6	"Of course you can, the schedules are more like recommendations."	10	0	5
+6	Sirkka	char19-card	My antennae can't handle this much sensory stimulus, could I possibly get a separate space for my work?	8	"No, no one gets special treatment"	-20	0	-15	7	"I'll do my best to get you your own space"	20	0	0
+7	Tilanne	placeholder_tilannekortti	The supply room could be refurnished to a work station for Sirkka, or you could get partition walls and acoustic panels and build a new work station for her.	8	Refurnish the supply room	0	10	-10	8	Build a new work station for Sirkka	15	-20	0
+8	Sirkka	placeholder_tilannekortti	You are going to eat, and you see Sirkka is still working.	9	Invite her for lunch too	10	0	0	9	Let her work	-15	8	0
+9	Sirkka	placeholder_tilannekortti	You're trying to talk to Sirkka, but she has headphones on and can't hear you	10	Touch her shoulder	0	0	-18	10	Send her a message or wait for eye contact	8	0	8
+10	Sirkka	char19-card	I still can't recognize my work mates or remember their names.	11	"I can send you photos of the teammates so you can learn from the pictures"	13	0	-5	11	"Oh you'll learn eventually"	-20	0	0
+11	Sirkka	char19-card	This rustling of paper reminds me of my favorite game Job That In. In it you're in a project and need to balance resources.	12	"Interesting"	0	0	0	14	"Alright, get to work"	-18	0	0
+12	Sirkka	char19-card	In that favorite game of mine, there's this character called Timo. He's a little scatterbrained and leaves stuff all over the place.	13	[Keep listening]	6	0	-4	14	"I'm a little busy right now"	-6	0	4
+13	Jesse	char17-card	I think Sirkka doesn't like me. She avoids eye contact and doesn't start conversations on her own.	15	"That doesn't mean she doesn't like you"	10	0	0	15	"You should ask her why she doesn't like you"	-20	0	-9
+14	Jesse	char17-card	I think Sirkka doesn't like me. She avoids eye contact and doesn't start conversations on her own.	16	"That doesn't mean she doesn't like you"	10	0	0	16	"You should ask her why she doesn't like you"	-20	0	-9
+15	Sirkka	char19-card	Once in my favorite game there was this scene where Tino left his things to wrong places and it was such a safety hazard that the whole building caught fire!	17	"Uh oh!"	0	0	0	17	"Alright"	0	0	0
+16	Sirkka	char19-card	Could you dim the lights a little?	18	"Yes"	10	0	0	18	"We're not going to work in the dark."	-16	0	0
+17	Sirkka	char19-card	Could you dim the lights a little?	19	"Yes"	10	0	0	19	"We're not going to work in the dark."	-16	0	0
+18	Cinos	char20-card	Sirkka keeps asking weird questions that I think are no-brainers.	20	"Things aren't always as clear to others as they are to you"	10	0	0	20	"She must've been doing it on purpose"	-16	0	0
+19	Cinos	char20-card	Sirkka keeps asking weird questions that I think are no-brainers.	21	"Things aren't always as clear to others as they are to you"	10	0	0	21	"She must've been doing it on purpose"	-16	0	0
+20	Tauno	char15-card	Here are the printer papers you ordered!	23	[Put the papers on the printer]	0	0	0	23	[Ask Toni to take the papers]	0	0	-10
+21	Tauno	char15-card	Here are the printer papers you ordered!	23	[Put the papers on the printer]	0	0	0	22	[Put the papers on the office desk]	0	0	0
+22	Sirkka	char19-card	That paper delivery reminds me of my favorite game. In it, the building caught fire exactly because of printer papers!	0	"What a coincidence!"	7	0	0	0	"Weird."	7	0	0
+23	Jesse	char17-card	I saw Sirkka being very sad yesterday. Has something happened?	24	"She must just have a bad day"	0	0	0	24	"Maybe you should ask her"	6	0	-5
+24	Sirkka	placeholder_tilannekortti	You get a phone call. They tell you that there has been a small fire in the office. The printer had caught on fire. Nobody got hurt though.	25	"Oh no!"	0	-10	0	25	[Blame Toni]	-10	-10	0
+25	Sirkka	placeholder_tilannekortti	In addition to buying a new printer, the office needs some repairs after the fire.	0	"Oh no!"	0	-20	0	0	[Blame Toni]	-10	-20	0
+26	Toni	char14-card	[RANDOM]I heard about this awesome investment opportunity, we should put all our money on Catto coin!	27	"We need the money to fund the project"	-5	0	0	0	"Awesome tip, let's invest!"	0	-100	0
+27	Toni	char14-card	I heard that Sirkka does everything with the wrong hand on purpose. Weird, isn't it?	28	"Oh, well that is weird!"	-8	0	0	28	"Sirkka is left-handed"	5	0	0
+28	Toni	char14-card	Cinos complains, because I always put the small coffee cups on the top shelf, but he never empties the dishwasher. 	29	"I will talk to Cinos so he'll do his part"	-5	0	0	29	"Put the small coffee cups on the lower shelf in the future so others can reach them"	15	0	0
+29	Toni	char14-card	I heard from the accountant that there's surplus in the budget, will you give us a bonus?	30	"Of course!"	25	-40	10	30	"We need to be wiser with the money"	-20	40	-10
+30	Toni	char14-card	Matti is slow and he easily falls behind when I explain things to him.	31	"Be slower and clearer with Matti"	25	0	-8	31	"Matti will learn to keep up the pace"	-30	0	10
+31	Toni	char14-card	I don't really see my family because of my work hours, could I switch to night shift?	32	"We need you on the day shift"	-10	0	18	35	"You can work the night shift"	15	0	-22
+32	Toni	char14-card	I have a bad day	33	"Hang in there!"	-15	0	-8	35	[Offer help / breaks]	10	0	0
+33	Toni	char14-card	I'm suffering from a burnout	34	"Hang in there"	-27	0	0	35	[Refer to treatment]	10	0	0
+34	Toni	char14-card	You are quite a bad boss	-1	Oh..	0	0	0	-1	I'm not	0	0	0
+35	Toni	char14-card	My nephew can get us cheap office supplies.	36	"Let's take that deal!"	0	0	0	37	"We will get our supplies full price"	0	-10	0
+36	Toni	char14-card	My brother made a donation to the project! He's very thankful about us supporting his son's business.	0	"Awesome!"	10	15	5	0	"Yeah!"	10	15	5
+37	Toni	char14-card	I need to drop out from the project due to my family situation.	-1	Okay	0	0	0	-1	Oh..	0	0	0
+42	Tuulia	cow-v1-card	[RANDOM]Matti doesn't really do much around here..	94	"I will talk to him"	0	0	-15	0	"I don't have time to deal with that"	-20	-10	0
+43	Kirjanpitäjä	char11-v1-card	[LOWMONEY]The money situation looks worrying, we need more funds.	0	[Cut from the workers' salaries]	-13	30	0	0	[Hold a fundraiser event]	0	30	-5
+44	Cinos	char20-card	[LOWENERGY]Many of the workers are overwhelmed with work	0	[Give the workers a paid day off]	20	30	-10	0	[Let the workers go home earlier today]	0	0	30	
+45	Jackie	char10-v1-card	[RANDOM]Can I help with the project somehow?	46	"Go and fetch the paint delivery from W-market"	5	0	0	47	"Help the accountants with the payrolls"	5	0	0
+46	Jackie	char10-v2-card	There was an accident with the paint buckets!	48	"Oh no, we need to buy more paint"	-10	0	0	48	"Are you alright?"	10	0	0
+47	Kirjanpitäjä	char11-v2-card	The payrolls are all wrong, we need to do them again!	48	"Oh no! You'll get overtime payment for sure though"	10	-5	0	48	"Is this Jackie's fault?"	-15	0	0
+48	Jackie	char10-v1-card	I want to help with something. What can I do?	49	"Areyou sure you can?"	-5	0	0	50	"You can update the project plan"	5	0	0
+49	Jackie	char10-v1-card	I don't know what I should do.	0	"You can go home for today."	-10	0	0	0	"You can help me."	5	0	0
+50	Mickey	char16-card	Why are there weird additions in the project plan?	51	"Jackie."	-15	0	0	51	"I don't know, I'll figure it out"	5	0	-3
+51	Jackie	char10-v1-card	Hey, how can I help?	52	"Could you check the project plan again?"	10	0	0	0	"You made some mistakes, can you fix them?"	-10	0	0
+52	Jackie	char10-v1-card	Thank you, you've given me a lot of opportunities to help and participate in the project!	-1	"No probs"	0	0	0	-1	"Nice to have you with us!"	0	0	0
+53	Jorma	placeholder_tilannekortti	[ALLHIGH]Jorma is back from his long vacation. Nowadays Tuisku is on the work station that used to be Jorma's. There's an empty work station on the other side of the office.	55	[Ask Tuisku to move to the empty work station]	-8	0	0	54	[Ask Jorma to go to the empty work station]	0	0	-10
+54	Jorma	char5-card	I don't understand why some polar bear can take my spot. It was mine first.	55	"We don't want to keep work stations empty for nothing"	0	0	0	55	"Maybe you can ask Tuisku to change"	-10	0	0
+55	Jorma	char5-card	Let me say that I think hens can't do rooster's work as well as they can.	56	[Don't say anything]	-10	0	-8	56	"Jorma you are wrong"	7	0	0
+56	Jorma	char5-card	In this work place the age restriction should be at least 25 because the youngsters can't do anything.	57	[Let him complain]	-10	0	-10	57	"That's not true at all"	8	0	0
+57	Jorma	char5-card	Nowadays people don't respect their elders. They only stare at their mobile phones and don't even watch where they are going. Everything was better in my childhood	58	[Don't react]	0	0	0	58	"Yeah, the youngsters are ruined"	-5	0	0
+58	Jorma	char5-card	A sloth in this kind of work, good grief. It's just stupid to hire one of them.	59	"Everyone's effort is valuable, even Matti's"	10	0	0	59	[Let Jorma complain]	-8	0	-10
+59	Jason	char13-card	Jorma has been very rude to others in the break room.	60	[Talk to Jorma about this]	0	0	0	62	“You should respect him because he's older than you”	-9	0	-7
+60	Jorma	char5-card	Are you saying that I'm rude now? Can't a man say anything nowadays?	61	“I have to give you a warning, your behaviour is disruptive”	0	0	4	62	“No, no, you're not rude at all. Others are complaining for nothing.”	-10	0	0
+61	Jorma	char5-card	Well since you don't respect my work effort I will leave!	0	Alright	0	0	0	0	Goodbye	0	0	0
+62	Matti	char21-card	I think you should talk to Jorma about his behaviour. He's very rude.	63	“Just don't let it get under your skin”	-7	0	-5	61	[Give Jorma a warning]	0	0	0
+63	Jason	char13-card	We workers are suffering because of Jorma. This needs to end.	61	[Scold Jorma]	0	0	0	0	"Hang in there"	-50	0	-50
+64	Tuisku	char23-card	[RANDOM]Sorry, where are the unisex bathrooms?	65	"We don't have unisex batrooms"	-10	0	0	73	"Go along this corridor and turn to the left"	5	0	0
+65	Tuisku	char23-card	Would it be possible to make gender neutral restrooms here?	73	"Sure"	10	0	7	73	"No"	-12	0	-8
+66	Tuisku	char23-card	[RANDOM]Others can drive to work and I need to ski...	0	"We can arrange you a ride to work"	8	-12	0	0	"You can do it!"	0	0	0
+67	Tuisku	char23-card	[RANDOM]I have so much work to do... This night will be so long...	68	[Give some of their work to Jesse]	0	0	0	0	"Hang in there"	0	0	-10
+68	Tilanne	placeholder_tilannekortti	Jesse hasn't been doing so great with Tuisku's work, and the quality of the work has gone down significantly.	69	[Tell Jesse to focus better]	-5	0	0	70	[Help Jesse]	10	0	-8
+69	Tuisku	char23-card	Jesse is my friend and he's doing his best. Not everyone can focus when you just tell them to.	0	“But he needs to focus more.”	0	0	-10	0	“I'm sorry, it was rude of me”	0	0	8
+70	Jesse	char17-card	Thanks for your help! I can focus way better when I do work with someone else!	0	"No problem"	0	0	9	0	"You're welcome"	0	0	9
+71	Tuisku	char23-card	[RANDOM]But where is Jason, he said he could help me with moving this table	0	"Good grief!"	0	0	0	0	"What if I help you"	10	0	-10
+72	Tuisku	char23-card	[RANDOM]Like everyone else, I'm really exhausted.	0	“Remember to take breaks too!”	0	-4	10	0	“Just get up and work for the money”	0	10	-8
+73	Samantha	char6-card	Hey, I haven't seen Tuisku today, could you give this invitation to females' night to them?	74	"Sure"	0	0	0	0	"They're not a female"	12	0	0
+74	Tuisku	char23-card	What is this invitation? I'm not a female, it would be weird to go.	0	"Just go regardless"	-20	0	0	0	"Oh I'm sorry I didn't know"	0	0	0
+75	Maria	char18-card	[RANDOM]Sorry, can I possibly leave early? My child is sick and needs my help.	0	"No, we're in a rush!"	0	10	-18	0	"You can go."	0	-10	14
+76	Greg	card-background-v1.1	[RANDOM]Hey, could I get a written summary of the meetings?	0	"Of course."	10	0	-8	0	"No, it takes too much time"	-10	0	+9
+77	Greg	card-background-v1.1	[RANDOM]Could I get subtitles to the video materials?	78	"Of course, I'll ask Jason to do that"	10	-5	-5	78	"We don't have the time for that"	-12	0	6
+78	Tilanne	placeholder_tilannekortti	You need one more member to the music team	0	[Ask Tuulia to join]	0	0	15	79	[Ask Greg to join]	0	0	-13
+79	Greg	card-background-v1.1	I can't do music tasks. I can't hear music...	0	"Uh oh"	0	0	0	0	"I'm sorry, I'll ask Tuulia to go instead of you"	0	0	5
+80	Greg	card-background-v1.1	[RANDOM]Could you speak towards me so I can read your lips?	0	"We'll see if I remember"	-17	0	-10	0	"Yes I will do my best"	10	0	0
+81	Tilanne	placeholder_tilannekortti	[RANDOM]You are in an elevator going six stories up. Jason is also there.	0	[Chit-chat with him]	0	0	-14	0	[Stay quiet]	0	0	0
+82	Tilanne	placeholder_tilannekortti	[RANDOM]Maria's phone rings during the meeting. She says it's her child.	0	"The phones should be on silent during the meetings."	-20	0	0	0	"It's okay, you can take it."	10	0	0
+83	Jasmin	char2-card	[RANDOM]Is there a private place where I could go to and do my daily routine?	0	"Yes, follow me and I'll show you"	10	0	12	0	"We don't have time for such things"	-20	10	0
+84	Jasmin	char2-card	[RANDOM]I think someone's stealing office supplies. I've had to buy three new pens during these last couple of weeks.	85	"Ah it's no problem."	0	-10	0	0	[Email the team about this]	0	0	-10
+85	Tilanne	placeholder_tilannekortti	You see Jackie taking a pen that you know belongs to Greg.	0	"Hey, I can take it to Greg"	0	0	-10	86	[Let them take it]	0	-10	0
+86	Tauno	char15-card	You have a new package!	0	"I can take it"	0	0	-10	87	[Let Jackie take it]	0	-15	0
+87	Maria	char18-card	A great amount of office supplies has gone missing. We need to address this situation.	88	"We can afford to lose a couple of things."	0	-20	0	0	[Talk to Jackie about this]	-10	0	-10
+88	Jackie	char10-v1-card	It's only a couple of office supplies, taking them doesn't hurt anyone!	0	"But it costs money, you need to stop."	0	10	-15	0	"Well true, it doesn't hurt anyone"	0	-30	0
+89	Tuulia	cow-v1-card	[RANDOM]I'm going to have a surgery next week. The recovery time is very long. Can I work remotely during that time?	0	"You should rather take a sick leave"	0	-20	20	0	"Of course you can"	0	10	-20
+90	Tuulia	cow-v1-card	[RANDOM]I got a letter from your assistant, where they address me as "bull". I didn't like it. I'm a cow.	0	"That's a non-issue"	-20	0	0	0	"Oh, I will talk about it with my assistant"	10	0	0
+91	Samantha	char6-card	[RANDOM]Which words should I start my presentation that I'm going to hold to the customers?	0	"Ladies and gentlemen, welcome..."	-10	0	0	0	"Esteemed guests, welcome..."	10	0	0
+92	Tilanne	placeholder_tilannekortti	[LOWHAPPINESS]The work team seems a bit unhappy. A recreational evening for the whole team could be a nice pick-me-up for them.	0	We won't hold a recreational evening.	-15	0	-20	0	We will hold a recreational evening.	20	-20	0
+93	Tilanne	placeholder_tilannekortti	[LOWENERGY]Many workers seem to be on the verge of a burnout.	0	Lessen the work hours of the most overwhelmed workers	0	-20	20	0	We don't have the money to easy anyone's work	0	18	-15
+94	Matti	char21-card	You wanted to talk to me about something?	95	"Get to work"	0	0	0	95	"Someone complained about you. Start working"	0	0	0
+95	Tuulia	cow-v1-card	Matti is still not doing anything...	96	"I need to talk to him..."	0	0	0	96	[Talk to Matti again]	0	0	0
+96	Matti	char21-card	I alrready know why you invited me. Does it really bother you that much that I don't want to do everything?	97	"I need to talk to my bosses about this"	-10	0	0	100	"I will ask nicely for the last time"	0	-10	-20
+97	Tilanne	placeholder_tilannekortti	You got a permission to lower Matti's salary if he can't get his work done.	98	[Talk to Matti]	0	0	0	98	[Talk to Matti]	0	0	0
+98	Matti	char21-card	What now.	99	"I will lower your salary. You'll get fired if things don't change."	-15	+20	0	102	"Last warning. I will lowers your salary if you can't get things done!"	0	0	-10
+99	Matti	char21-card	I got the work done now	0	"Good"	-15	20	10	0	"Finally"	-15	20	10
+100	Matti	char21-card	Things are a bit behind of the schedule. Will that matter a lot?	97	"I need to contact my bosses"	-20	0	0	101	"I will give you more time"	10	-15	-10
+101	Tuulia	cow-v1-card	Matti got his work done, but now the whole project is behind the schedule...	0	"Oh, it is isn't it.."	-20	-20	-10	0	"Oh.."	-20	-20	-10
+102	Matti	char21-card	Hey, I got the work done on time! You won't lower my salary now, will you?	0	"Of course not, well done!"	20	0	15	0	"You still deserve your punishment!"	-30	25	0
+103	Pouta	char3-v2-card	[RANDOM]Samantha has had a rough week at work, I would gladly help her with her work!	104	"Good thinking Pouta, go ahead!"	0	-12	10	105	 ”Do your own work first, we're running low on resources.”	0	14	-10
+104	Pouta	char3-v2-card	I managed to help Samantha a lot! She will now have the energy for the rest of her work!	107	"Awesome!"	0	0	10	107	"Glad to hear!"	0	0	10
+105	Pouta	char3-v2-card	I need a new 3D printer for the project! I would be more efficient!	107	"We'll buy it"	0	-20	15	107	"Just use the 3D printer in the library"	0	13	-10
+106	Sirkka	char19-card	[RANDOM]Pouta is disrupting my work by singing to himself.	0	[Remind Pouta about the company policies]	-20	10	0	0	”Pouta, could you sing a bit less? Sirkka can't focus on her work.”	0	0	13
+107	Pouta	char3-v2-card	Hey, I baked a big cake and I would like to offer it to everyone. Could you notify others?	108	”Of course. Hey everyone, Pouta has brought some cake, let's take a break!"	10	0	15	108	”Here's cake for everyone!”	0	0	10
+108	Poura	char3-v2-card	Hey, I could also do the assistant's work if you want!	0	”You already have a lot of work, don't burn yourself out!”	0	-15	20	0	”Oh nice, we need your talent! Here's a couple of tasks...”	0	20	-24
+99999	Boss	char9-card	You're fired	-1	oh no	0	0	0	-1	oh no	0	0	0
