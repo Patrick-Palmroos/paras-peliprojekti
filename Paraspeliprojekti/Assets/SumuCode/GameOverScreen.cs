@@ -15,11 +15,5 @@ namespace ProjectC
             if (GameObject.FindObjectOfType<StoryControl>())
                 gameOverText.text = StoryControl.gameEndText;
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
     }
 }
