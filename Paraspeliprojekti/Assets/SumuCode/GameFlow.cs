@@ -207,7 +207,7 @@ namespace ProjectC
         // Returns true if current card is the last card
         public bool IsLastCard()
         {
-            if (endGame)
+            if (endGame || loseGame)
             {
                 return endNodeIds.Count - 1 <= 0;
             }
