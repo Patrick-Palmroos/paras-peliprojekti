@@ -11,6 +11,7 @@ namespace ProjectC
         [SerializeField] private TMP_Text sfx, music, back;
         [SerializeField] private TMP_Dropdown language, controls;
         [SerializeField] private TMP_Text youSure, yes, no;
+        [SerializeField] private TMP_Text code, art, sound;
 
         void Start()
         {
@@ -43,6 +44,10 @@ namespace ProjectC
             youSure.text = "Oletko varma, että tahdot lopettaa?";
             yes.text = "Kyllä";
             no.text = "Ei";
+
+            code.text = "Koodi";
+            art.text = "Taide";
+            sound.text = "Äänet";
         }
 
         private void ChangeToEnglish()
@@ -63,6 +68,10 @@ namespace ProjectC
             youSure.text = "Are you sure you want to exit?";
             yes.text = "Yes";
             no.text = "No";
+
+            code.text = "Code";
+            art.text = "Art";
+            sound.text = "Sound";
         }
     }
 }
