@@ -29,6 +29,7 @@ namespace ProjectC
         private string setState = "";
         VignetteAnim vignette;
         SoundManager soundManager;
+        GameFlow gameFlow;
 
         private void Start()
         {
@@ -38,6 +39,7 @@ namespace ProjectC
             startPos = transform.position;
             vignette = gameObject.GetComponent<VignetteAnim>();
             soundManager = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
+            gameFlow = GameObject.Find("GameControl").GetComponent<GameFlow>();
         }
 
         private void Update()
@@ -167,7 +169,7 @@ namespace ProjectC
                 }
             }
             if (cardAnim) {
-                if (swiped) {
+                if (swiped && !gameFlow.IsLastCard()) {
                     if (zeroToOne > 0) {
                         zeroToOne -= Time.deltaTime * 3.7f;
                         bgImage.transform.localScale = new Vector2(zeroToOne, 1);
