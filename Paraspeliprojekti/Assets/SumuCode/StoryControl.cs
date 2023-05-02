@@ -37,6 +37,7 @@ namespace ProjectC
                 Destroy(gameObject);
             }
 
+            StoryControl.NormalEnding();
             language = PlayerPrefs.GetInt(LANGUAGE);
             gameMode = PlayerPrefs.GetInt(GAMEMODE);
         }
@@ -90,6 +91,70 @@ namespace ProjectC
         public static string GameModeString()
         {
             return GAMEMODE;
+        }
+
+        public static void NoHappinessEnding()
+        {
+            if(IsFinnish())
+            {
+                gameEndText = 
+                    "Työntekijöistäsi tuli niin onnettomia ja pahoinvoivia työpaikalla, että he irtisanoutuivat." +
+                    "Koita pitää huoli siitä, että kaikilla työntekijöillä on hyvä olla työpaikalla.";
+            }
+            else
+            {
+                gameEndText =
+                    "Your workers got so unhappy they resigned, and there are no workers left to continue the project." +
+                    "Try to make sure that everyone's wellbeing is taken into consideration.";
+            }
+        }
+
+        public static void NoMoneyEnding()
+        {
+            if (IsFinnish())
+            {
+                gameEndText = 
+                    "Kulutit liikaa projektin rahoja, eikä sinulla ole enää tarpeeksi varoja jatkaa projektia." +
+                    "Yritä pitää huoli siitä, että projektin rahat riittävät loppuun asti.";
+            }
+            else
+            {
+                gameEndText =
+                    "You used too much of the project's money, and now you don't have the necessary funds to continue the project." +
+                    "Try to take care of your money so that there will be enough to fund the whole project.";
+            }
+        }
+
+        public static void NoEnergyEnding()
+        {
+            if (IsFinnish())
+            {
+                gameEndText = 
+                    "Työntekijät saivat liikaa töitä harteilleen, eivätkä he kykene enää jatkamaan projektin parissa." +
+                    "Yritä pitää huoli siitä, ettei työntekijäsi ajaudu burnouttiin.";
+            }
+            else
+            {
+                gameEndText =
+                    "The workers had too much work on their plates, and they couldn't continue working with the project anymore." +
+                    "Try to keep an eye on your workers energy levels, so they don't burn themselves out.";
+            }
+        }
+
+        public static void NormalEnding()
+        {
+            if (IsFinnish())
+            {
+                gameEndText = 
+                    "Onneksi olkoon, projekti saatiin päätökseen onnistuneesti! \n" +
+                    "Selvisit projektinvetäjän virasta kunnialla ja työtoverisi pysyivät tyytyväisinä.";
+            }
+            else
+            {
+                gameEndText = 
+                    "Congratulations, the project is successfully behind you! \n" +
+                    "You handled the title of a project manager with honor and your workmates stayed happy.";
+            }
         }
     }
 }

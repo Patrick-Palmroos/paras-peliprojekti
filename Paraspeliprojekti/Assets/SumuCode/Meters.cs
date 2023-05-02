@@ -138,50 +138,6 @@ namespace ProjectC
             meter.fillAmount = Mathf.Lerp(from, to, Time.deltaTime * meterSpeed);
         }
 
-        /*
-        private void GameEnd(string state)
-        {
-            switch(state)
-            {
-                case outOfHappiness:
-                    if (StoryControl.IsFinnish())
-                    {
-                        StoryControl.gameEndText = "Onnellisuus loppui!";
-                    }
-                    else
-                    {
-                        StoryControl.gameEndText = "Ran out of happiness!";
-                    }
-
-                    loader.LoadScene("GameOver");
-                    break;
-                case outOfMoney:
-                    if (StoryControl.IsFinnish())
-                    {
-                        StoryControl.gameEndText = "Rahat loppuivat!";
-                    }
-                    else
-                    {
-                        StoryControl.gameEndText = "Ran out of money";
-                    }
-
-                    loader.LoadScene("GameOver");
-                    break;
-                case outOfEnergy:
-                    if (StoryControl.IsFinnish())
-                    {
-                        StoryControl.gameEndText = "Energiat loppuivat!";
-                    }
-                    else
-                    {
-                        StoryControl.gameEndText = "Ran out of energy";
-                    }
-
-                    loader.LoadScene("GameOver");
-                    break;
-            }
-        }*/
-
         public int GetHappiness()
         {
             return happy;
@@ -207,40 +163,19 @@ namespace ProjectC
         {
             if (happy + affectHappiness <= 0)
             {
-                if (StoryControl.IsFinnish())
-                {
-                    StoryControl.gameEndText = "Onnellisuus loppui!";
-                }
-                else
-                {
-                    StoryControl.gameEndText = "Ran out of happiness!";
-                }
+                StoryControl.NoHappinessEnding();
                 return true;
             }
 
             if (money + affectMoney <= 0)
             {
-                if (StoryControl.IsFinnish())
-                {
-                    StoryControl.gameEndText = "Rahat loppuivat!";
-                }
-                else
-                {
-                    StoryControl.gameEndText = "Ran out of money";
-                }
+                StoryControl.NoMoneyEnding();
                 return true;
             }
 
             if (energy + affectEnergy <= 0)
             {
-                if (StoryControl.IsFinnish())
-                {
-                    StoryControl.gameEndText = "Energiat loppuivat!";
-                }
-                else
-                {
-                    StoryControl.gameEndText = "Ran out of energy";
-                }
+                StoryControl.NoEnergyEnding();
                 return true;
             }
 
