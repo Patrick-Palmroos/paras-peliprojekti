@@ -86,7 +86,7 @@ namespace ProjectC
             settingsBtn.transform.localPosition = Vector3.zero;
             menuBtn.transform.localPosition = Vector3.zero;
             backgroundOpenSize = background.sizeDelta;
-            backgroundClosedSize = new Vector2(110, 110);
+            backgroundClosedSize = new Vector2(142, 142);
             background.sizeDelta = backgroundClosedSize;
 
             saveBtn.SetActive(false);
@@ -176,6 +176,7 @@ namespace ProjectC
                 StartCoroutine(OpenMenu());
         }
 
+        // Saves the game and displays an animation prompt
         public void SaveGame()
         {
             loader.SaveGame();
@@ -204,6 +205,7 @@ namespace ProjectC
             menuOpen = true;
         }
 
+        // Closes the menu and returns to the game
         IEnumerator CloseMenu()
         {
             StartCoroutine(MoveMenuItems(saveBtn, Vector3.zero));
@@ -215,6 +217,7 @@ namespace ProjectC
             menuOpen = false;
         }
 
+        // Opens the burger menu and shows the rest of the icons
         IEnumerator MoveMenuItems(GameObject menuItem, Vector3 endPos)
         {
             if (!menuItem.activeInHierarchy)
