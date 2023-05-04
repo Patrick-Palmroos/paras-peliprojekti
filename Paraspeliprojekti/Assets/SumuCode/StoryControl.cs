@@ -113,15 +113,13 @@ namespace ProjectC
         {
             if (IsFinnish())
             {
-                gameEndText = 
-                    "Kulutit liikaa projektin rahoja, eikä sinulla ole enää tarpeeksi varoja jatkaa projektia." +
-                    "Yritä pitää huoli siitä, että projektin rahat riittävät loppuun asti.";
+                gameEndText =
+                    "Kulutit liikaa projektin rahoja, eikä sinulla ole enää tarpeeksi varoja jatkaa projektia.";
             }
             else
             {
                 gameEndText =
-                    "You used too much of the project's money, and now you don't have the necessary funds to continue the project." +
-                    "Try to take care of your money so that there will be enough to fund the whole project.";
+                    "You used too much of the project's money, and now you don't have the necessary funds to continue the project.";
             }
         }
 
@@ -129,15 +127,13 @@ namespace ProjectC
         {
             if (IsFinnish())
             {
-                gameEndText = 
-                    "Työntekijät saivat liikaa töitä harteilleen, eivätkä he kykene enää jatkamaan projektin parissa." +
-                    "Yritä pitää huoli siitä, ettei työntekijäsi ajaudu burnouttiin.";
+                gameEndText =
+                    "Työntekijät saivat liikaa töitä harteilleen, eivätkä he kykene enää jatkamaan projektin parissa.";
             }
             else
             {
                 gameEndText =
-                    "The workers had too much work on their plates, and they couldn't continue working with the project anymore." +
-                    "Try to keep an eye on your workers energy levels, so they don't burn themselves out.";
+                    "The workers had too much work on their plates, and they couldn't continue working with the project anymore.";
             }
         }
 

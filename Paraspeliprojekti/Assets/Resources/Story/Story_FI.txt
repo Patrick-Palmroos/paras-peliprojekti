@@ -12,7 +12,7 @@
 12	Sirkka	char19-card	Siinä minun lempipelissäni oli sellainen hahmo kuin Tino. Hän oli vähän hajamielinen ja levitteli tavaroita ympäriinsä...	13	[Jatka kuuntelua]	6	0	-4	14	"Minulla on nyt vähän kiire."	-6	0	4
 13	Jesse	char17-card	Luulen, että Sirkka ei pidä minusta. Hän välttelee katsekontaktia, eikä puhu minulle oma-aloitteisesti.	15	"Ei tuo tarkoita, ettei hän pitäisi sinusta."	10	0	0	15	"Kannattaa kysyä Sirkalta, miksi hän ei pidä sinusta."	-20	0	-9
 14	Jesse	char17-card	Luulen, että Sirkka ei pidä minusta. Hän välttelee katsekontaktia, eikä puhu minulle oma-aloitteisesti.	16	"Ei tuo tarkoita, ettei hän pitäisi sinusta."	10	0	0	16	"Kannattaa kysyä Sirkalta, miksi hän ei pidä sinusta."	-20	0	-9
-15	Sirkka	char19-card	Kerran lempipelissäni oli sellainen tilanne, että Tino oli jättänyt tavaroita väätiin paikkoihin, ja se oli niin paha paloturvallisuusriski, että koko laitos syttyi palamaan!	17	"Oho!"	0	0	0	17	"Vai niin"	0	0	0
+15	Sirkka	char19-card	Kerran lempipelissäni oli sellainen tilanne, että Tino oli jättänyt tavaroita vääriin paikkoihin, ja se oli niin paha paloturvallisuusriski, että koko laitos syttyi palamaan!	17	"Oho!"	0	0	0	17	"Vai niin"	0	0	0
 16	Sirkka	char19-card	Voisiko valoja hieman himmentää?	18	"Kyllä voi."	10	0	0	18	"Ei me nyt pimeässä työskennellä."	-16	0	0
 17	Sirkka	char19-card	Voisiko valoja hieman himmentää?	19	"Kyllä voi."	10	0	0	19	"Ei me nyt pimeässä työskennellä."	-16	0	0
 18	Greg	char20-card	Sirkka kysyy projektista todella outoja kysymyksiä, mitkä minun mielestäni ovat ihan itsestäänselvyyksiä.	20	"Asiat eivät ole kaikille niin selkeitä kuin sinulle."	10	0	0	20	"Hän varmaan tekee sen tahallaan."	-16	0	0
