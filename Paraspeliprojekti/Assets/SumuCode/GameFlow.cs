@@ -31,6 +31,7 @@ namespace ProjectC
         // private const string ENDINGCARD = "card-background-v1.1";
 
         private int lowThreshold = 20;
+        private int highThreshold = 75;
 
         // Start is called before the first frame update
         void Start()
@@ -56,6 +57,12 @@ namespace ProjectC
             {
                 Debug.Log("game will end");
                 currentNodeId = 99999;
+            }
+            else if (meters.GetHappiness() >= highThreshold && meters.GetMoney() >= highThreshold && meters.GetEnergy() >= highThreshold && allhighIds.Count > 0)
+            {
+                // ALL HIGH
+                currentNodeId = RandomId(allhighIds);
+                allhighIds.Remove(currentNodeId);
             }
             else if (meters.GetHappiness() < lowThreshold && lowHappinessIds.Count > 0)
             {

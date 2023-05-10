@@ -1,4 +1,4 @@
-1	Sirkka	char19-card	[RANDOM]Hey! It's my first time here	2	"Good day, Sirkka"	5	0	0	2	"Hey, let me show you around."	10	0	5
+1	Sirkka	char19-card	[RANDOM]Hey! It's my first time here	2	"Good day, Sirkka"	5	0	0	3	"Hey, let me show you around."	10	0	5
 2	Greg	char20-card	I feel like Sirkka doesn't really know where everything is	3	"Could you help her?"	5	0	-10	3	"Oh, let me show her around"	10	0	0
 3	Sirkka	char19-card	So, what's the protocol with breaks here?	4	"You can decide when you want to take breaks."	10	0	-5	5	"We have set times for lunch and coffee breaks."	-5	0	15
 4	Greg	char20-card	I don't think I've ever seen Sirkka at the break room.	6	"She's just very hard-working"	0	15	-10	6	"I should remind her to take breaks too."	0	0	20
@@ -39,9 +39,9 @@
 43	Kirjanpitäjä	char11-v1-card	[LOWMONEY]The money situation looks worrying, we need more funds.	0	[Cut from the workers' salaries]	-13	30	0	0	[Hold a fundraiser event]	0	30	-5
 44	Greg	char20-card	[LOWENERGY]Many of the workers are overwhelmed with work	0	[Give the workers a paid day off]	20	30	-10	0	[Let the workers go home earlier today]	0	0	30	
 45	Jackie	char10-v1-card	[RANDOM]Can I help with the project somehow?	46	"Go and fetch the paint delivery from W-market"	5	0	0	47	"Help the accountants with the payrolls"	5	0	0
-46	Jackie	char10-v1-card	There was an accident with the paint buckets!	48	"Oh no, we need to buy more paint"	-10	0	0	48	"Are you alright?"	10	0	0
-47	Kirjanpitäjä	char11-v1-card	The payrolls are all wrong, we need to do them again!	48	"Oh no! You'll get overtime payment for sure though"	10	-5	0	48	"Is this Jackie's fault?"	-15	0	0
-48	Jackie	char10-v1-card	I want to help with something. What can I do?	49	"Areyou sure you can?"	-5	0	0	50	"You can update the project plan"	5	0	0
+46	Jackie	char10-v2-card	There was an accident with the paint buckets!	48	"Oh no, we need to buy more paint"	-10	0	0	48	"Are you alright?"	10	0	0
+47	Kirjanpitäjä	char11-v2-card	The payrolls are all wrong, we need to do them again!	48	"Oh no! You'll get overtime payment for sure though"	10	-5	0	48	"Is this Jackie's fault?"	-15	0	0
+48	Jackie	char10-v1-card	I want to help with something. What can I do?	49	"Are you sure you can?"	-5	0	0	50	"You can update the project plan"	5	0	0
 49	Jackie	char10-v1-card	I don't know what I should do.	0	"You can go home for today."	-10	0	0	0	"You can help me."	5	0	0
 50	Mickey	char16-card	Why are there weird additions in the project plan?	51	"Jackie."	-15	0	0	51	"I don't know, I'll figure it out"	5	0	-3
 51	Jackie	char10-v1-card	Hey, how can I help?	52	"Could you check the project plan again?"	10	0	0	0	"You made some mistakes, can you fix them?"	-10	0	0
@@ -102,4 +102,11 @@
 106	Sirkka	char19-card	Pouta is disrupting my work by singing to himself.	0	[Remind Pouta about the company policies]	-20	10	0	0	”Pouta, could you sing a bit less? Sirkka can't focus on her work.”	0	0	13
 107	Pouta	char3-v2-card	Hey, I baked a big cake and I would like to offer it to everyone. Could you notify others?	108	”Of course. Hey everyone, Pouta has brought some cake, let's take a break!"	10	0	15	108	”Here's cake for everyone!”	0	0	10
 108	Pouta	char3-v2-card	Hey, I could also do the assistant's work if you want!	0	”You already have a lot of work, don't burn yourself out!”	0	-15	20	0	”Oh nice, we need your talent! Here's a couple of tasks...”	0	20	-24
-99999	Boss	char9-card	You're fired	-1	oh no	0	0	0	-1	oh no	0	0	0
+110	Jesse	char17-card	[RANDOM]Wuff wuff!	111	"Hey Jesse!"	0	0	6	111	"Umm.."	0	0	0
+111	Jesse	char17-card	Grr..	112	"Hello!"	-15	0	0	112	"Is everything alright?"	15	0	0
+112	Jesse	char17-card	Woof woof woof!	113	"Hah, you don't say!"	-15	0	0	114	[Nod happily]	15	0	0
+113	Jesse	char17-card	Woof woof.	-1	"Woof?"	-10	0	0	115	"I'm sorry, there must be a communication error between us"	15	0	10
+114	Jesse	char17-card	Bark!	115	"Bark bark!"	6	0	0	0	"Wuff wuff!"	-5	0	0
+115	Jesse	char17-card	Huff..	116	"Ain't this a good time for a coffee break?"	0	0	0	0	"Do you need to go out for a walk?"	0	0	0
+116	Jesse	char17-card	This is the best workplace I've ever been in.	0	"Nice to hear!"	20	0	5	0	"Cool!"	20	0	5
+99999	Boss	char9-card	You're fired	-1	Oh no	0	0	0	-1	Oh no	0	0	0

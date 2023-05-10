@@ -1,4 +1,4 @@
-1	Sirkka	char19-card	[RANDOM]Hei! Olen täällä ensimmäistä kertaa.	2	"Hyvää päivää, Sirkka"	5	0	0	2	"Hei, anna kun esittelen sinulle paikkoja."	10	0	5
+1	Sirkka	char19-card	[RANDOM]Hei! Olen täällä ensimmäistä kertaa.	2	"Hyvää päivää, Sirkka"	5	0	0	3	"Hei, anna kun esittelen sinulle paikkoja."	10	0	5
 2	Greg	char20-card	Minusta tuntuu, ettei Sirkka oikein osaa kulkea täällä.	3	"Voisitko sinä auttaa häntä?"	5	0	-10	3	"Minäpä esittelen hänelle paikkoja."	10	0	0
 3	Sirkka	char19-card	Miten täällä toimitaan taukojen suhteen?	4	"Saat itse päättää, koska taukoja pidetään."	10	0	-5	5	"Meillä on tietyt aikataulut kahvi- ja ruokatauoille."	-5	0	15
 4	Greg	char20-card	En ole tainnut nähdä Sirkkaa kertaakaan tauolla.	6	"Hän on vain kovin ahkera työntekijä."	0	15	-10	6	"Täytyypä käydä muistuttamassa häntä, että pitäisi taukojakin välillä."	0	0	20
@@ -39,8 +39,8 @@
 43	Kirjanpitäjä	char11-v1-card	[LOWMONEY]Projektin rahatilanne näyttää huolestuttavalta, tarvitsemme lisää varoja.	0	Leikkaa työntekijöiden palkkoja.	-13	30	0	0	Pidä rahankeräystilaisuus.	0	30	-5
 44	Greg	char20-card	[LOWENERGY]Moni työntekijä on ylikuormittunut.	0	Anna työntekijöille palkallinen vapaapäivä.	20	30	-10	0	Päästä työntekijät aikaisemmin kotiin.	0	0	30	
 45	Jackie	char10-v1-card	[RANDOM]Voinko auttaa jotenkin projektin kanssa?	46	"Käy noutamassa maalitilaus W-kaupasta."	5	0	0	47	"Auta kirjanpitäjiä palkkalaskelmien kanssa."	5	0	0
-46	Jackie	char10-v1-card	Lastin kanssa kävi onnettomuus!	48	"Voi ei, meidän pitää ostaa lisää maalia"	-10	0	0	48	"Oletko kunnossa?"	10	0	0
-47	Kirjanpitäjä	char11-v1-card	Palkkalaskelmat ovat pilalla,  joudumme tekemään ne uudestaan!	48	"Voi ei, saatte toki ylityölisän tämän korjaamisesta."	10	-5	0	48	"Onko tämä Jackien syytä?"	-15	0	0
+46	Jackie	char10-v2-card	Lastin kanssa kävi onnettomuus!	48	"Voi ei, meidän pitää ostaa lisää maalia"	-10	0	0	48	"Oletko kunnossa?"	10	0	0
+47	Kirjanpitäjä	char11-v2-card	Palkkalaskelmat ovat pilalla,  joudumme tekemään ne uudestaan!	48	"Voi ei, saatte toki ylityölisän tämän korjaamisesta."	10	-5	0	48	"Onko tämä Jackien syytä?"	-15	0	0
 48	Jackie	char10-v1-card	Haluan auttaa jotenkin, mitä voisin tehdä?	49	"Oletko varma, että pystyt auttamaan?"	-5	0	0	50	"Voit päivittää projektisuunnitelman."	5	0	0
 49	Jackie	char10-v1-card	En tiedä mitä tekisin.	0	"Voit mennä kotiin tältä päivältä"	-10	0	0	0	"Voit auttaa minua."	5	0	0
 50	Mickey	char16-card	Miksi projektisuunnitelmassa on outoja lisäyksiä?	51	"Jackie."	-15	0	0	51	"En tiedä, selvitän asiaa."	5	0	-3
@@ -102,4 +102,11 @@
 106	Sirkka	char19-card	Pouta häiritsee minun työtäni, hän laulaa itsekseen..	0	[Muistuta Poutaa firman käytössäännöistä.]	-20	10	0	0	”Pouta, voisitteko vähentää laulamista? Sirkka ei pysty keskittymään työhönsä.”	0	0	13
 107	Pouta	char3-v2-card	Hei, leivoin suuren kakun, ja haluaisin tarjota sitä kahvitilassa. Ilmoittaisitko kaikille?	108	”Toki. Hei kaikki, Pouta on tuonut kakkua kaikille! Pidetään pieni tauko!"	10	0	15	108	”Täällä olisi kakkua tarjolla kaikille!”	0	0	10
 108	Pouta	char3-v2-card	Hei, voin tehdä myös sihteerin hommia, jos haluatte!	0	”Sinulla on jo paljon muutakin työtä! Älä ylikuormita itseäsi!”	0	-15	20	0	”Sinun taitojasi tähän kaivattiinkin! Tässä pari tehtävää..”	0	20	-24
-99999	Boss	char9-card	Saat potkut	-1	oh no	0	0	0	-1	oh no	0	0	0
+110	Jesse	char17-card	[RANDOM]Wuff wuff!	111	"Hei Jesse!"	0	0	6	111	"Öö.."	0	0	0
+111	Jesse	char17-card	Murr..	112	"Heippa!"	-15	0	0	112	"Onko kaikki kunnossa?"	15	0	0
+112	Jesse	char17-card	Hau hau hau!	113	"Hah, ei kai!"	-15	0	0	114	Nyökyttele iloisesti.	15	0	0
+113	Jesse	char17-card	Hau hau.	-1	"Woof?"	-10	0	0	115	"Anteeksi, meillä on varmaan käynyt kommunikaatiovirhe."	15	0	10
+114	Jesse	char17-card	Bark!	115	"Bark bark!"	6	0	0	0	"Wuff wuff!"	-5	0	0
+115	Jesse	char17-card	Huff..	116	"Olisiko kahvitauon paikka?"	0	0	0	0	"Pitääkö päästä lenkille?"	0	0	0
+116	Jesse	char17-card	Tämä on paras työpaikka jossa olen koskaan ollut.	0	"Mukava kuulla!"	20	0	5	0	"Kiva!"	20	0	5
+99999	Boss	char9-card	Saat potkut	-1	Voi ei	0	0	0	-1	Voi ei	0	0	0

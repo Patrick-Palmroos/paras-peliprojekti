@@ -97,15 +97,13 @@ namespace ProjectC
         {
             if(IsFinnish())
             {
-                gameEndText = 
-                    "Työntekijöistäsi tuli niin onnettomia ja pahoinvoivia työpaikalla, että he irtisanoutuivat." +
-                    "Koita pitää huoli siitä, että kaikilla työntekijöillä on hyvä olla työpaikalla.";
+                gameEndText =
+                    "Työntekijöistäsi tuli niin onnettomia ja pahoinvoivia työpaikalla, että he irtisanoutuivat.";
             }
             else
             {
                 gameEndText =
-                    "Your workers got so unhappy they resigned, and there are no workers left to continue the project." +
-                    "Try to make sure that everyone's wellbeing is taken into consideration.";
+                    "Your workers got so unhappy they resigned, and there are no workers left to continue the project.";
             }
         }
 
